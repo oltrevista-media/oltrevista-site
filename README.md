@@ -70,7 +70,7 @@ with full autonomy and extreme precision.
 ## Pricing
 - **Free** — parsing base  
 - **Pro** — parsing avanzato + export completo  
-- **Enterprise** — BYOM + API + Cloud + Offline‑PRO + supporto dedicato  
+- **Enterprise** — BYOM + API + Cloud + Offline‑PRO 
 
 ---
 

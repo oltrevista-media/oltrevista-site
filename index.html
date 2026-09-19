@@ -76,18 +76,27 @@
             opacity: 1;
         }
 
-        /* FOOTER */
+        /* FOOTER — UPDATED */
         .brand-footer {
             text-align: right;
             padding-right: 40px;
             padding-bottom: 40px;
+            margin-top: 40px;        /* footer più basso */
         }
 
-        .brand-footer p {
+        .brand-footer p:first-child {
             margin: 0;
-            font-size: 16px;
+            font-size: 18px;         /* OLTREVISTA più elegante */
+            font-weight: 500;
+            opacity: 0.75;
+        }
+
+        .brand-footer p:last-child {
+            margin: 6px 0 0 0;
+            font-size: 13px;         /* motto più piccolo */
             font-weight: 300;
-            opacity: 0.65;
+            opacity: 0.55;           /* motto più soft */
+            letter-spacing: 0.5px;
         }
     </style>
 </head>

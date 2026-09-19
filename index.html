@@ -11,51 +11,74 @@
             padding: 0;
             background: #000;
             color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
             text-align: center;
         }
 
+        /* LOGO */
         .logo {
             width: 90px;
-            margin-bottom: 1.5rem;
+            margin-top: 80px;
+            margin-bottom: 40px;
             opacity: 0.95;
         }
 
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
+        /* OLTREVISTA AI */
+        .main-title h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
         }
 
-        p.tagline {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 2rem;
+        .main-title p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-top: 10px;
+            margin-bottom: 50px;
         }
 
-        .links a {
+        /* ZUKWEND Billing AI */
+        .product a {
+            font-size: 26px;
+            font-weight: 400;
             color: #fff;
             text-decoration: none;
-            margin: 0 12px;
-            font-size: 1rem;
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
         }
 
-        .links a:hover {
+        .product {
+            margin-bottom: 60px;
+        }
+
+        /* SOCIAL */
+        .social {
+            margin-bottom: 80px;
+        }
+
+        .social a {
+            margin: 0 18px;
+            font-size: 18px;
+            font-weight: 300;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .social a:hover {
             opacity: 1;
         }
 
-        footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.8rem;
-            opacity: 0.5;
+        /* BRAND FOOTER (firma a destra) */
+        .brand-footer {
+            text-align: right;
+            padding-right: 40px;
+            padding-bottom: 40px;
+        }
+
+        .brand-footer p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -65,29 +88,31 @@
     <!-- Logo -->
     <img src="logo.png" alt="OLTREVISTA Logo" class="logo">
 
-    <!-- Brand -->
-    <h1>OLTREVISTA</h1>
+    <!-- OLTREVISTA AI -->
+    <div class="main-title">
+        <h1>OLTREVISTA AI</h1>
+        <p>Multi Agent Ecosystem</p>
+    </div>
 
-    <!-- Tagline -->
-    <p class="tagline">See beyond.</p>
+    <!-- ZUKWEND Billing AI -->
+    <div class="product">
+        <a href="zukwend.html">ZUKWEND Billing AI</a>
+    </div>
 
-    <!-- Social & Product Links -->
-    <div class="links">
+    <!-- Social -->
+    <div class="social">
         <a href="https://youtube.com/@oltrevista" target="_blank">YouTube</a>
         <a href="https://www.instagram.com/oltrevista.media/" target="_blank">Instagram</a>
         <a href="https://www.tiktok.com/@oltrevista.media" target="_blank">TikTok</a>
         <a href="https://x.com/oltrevistamedia" target="_blank">X</a>
         <a href="https://www.threads.com/@oltrevista.media" target="_blank">Threads</a>
-
-        <!-- ⭐ CTA PRINCIPALE: OLTREVISTA AI -->
-        <a href="oltrevista-ai.html">OLTREVISTA AI — AI Agent Ecosystem</a>
-
-        <!-- ⭐ Link agente attuale -->
-        <a href="zukwend.html">ZUKWEND Billing AI</a>
     </div>
 
-    <!-- Footer -->
-    <footer>© 2026 OLTREVISTA</footer>
+    <!-- Firma OLTREVISTA -->
+    <div class="brand-footer">
+        <p>OLTREVISTA</p>
+        <p>See beyond</p>
+    </div>
 
 </body>
 </html>

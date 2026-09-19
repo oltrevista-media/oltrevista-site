@@ -1,11 +1,14 @@
-# OLTREVISTA AI  
-Ecosistema di Agenti Intelligenti
+# OLTREVISTA AI
 
-OLTREVISTA AI è il brand madre che sviluppa agenti autonomi progettati per operare con precisione, privacy e controllo totale dei dati.
+**Intelligent Agent Ecosystem**
 
-## Agenti
-• ZUKWEND Billing AI  
-• Altri agenti in arrivo
+OLTREVISTA AI is the parent brand developing autonomous agents designed for precision, privacy, and full data control.
+
+## Agents
+- ZUKWEND Billing AI  
+- Additional agents coming soon
 
 ## Brand
 **OLTREVISTA — See beyond**
+
+© 2026

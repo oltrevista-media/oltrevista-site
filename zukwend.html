@@ -1,81 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
+    <title>ZUKWEND — Agente AI Ibrido per l'Automazione Solleciti e Tracciamento Crediti | OLTREVISTA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZUKWEND Billing AI</title>
-
+    
+    <!-- Lemon Squeezy Overlay Checkout Script -->
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+    
     <style>
+        :root {
+            --bg: #0d0f12;
+            --card-bg: #161920;
+            --border: #262b36;
+            --text: #f0f2f5;
+            --text-muted: #9ba3b2;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --green: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            margin: 0;
-            padding: 0;
-            background: #fff;
-            color: #000;
-            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 760px;
+            width: 100%;
             text-align: center;
+            padding: 40px 10px;
         }
-
-        .logo {
-            width: 90px;
-            margin-top: 80px;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        h1 {
-            font-size: 46px;
-            font-weight: 700;
-            margin: 0;
+        .badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.15);
+            color: #60a5fa;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            margin-bottom: 24px;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
-        p.subtitle {
-            font-size: 22px;
-            font-weight: 300;
-            opacity: 0.75;
-            margin-top: 12px;
-            margin-bottom: 55px;
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .download-btn {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 14px 32px;
+        p.subheadline {
             font-size: 18px;
-            font-weight: 500;
-            color: #000;
-            border: 1px solid #000;
-            border-radius: 6px;
-            text-decoration: none;
-            opacity: 0.4;
-            pointer-events: none;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 660px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+        .price-tag {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .price-tag span {
+            font-size: 16px;
+            color: var(--green);
+            font-weight: 600;
+        }
+        
+        /* IMPAGINAZIONE CORRETTA BULLET LIST */
+        .features-list {
+            list-style: none;
+            margin: 28px 0;
+        }
+        .features-list li {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .features-list .check-icon {
+            color: var(--green);
+            font-size: 16px;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+        .features-list .feature-text {
+            flex: 1;
+        }
+        .features-list .feature-title {
+            color: var(--text);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
         }
 
-        footer {
-            margin-top: 90px;
+        .btn-primary {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            padding: 16px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            margin-top: 20px;
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+        .freedom-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 24px;
             font-size: 14px;
-            opacity: 0.5;
-            margin-bottom: 40px;
+            color: var(--text-muted);
+            text-align: left;
+        }
+        .freedom-box h3 {
+            color: var(--text);
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .transparency-note {
+            font-size: 13px;
+            color: #71717a;
+            margin-top: 28px;
+            line-height: 1.5;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Logo -->
-    <img src="logo.png" alt="ZUKWEND Logo" class="logo">
+    <div class="container">
+        <div class="badge">Architettura AI Ibrida — BYOC & Locale</div>
+        
+        <h1>ZUKWEND — Agente AI Ibrido per l'Automazione Solleciti e Tracciamento Crediti</h1>
+        
+        <p class="subheadline">
+            Metti in pilota automatico l'analisi degli insoluti, il controllo dell'aging e la generazione dei solleciti di pagamento. Sfrutta la velocità delle API Cloud o la privacy totale dei modelli locali. Zero abbonamenti.
+        </p>
 
-    <!-- Title -->
-    <h1>ZUKWEND Billing AI</h1>
+        <div class="pricing-card">
+            <div class="price-tag">€299 <span>/ Licenza a Vita</span></div>
+            <p style="color: var(--text-muted); font-size: 14px;">Paghi una volta, tuo per sempre. Include 2 attivazioni hardware vincolate.</p>
 
-    <!-- Subtitle -->
-    <p class="subtitle">The First Autonomous Billing Agent — Coming Soon</p>
+            <ul class="features-list">
+                <li>
+                    <span class="check-icon">✔️</span>
+                    <div class="feature-text">
+                        <span class="feature-title">Massima Libertà di Motore:</span>
+                        Scegli il tuo modello, provider o workflow preferito. Passa senza attrito tra le migliori API Cloud (Claude, OpenAI, Gemini, Mistral [GDPR], Groq) e i modelli locali 100% privati (Ollama).
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✔️</span>
+                    <div class="feature-text">
+                        <span class="feature-title">Automazione Solleciti & Aging:</span>
+                        Parsing immediato delle fatture emesse, generazione solleciti multilivello e tracciamento scadenze.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✔️</span>
+                    <div class="feature-text">
+                        <span class="feature-title">Zero Vendor Lock-in:</span>
+                        Nessun canone mensile cloud, nessun ricarico obbligatorio sulle API.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✔️</span>
+                    <div class="feature-text">
+                        <span class="feature-title">Agente Desktop Multi-Piattaforma:</span>
+                        Gira nativamente sulla tua workstation con la totale proprietà dei dati contabili.
+                    </div>
+                </li>
+            </ul>
 
-    <!-- Download Button -->
-    <a class="download-btn">Download Alpha — Coming Soon</a>
+            <!-- BOTTONE CHECKOUT LEMON SQUEEZY OVERLAY -->
+            <a href="https://oltrevista.lemonsqueezy.com/checkout/buy/5a0f67eb-a1ab-47d8-aaa0-df365147f5ae?embed=1" 
+               class="lemonsqueezy-button btn-primary">
+                Acquista Licenza a Vita — €299
+            </a>
 
-    <!-- Footer -->
-    <footer>© 2026 ZUKWEND — Powered by OLTREVISTA AI</footer>
+            <div class="freedom-box">
+                <h3>Totale Libertà — Usa il tuo Motore Preferito</h3>
+                Scegli come la tua IA elabora i dati. Passa dall'esecuzione locale 100% riservata (Ollama: Gemma, Mistral, Qwen, DeepSeek) alla velocità del Cloud (BYOC: Claude, OpenAI, Gemini, Mistral [GDPR], Groq o qualsiasi provider personalizzato).
+            </div>
+        </div>
+
+        <p class="transparency-note">
+            ⚠️ <strong>Nota di trasparenza:</strong> ZUKWEND è un agente desktop amministrativo progettato per l'automazione dell'Accounts Receivable (AR), il tracciamento delle fatture scadute e la generazione di bozze di sollecito multilivello. Non è uno strumento di fatturazione attiva (non emette fatture elettroniche XML/SDI) né un'agenzia di recupero crediti.
+        </p>
+    </div>
 
 </body>
 </html>

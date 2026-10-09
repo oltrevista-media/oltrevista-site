@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLTREVISTA</title>
+    <title>OLTREVISTA — Multi Agent Ecosystem</title>
 
     <style>
         body {
@@ -40,7 +40,11 @@
         }
 
         /* PRODUCT LINK */
-        .product a {
+        .product {
+            margin-bottom: 70px;
+        }
+
+        .product a.main-link {
             font-size: 26px;
             font-weight: 400;
             color: #fff;
@@ -49,12 +53,29 @@
             transition: opacity 0.2s ease;
         }
 
-        .product a:hover {
+        .product a.main-link:hover {
             opacity: 1;
         }
 
-        .product {
-            margin-bottom: 70px;
+        /* LANGUAGE SELECTOR */
+        .lang-selector {
+            margin-top: 16px;
+            font-size: 13px;
+            opacity: 0.65;
+        }
+
+        .lang-selector a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 13px;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .lang-selector a:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
 
         /* SOCIAL */
@@ -76,26 +97,26 @@
             opacity: 1;
         }
 
-        /* FOOTER — UPDATED */
+        /* FOOTER */
         .brand-footer {
             text-align: right;
             padding-right: 40px;
             padding-bottom: 40px;
-            margin-top: 40px;        /* footer più basso */
+            margin-top: 40px;
         }
 
         .brand-footer p:first-child {
             margin: 0;
-            font-size: 18px;         /* OLTREVISTA più elegante */
+            font-size: 18px;
             font-weight: 500;
             opacity: 0.75;
         }
 
         .brand-footer p:last-child {
             margin: 6px 0 0 0;
-            font-size: 13px;         /* motto più piccolo */
+            font-size: 13px;
             font-weight: 300;
-            opacity: 0.55;           /* motto più soft */
+            opacity: 0.55;
             letter-spacing: 0.5px;
         }
     </style>
@@ -114,7 +135,15 @@
 
     <!-- Product -->
     <div class="product">
-        <a href="zukwend.html">ZUKWEND Billing AI</a>
+        <a href="it-solleciti-fatture.html" class="main-link">ZUKWEND Billing AI</a>
+        <div class="lang-selector">
+            <a href="it-solleciti-fatture.html">🇮🇹 IT</a> • 
+            <a href="fr-relance-factures.html">🇫🇷 FR</a> • 
+            <a href="de-mahnwesen-software.html">🇩🇪 DE</a> • 
+            <a href="es-recordatorios-pago.html">🇪🇸 ES</a> • 
+            <a href="pt-lembrete-faturas.html">🇵🇹 PT</a> • 
+            <a href="https://zukwend.com" target="_blank">🌐 EN</a>
+        </div>
     </div>
 
     <!-- Social -->
@@ -123,7 +152,7 @@
         <a href="https://www.instagram.com/oltrevista.media/" target="_blank">Instagram</a>
         <a href="https://www.tiktok.com/@oltrevista.media" target="_blank">TikTok</a>
         <a href="https://x.com/oltrevistamedia" target="_blank">X</a>
-        <a href="https://www.threads.com/@oltrevista.media" target="_blank">Threads</a>
+        <a href="https://www.threads.net/@oltrevista.media" target="_blank">Threads</a>
     </div>
 
     <!-- Footer -->

@@ -4,7 +4,311 @@
     <meta charset="UTF-8">
     <title>ZUKWEND — Hybrid-KI-Software für Mahnwesen & Offene Posten | OLTREVISTA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script><!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZUKWEND — Hybrid-KI-Agent für Mahnwesen und Forderungsmanagement</title>
+    <meta name="description" content="Automatisierte Mahnschreiben. 100% DSGVO-konform & Offline-first. Keine monatlichen Gebühren.">
+    
+    <!-- STYLES -->
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --card-bg: #131926;
+            --border: #262f45;
+            --text-main: #f3f4f6;
+            --text-muted: #9da8be;
+            --accent: #3b82f6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER / LOGO */
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--border);
+            color: #60a5fa;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        /* HERO SECTION */
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        p.subheadline {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 660px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /* PRICING CARD */
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+
+        .price-header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-amount {
+            font-size: 44px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .price-sub {
+            font-size: 14px;
+            color: #60a5fa;
+            margin-top: 6px;
+        }
+
+        /* BULLETS */
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+        }
+
+        .features-list li {
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: #d1d5db;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .features-list li strong {
+            color: #ffffff;
+        }
+
+        /* BUTTONS (DUAL CTA) */
+        .btn-primary {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            background: #ffffff;
+            color: #000000;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.2s, background 0.2s;
+            box-sizing: border-box;
+        }
+
+        .btn-primary:hover {
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        .btn-demo {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 14px;
+            padding: 12px;
+            color: var(--text-muted);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+
+        .btn-demo:hover {
+            border-color: #60a5fa;
+            color: #ffffff;
+        }
+
+        /* FEATURE HIGHLIGHT BOX */
+        .feature-box {
+            background: rgba(19, 25, 38, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .feature-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .feature-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* DISCLAIMER */
+        .disclaimer-box {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 13px;
+            color: #fbbf24;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header>
+            <div class="logo">ZUKWEND <span style="font-weight:300; opacity:0.6;">by OLTREVISTA</span></div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <div style="text-align: center;">
+            <div class="badge">Hybride KI-Architektur — BYOC &amp; Lokal</div>
+            <h1>ZUKWEND — Hybrid-KI-Agent für Mahnwesen und Forderungsmanagement</h1>
+            <p class="subheadline">
+                Schalten Sie den Autopiloten für die Analyse offener Posten, das Fälligkeitstracking und die Erstellung von Mahnschreiben ein. Nutzen Sie die Geschwindigkeit von Cloud-APIs oder die maximale Privatsphäre lokaler Modelle. Kein Abonnement.
+            </p>
+        </div>
+
+        <!-- PRICING CARD -->
+        <div class="pricing-card">
+            <div class="price-header">
+                <div class="price-amount">249 € <span class="price-period">/ Lebenslange Lizenz</span></div>
+                <div class="price-sub">Einmal zahlen, für immer nutzen. Enthält 2 hardwaregebundene Aktivierungen.</div>
+            </div>
+
+            <ul class="features-list">
+                <li>
+                    <span>✔️</span>
+                    <div><strong>Volle Engine-Freiheit:</strong> Wählen Sie Ihr bevorzugtes Modell, Ihren Anbieter oder Workflow. Wechseln Sie nahtlos zwischen Top-Cloud-APIs (Claude, OpenAI, Gemini, Mistral [DSGVO], Groq) und 100% privaten lokalen LLMs (Ollama).</div>
+                </li>
+                <li>
+                    <span>✔️</span>
+                    <div><strong>Automatisiertes Mahnwesen &amp; Fälligkeitstracking:</strong> Sofortiges Invoice-Parsing, Erstellung mehrstufiger Mahnschreiben und Nachverfolgung überfälliger Rechnungen.</div>
+                </li>
+                <li>
+                    <span>✔️</span>
+                    <div><strong>Kein Vendor Lock-in:</strong> Keine monatlichen Cloud-Gebühren, kein API-Preisaufschlag.</div>
+                </li>
+                <li>
+                    <span>✔️</span>
+                    <div><strong>Plattformübergreifender Desktop-Agent:</strong> Läuft nativ auf Ihrer Workstation mit vollständiger Datenkontrolle.</div>
+                </li>
+            </ul>
+
+            <!-- PRIMÄRER CTA (LEMON SQUEEZY CHECKOUT) -->
+            <a href="[suspicious link removed]" class="lemonsqueezy-button btn-primary">
+                Lebenslangen Zugriff sichern — 249 €
+            </a>
+
+            <!-- SEKUNDÄRER CTA (DEMO DOWNLOAD) -->
+            <a href="[suspicious link removed]" class="btn-demo">
+                ⬇️ Kostenlose Demo herunterladen (7 Tage / Max. 10 Rechnungen)
+            </a>
+        </div>
+
+        <!-- FEATURE HIGHLIGHT -->
+        <div class="feature-box">
+            <h3>Volle Freiheit — Bring Your Own Engine</h3>
+            <p>
+                Wählen Sie, wie Ihre KI Rechnungen verarbeitet. Wechseln Sie zwischen 100% privater lokaler Ausführung (Ollama: Gemma, Mistral, Qwen, DeepSeek) oder Cloud-Geschwindigkeit (BYOC: Claude, OpenAI, Gemini, Mistral [DSGVO], Groq oder benutzerdefinierte Anbieter).
+            </p>
+        </div>
+
+        <!-- TRANSPARENCY DISCLAIMER -->
+        <div class="disclaimer-box">
+            ⚠️ <strong>Transparenzhinweis:</strong> ZUKWEND ist ein administrativer Desktop-Agent für die Automatisierung des Mahnwesens (AR), die Verfolgung überfälliger Rechnungen und die Erstellung von Mahnentwürfen. Es ist kein aktives Rechnungsstellungsprogramm und keine Inkassagentur.
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 OLTREVISTA AI — Multi-Agent Ecosystem. Alle Rechte vorbehalten.</p>
+        </footer>
+
+    </div>
+
+    <!-- LEMON SQUEEZY EMBED SCRIPT -->
+    <script src="[suspicious link removed]" defer></script>
+</body>
+</html>
     <style>
         :root {
             --bg: #0d0f12;
@@ -41,25 +345,7 @@
             margin-bottom: 24px;
             text-transform: uppercase;
         }
-        h1 {
-            font-size: 36px;
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 18px;
-            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p.subheadline { font-size: 18px; color: var(--text-muted); margin-bottom: 36px; max-width: 660px; margin-left: auto; margin-right: auto; }
-        .pricing-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 36px 28px;
-            margin-bottom: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            text-align: left;
-        }
+        <h1>ZUKWEND — Hybrid-KI-Agent für Mahnwesen &amp; Forderungsmanagement</h1> <p> Automatisierte Mahnschreiben. 100% DSGVO-konform &amp; Offline-first. Keine monatlichen Gebühren. </p>  <div> <h3>Lebenslange Lizenz</h3> <div> 249 € <span>/ Einmalzahlung</span> </div> <ul> <li>✅ Unbegrenzte Mahnschreiben &amp; Analyse</li> <li>✅ 2 PC-Installationen inklusive</li> <li>✅ Hybrid-Engine: 100% Lokal (Ollama) oder Cloud (BYOC)</li> <li>✅ 100% DSGVO-konform (Kein Cloud-Zwang)</li> <li>✅ Keine monatlichen Abonnements</li> <li>✅ Vollständiger Excel / CSV Export</li> </ul>  <a href="[suspicious link removed]"> Lebenslange Lizenz kaufen — 249 € </a>  <a href="[suspicious link removed]"> ⬇️ Kostenlose Demo herunterladen (7 Tage / Max. 10 Rechnungen) </a> </div>
         .price-tag { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 4px; }
         .price-tag span { font-size: 16px; color: var(--green); font-weight: 600; }
         .features-list { list-style: none; margin: 28px 0; }

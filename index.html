@@ -316,6 +316,38 @@
     }
     .disclaimer-section p { margin-bottom: 12px; }
     .disclaimer-section p:last-child { margin-bottom: 0; }
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .social-label {
+        font-size: 0.85rem;
+        color: var(--mut);
+        text-transform: uppercase;
+        letter-spacing: .05em;
+    }
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .social-links a {
+        color: var(--mut);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color .2s ease;
+    }
+    .social-links a:hover {
+        color: var(--a);
+    }
+    .footer-credit {
+        font-size: 0.9rem;
+        color: var(--mut);
+    }
     footer {
         padding: 36px 0 20px;
         border-top: 1px solid var(--line);
@@ -536,18 +568,6 @@
         </div>
     </section>
 
-    <!-- SOCIAL LINKS -->
-    <div class="social-wrap">
-        <p style="color: var(--mut); font-size: 0.95rem;">Connect with OLTREVISTA Media</p>
-        <div class="social-links">
-            <a href="https://youtube.com/@oltrevista" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://www.instagram.com/oltrevista.media/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.tiktok.com/@oltrevista.media" target="_blank" rel="noopener">TikTok</a>
-            <a href="https://x.com/oltrevistamedia" target="_blank" rel="noopener">X</a>
-            <a href="https://www.threads.net/@oltrevista.media" target="_blank" rel="noopener">Threads</a>
-        </div>
-    </div>
-
     <div class="disclaimer-section">
         <p><strong>⚠️ Legal Transparency Note:</strong> ZUKWEND is an administrative desktop agent designed for Accounts Receivable (AR) management, overdue invoice tracking, and reminder drafting. It is not an active invoicing system nor a debt collection agency.</p>
         <p><strong>🛡️ Safety AI Disclaimer:</strong> AI-generated outputs must be verified by the user. The software provides draft suggestions, not binding financial or legal decisions.</p>
@@ -556,7 +576,19 @@
 
 <footer>
     <div class="wrap">
-        ZUKWEND by <a href="index.html" rel="noopener">OLTREVISTA AI</a>. AI outputs must be verified by the user.
+    <div class="footer-social">
+        <span class="social-label">OLTREVISTA Network:</span>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@oltrevista_ai" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@oltrevista.media" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.instagram.com/oltrevista.ai/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/Oltrevista/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.threads.com/@oltrevista.ai" target="_blank" rel="noopener">Threads</a>
+        </div>
+    </div>
+        <div class="footer-credit">
+            ZUKWEND by <a href="index.html" rel="noopener">OLTREVISTA AI</a>. AI outputs must be verified by the user.
+        </div>
     </div>
 </footer>
 </body>

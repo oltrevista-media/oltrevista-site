@@ -3,163 +3,561 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLTREVISTA — Multi Agent Ecosystem</title>
-
+    <title>OLTREVISTA AI — Autonomous & Hybrid Multi-Agent Ecosystem</title>
+    <meta name="description" content="OLTREVISTA AI is an ecosystem of specialized desktop and hybrid AI agents for business workflows, beginning with ZUKWEND Billing AI.">
+    <link rel="alternate" hreflang="it" href="it-solleciti-fatture.html" />
+    <link rel="alternate" hreflang="de" href="de-mahnwesen-software.html" />
+    <link rel="alternate" hreflang="fr" href="fr-relance-factures.html" />
+    <link rel="alternate" hreflang="es" href="es-recordatorios-pago.html" />
+    <link rel="alternate" hreflang="pt" href="pt-lembrete-faturas.html" />
+    <link rel="alternate" hreflang="en" href="oltrevista-ai.html" />
+    <link rel="alternate" hreflang="x-default" href="index.html" />
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: 'Inter', Arial, Helvetica, sans-serif;
+    :root {
+        --bg: #0b0f17;
+        --card: #131a26;
+        --line: #222c3d;
+        --txt: #e6eaf5;
+        --mut: #9aa6c4;
+        --a: #6c8cff;
+        --b: #b46cff;
+        --ok: #2ecc8f;
+        --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        background: var(--bg);
+        color: var(--txt);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        padding-bottom: 60px;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    header {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(11, 15, 23, 0.85);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .nav-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .brand-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--txt);
+    }
+    .brand-logo {
+        height: 38px;
+        width: auto;
+    }
+    .brand-text {
+        display: flex;
+        flex-direction: column;
+    }
+    .brand-title {
+        font-weight: 800;
+        letter-spacing: .08em;
+        font-size: 1.15rem;
+    }
+    .brand-tagline {
+        font-size: 0.75rem;
+        color: var(--mut);
+        letter-spacing: .05em;
+    }
+    .lang-selector {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .lang-link {
+        color: var(--mut);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 5px 9px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        transition: all .15s ease;
+    }
+    .lang-link:hover {
+        color: var(--txt);
+        background: var(--card);
+        border-color: var(--line);
+    }
+    .lang-link.active {
+        color: #fff;
+        background: rgba(108, 140, 255, 0.15);
+        border-color: var(--a);
+        font-weight: 600;
+    }
+    .hero {
+        text-align: center;
+        padding: 72px 0 48px;
+    }
+    .badge {
+        display: inline-block;
+        background: rgba(108, 140, 255, 0.12);
+        color: var(--a);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(108, 140, 255, 0.3);
+        margin-bottom: 24px;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+    }
+    h1 {
+        font-size: clamp(2.1rem, 5vw, 3.2rem);
+        line-height: 1.2;
+        font-weight: 800;
+        background: linear-gradient(90deg, var(--a), var(--b));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        margin-bottom: 18px;
+    }
+    .sub {
+        max-width: 760px;
+        margin: 0 auto 36px;
+        color: var(--mut);
+        font-size: 1.15rem;
+    }
+    .pricing-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 36px;
+        margin: 0 auto 40px;
+        max-width: 780px;
+        text-align: left;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+    .price-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+    .price-amount {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #fff;
+    }
+    .price-period {
+        font-size: 1.1rem;
+        color: var(--ok);
+        font-weight: 600;
+    }
+    .license-note {
+        color: var(--mut);
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+        border-left: 3px solid var(--a);
+        padding-left: 12px;
+    }
+    .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        margin: 28px 0;
+    }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 32px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.05rem;
+        transition: transform .15s ease, box-shadow .15s ease;
+        text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-buy {
+        background: linear-gradient(90deg, var(--a), var(--b));
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(108, 140, 255, .35);
+        flex: 1 1 280px;
+    }
+    .btn-demo {
+        border: 1.5px solid var(--a);
+        color: var(--txt);
+        background: transparent;
+        flex: 1 1 240px;
+    }
+    .btn-demo:hover {
+        background: rgba(108, 140, 255, 0.1);
+    }
+    .cta-note {
+        color: var(--mut);
+        font-size: 0.88rem;
+        margin-top: 10px;
+    }
+    section {
+        padding: 48px 0;
+        border-top: 1px solid var(--line);
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 28px;
+        text-align: center;
+        font-weight: 800;
+        color: #fff;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 24px;
+    }
+    .card h3 {
+        margin-bottom: 10px;
+        color: var(--a);
+        font-size: 1.2rem;
+    }
+    .card p {
+        color: var(--mut);
+        font-size: 0.95rem;
+    }
+    .models-box {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 30px;
+        margin-top: 20px;
+    }
+    .models-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 20px;
+    }
+    .model-col {
+        background: rgba(255,255,255,0.02);
+        border: 1px dashed var(--line);
+        border-radius: 12px;
+        padding: 20px;
+    }
+    .model-col h4 {
+        color: var(--a);
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    .model-col p {
+        color: var(--mut);
+        font-size: 0.92rem;
+        line-height: 1.5;
+    }
+    .model-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 12px;
+    }
+    .tag {
+        background: rgba(108, 140, 255, 0.12);
+        color: var(--txt);
+        font-size: 0.8rem;
+        padding: 3px 8px;
+        border-radius: 6px;
+        border: 1px solid rgba(108, 140, 255, 0.25);
+    }
+    ul.ok {
+        list-style: none;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    ul.ok li {
+        padding: 10px 0 10px 34px;
+        position: relative;
+        color: var(--mut);
+        font-size: 1rem;
+    }
+    ul.ok li strong { color: var(--txt); }
+    ul.ok li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--ok);
+        font-weight: 800;
+        font-size: 1.2rem;
+    }
+    .disclaimer-section {
+        background: rgba(19, 26, 38, 0.5);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 24px;
+        margin: 40px auto 0;
+        font-size: 0.88rem;
+        color: var(--mut);
+        line-height: 1.6;
+    }
+    .disclaimer-section p { margin-bottom: 12px; }
+    .disclaimer-section p:last-child { margin-bottom: 0; }
+    footer {
+        padding: 36px 0 20px;
+        border-top: 1px solid var(--line);
+        text-align: center;
+        color: var(--mut);
+        font-size: 0.9rem;
+    }
+    footer a {
+        color: var(--a);
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+        .portal-hero {
             text-align: center;
+            padding: 80px 0 40px;
         }
-
-        /* LOGO */
-        .logo {
-            width: 90px;
-            margin-top: 80px;
-            margin-bottom: 40px;
-            opacity: 0.95;
+        .portal-tagline {
+            font-size: 1.35rem;
+            color: var(--mut);
+            max-width: 700px;
+            margin: 16px auto 40px;
         }
-
-        /* TITLE */
-        .main-title h1 {
-            font-size: 48px;
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .agent-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform .2s ease, border-color .2s ease;
+        }
+        .agent-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--a);
+        }
+        .agent-card.featured {
+            border-color: var(--a);
+            box-shadow: 0 12px 36px rgba(108, 140, 255, 0.15);
+            grid-column: 1 / -1;
+        }
+        .agent-badge {
+            display: inline-block;
+            font-size: 0.75rem;
             font-weight: 700;
-            margin: 0;
-            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: .05em;
         }
-
-        .main-title p {
-            font-size: 22px;
-            font-weight: 300;
-            margin-top: 12px;
-            margin-bottom: 55px;
-            opacity: 0.85;
+        .badge-live {
+            background: rgba(46, 204, 143, 0.15);
+            color: var(--ok);
+            border: 1px solid rgba(46, 204, 143, 0.3);
         }
-
-        /* PRODUCT LINK */
-        .product {
-            margin-bottom: 70px;
+        .badge-soon {
+            background: rgba(154, 166, 196, 0.15);
+            color: var(--mut);
+            border: 1px solid rgba(154, 166, 196, 0.3);
         }
-
-        .product a.main-link {
-            font-size: 26px;
-            font-weight: 400;
+        .agent-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
             color: #fff;
+        }
+        .agent-desc {
+            color: var(--mut);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .agent-langs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .agent-langs a {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--line);
+            color: var(--txt);
+            padding: 8px 14px;
+            border-radius: 8px;
             text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.2s ease;
+            font-size: 0.9rem;
+            transition: all .15s ease;
         }
-
-        .product a.main-link:hover {
-            opacity: 1;
+        .agent-langs a:hover {
+            border-color: var(--a);
+            background: rgba(108, 140, 255, 0.1);
         }
-
-        /* LANGUAGE SELECTOR */
-        .lang-selector {
+        .social-wrap {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--line);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
             margin-top: 16px;
-            font-size: 13px;
-            opacity: 0.65;
         }
-
-        .lang-selector a {
-            color: #fff;
+        .social-links a {
+            color: var(--mut);
             text-decoration: none;
-            margin: 0 6px;
-            font-size: 13px;
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
+            font-size: 0.95rem;
+            transition: color .2s;
         }
-
-        .lang-selector a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        /* SOCIAL */
-        .social {
-            margin-bottom: 90px;
-        }
-
-        .social a {
-            margin: 0 18px;
-            font-size: 18px;
-            font-weight: 300;
-            color: #fff;
-            text-decoration: none;
-            opacity: 0.75;
-            transition: opacity 0.2s ease;
-        }
-
-        .social a:hover {
-            opacity: 1;
-        }
-
-        /* FOOTER */
-        .brand-footer {
-            text-align: right;
-            padding-right: 40px;
-            padding-bottom: 40px;
-            margin-top: 40px;
-        }
-
-        .brand-footer p:first-child {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 500;
-            opacity: 0.75;
-        }
-
-        .brand-footer p:last-child {
-            margin: 6px 0 0 0;
-            font-size: 13px;
-            font-weight: 300;
-            opacity: 0.55;
-            letter-spacing: 0.5px;
+        .social-links a:hover {
+            color: var(--a);
         }
     </style>
 </head>
-
 <body>
+<header>
+    <div class="wrap nav-wrap">
+        <a href="index.html" class="brand-link" title="OLTREVISTA AI — See beyond.">
+            <img src="logo.png" alt="OLTREVISTA Logo" class="brand-logo" />
+            <div class="brand-text">
+                <span class="brand-title">OLTREVISTA AI</span>
+                <span class="brand-tagline">See beyond.</span>
+                <span style="display:none;">OLTREVISTA AI — See beyond.</span>
+            </div>
+        </a>
+        <div class="lang-selector">
+            <a href="it-solleciti-fatture.html" class="lang-link">🇮🇹 IT</a>
+            <a href="oltrevista-ai.html" class="lang-link">🇬🇧 EN</a>
+            <a href="de-mahnwesen-software.html" class="lang-link">🇩🇪 DE</a>
+            <a href="es-recordatorios-pago.html" class="lang-link">🇪🇸 ES</a>
+            <a href="fr-relance-factures.html" class="lang-link">🇫🇷 FR</a>
+            <a href="pt-lembrete-faturas.html" class="lang-link">🇵🇹 PT</a>
+        </div>
+    </div>
+</header>
 
-    <!-- Logo -->
-    <img src="logo.png" alt="OLTREVISTA Logo" class="logo">
-
-    <!-- Title -->
-    <div class="main-title">
+<main class="wrap">
+    <div class="portal-hero">
+        <div class="badge">Ecosystem Overview</div>
         <h1>OLTREVISTA AI</h1>
-        <p>Multi Agent Ecosystem</p>
+        <p class="portal-tagline">Intelligent Agent Ecosystem — See beyond.</p>
     </div>
 
-    <!-- Product -->
-    <div class="product">
-        <a href="https://zukwend.com" class="main-link">ZUKWEND Billing AI</a>
-        <div class="lang-selector">
-            <a href="https://zukwend.com">🌐 EN</a> • 
-            <a href="de-mahnwesen-software.html">🇩🇪 DE</a> • 
-            <a href="fr-relance-factures.html">🇫🇷 FR</a> • 
-            <a href="es-recordatorios-pago.html">🇪🇸 ES</a> • 
-            <a href="it-solleciti-fatture.html">🇮🇹 IT</a> • 
-            <a href="pt-lembrete-faturas.html">🇵🇹 PT</a>
+    <!-- FEATURED AGENT 1: ZUKWEND -->
+    <div class="agent-card featured">
+        <div>
+            <span class="agent-badge badge-live">Available Now — v2.1.0</span>
+            <div class="agent-title">ZUKWEND Billing AI</div>
+            <p class="agent-desc">
+                Hybrid AI desktop agent for Accounts Receivable (AR) tracking, overdue invoice monitoring, and automated multi-level payment reminders.
+                Combines 100% offline local privacy (Ollama: Gemma, Mistral, Qwen, DeepSeek) with high-speed Cloud BYOC APIs (Claude, OpenAI, Gemini, Mistral [GDPR], Groq). Zero monthly subscriptions.
+            </p>
+
+            <div class="price-header">
+                <div class="price-amount">249 €</div>
+                <div class="price-period">/ Lifetime License (Launch Offer)</div>
+            </div>
+            <p class="license-note">Pay once, use forever. Includes 2 hardware-locked activations.</p>
+
+            <div class="cta">
+                <a href="https://oltrevista.lemonsqueezy.com/checkout/buy/191492c7-087e-4e04-8c78-2de2a1dcfda6" class="lemonsqueezy-button btn btn-buy">Acquista Ora / Buy Now — 249 €</a>
+                <a href="https://zukwend.com/downloads/ZUKWEND_DEMO_Setup.zip" class="btn btn-demo">Download Free DEMO (7 Days / 10 Invoices)</a>
+            </div>
+
+            <p style="font-weight: 700; color: #fff; margin-top: 24px; margin-bottom: 8px;">Explore Localized Editions & Full Documentation:</p>
+            <div class="agent-langs">
+                <a href="it-solleciti-fatture.html">🇮🇹 Italiano — Solleciti & Gestione Crediti</a>
+                <a href="oltrevista-ai.html">🇬🇧 English — Invoice Reminders & AR Tracking</a>
+                <a href="de-mahnwesen-software.html">🇩🇪 Deutsch — Mahnwesen & Offene Posten</a>
+                <a href="es-recordatorios-pago.html">🇪🇸 Español — Recordatorios & Cobros</a>
+                <a href="fr-relance-factures.html">🇫🇷 Français — Relance Factures & Créances</a>
+                <a href="pt-lembrete-faturas.html">🇵🇹 Português — Lembrete de Faturas & Cobrança</a>
+            </div>
         </div>
     </div>
 
-    <!-- Social -->
-    <div class="social">
-        <a href="https://youtube.com/@oltrevista" target="_blank">YouTube</a>
-        <a href="https://www.instagram.com/oltrevista.media/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@oltrevista.media" target="_blank">TikTok</a>
-        <a href="https://x.com/oltrevistamedia" target="_blank">X</a>
-        <a href="https://www.threads.net/@oltrevista.media" target="_blank">Threads</a>
+    <!-- ECOSYSTEM ROADMAP -->
+    <section>
+        <h2>Multi-Agent Pipeline</h2>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div>
+                    <span class="agent-badge badge-soon">Pipeline — Q4 2026</span>
+                    <div class="agent-title" style="font-size: 1.3rem;">Agent 2 — Ledger Recon AI</div>
+                    <p class="agent-desc">Autonomous multi-bank statement reconciliation with automated transaction categorisation and anomaly detection.</p>
+                </div>
+                <div style="color: var(--mut); font-size: 0.85rem; font-style: italic;">In Development</div>
+            </div>
+
+            <div class="agent-card">
+                <div>
+                    <span class="agent-badge badge-soon">Pipeline — Q1 2027</span>
+                    <div class="agent-title" style="font-size: 1.3rem;">Agent 3 — Corporate Treasury AI</div>
+                    <p class="agent-desc">Cash flow forecasting and liquidity projection desktop engine with local statistical reasoning.</p>
+                </div>
+                <div style="color: var(--mut); font-size: 0.85rem; font-style: italic;">In Architecture Design</div>
+            </div>
+
+            <div class="agent-card">
+                <div>
+                    <span class="agent-badge badge-soon">Pipeline — Q2 2027</span>
+                    <div class="agent-title" style="font-size: 1.3rem;">OLTREVISTA AI Suite</div>
+                    <p class="agent-desc">Unified cross-agent desktop orchestrator for end-to-end autonomous business administration.</p>
+                </div>
+                <div style="color: var(--mut); font-size: 0.85rem; font-style: italic;">Coming Soon</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL LINKS -->
+    <div class="social-wrap">
+        <p style="color: var(--mut); font-size: 0.95rem;">Connect with OLTREVISTA Media</p>
+        <div class="social-links">
+            <a href="https://youtube.com/@oltrevista" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/oltrevista.media/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tiktok.com/@oltrevista.media" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://x.com/oltrevistamedia" target="_blank" rel="noopener">X</a>
+            <a href="https://www.threads.net/@oltrevista.media" target="_blank" rel="noopener">Threads</a>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <div class="brand-footer">
-        <p>OLTREVISTA</p>
-        <p>See beyond</p>
+    <div class="disclaimer-section">
+        <p><strong>⚠️ Legal Transparency Note:</strong> ZUKWEND is an administrative desktop agent designed for Accounts Receivable (AR) management, overdue invoice tracking, and reminder drafting. It is not an active invoicing system nor a debt collection agency.</p>
+        <p><strong>🛡️ Safety AI Disclaimer:</strong> AI-generated outputs must be verified by the user. The software provides draft suggestions, not binding financial or legal decisions.</p>
     </div>
+</main>
 
+<footer>
+    <div class="wrap">
+        ZUKWEND by <a href="index.html" rel="noopener">OLTREVISTA AI</a>. AI outputs must be verified by the user.
+    </div>
+</footer>
 </body>
 </html>

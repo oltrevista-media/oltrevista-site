@@ -2,139 +2,441 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>ZUKWEND — Agente de IA Híbrido para Recordatorios de Pago y Facturas Vencidas | OLTREVISTA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZUKWEND — Agente de IA Híbrido para Cobro de Facturas y Gestión de Clientes | OLTREVISTA AI</title>
+    <meta name="description" content="Recupere facturas vencidas sin exponer sus datos financieros. Agente de IA de escritorio híbrido: 100% offline o API Cloud. Licencia vitalicia 249 €.">
+    <link rel="alternate" hreflang="it" href="it-solleciti-fatture.html" />
+    <link rel="alternate" hreflang="de" href="de-mahnwesen-software.html" />
+    <link rel="alternate" hreflang="fr" href="fr-relance-factures.html" />
+    <link rel="alternate" hreflang="es" href="es-recordatorios-pago.html" />
+    <link rel="alternate" hreflang="pt" href="pt-lembrete-faturas.html" />
+    <link rel="alternate" hreflang="en" href="oltrevista-ai.html" />
+    <link rel="alternate" hreflang="x-default" href="index.html" />
     <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
     <style>
-        :root {
-            --bg: #0d0f12;
-            --card-bg: #161920;
-            --border: #262b36;
-            --text: #f0f2f5;
-            --text-muted: #9ba3b2;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --green: #10b981;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container { max-width: 760px; width: 100%; text-align: center; padding: 40px 10px; }
-        .badge {
-            display: inline-block;
-            background: rgba(37, 99, 235, 0.15);
-            color: #60a5fa;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            margin-bottom: 24px;
-            text-transform: uppercase;
-        }
-        h1 {
-            font-size: 36px;
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 18px;
-            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p.subheadline { font-size: 18px; color: var(--text-muted); margin-bottom: 36px; max-width: 660px; margin-left: auto; margin-right: auto; }
-        .pricing-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 36px 28px;
-            margin-bottom: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            text-align: left;
-        }
-        .price-tag { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 4px; }
-        .price-tag span { font-size: 16px; color: var(--green); font-weight: 600; }
-        .features-list { list-style: none; margin: 28px 0; }
-        .features-list li { font-size: 15px; color: var(--text-muted); margin-bottom: 18px; display: flex; align-items: flex-start; gap: 12px; }
-        .features-list .check-icon { color: var(--green); font-size: 16px; line-height: 1.4; flex-shrink: 0; }
-        .features-list .feature-text { flex: 1; }
-        .features-list .feature-title { color: var(--text); font-weight: 700; display: block; margin-bottom: 2px; }
-        .btn-primary {
-            display: block; width: 100%; background: var(--accent); color: #fff; font-size: 18px; font-weight: 700;
-            text-align: center; padding: 16px 24px; border-radius: 10px; text-decoration: none; transition: all 0.2s ease;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); margin-top: 20px;
-        }
-        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
-        .freedom-box { background: rgba(255,255,255,0.02); border: 1px dashed var(--border); border-radius: 12px; padding: 18px; margin-top: 24px; font-size: 14px; color: var(--text-muted); text-align: left; }
-        .freedom-box h3 { color: var(--text); font-size: 15px; margin-bottom: 4px; }
-        .transparency-note { font-size: 13px; color: #71717a; margin-top: 28px; line-height: 1.5; }
+    :root {
+        --bg: #0b0f17;
+        --card: #131a26;
+        --line: #222c3d;
+        --txt: #e6eaf5;
+        --mut: #9aa6c4;
+        --a: #6c8cff;
+        --b: #b46cff;
+        --ok: #2ecc8f;
+        --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        background: var(--bg);
+        color: var(--txt);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        padding-bottom: 60px;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    header {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(11, 15, 23, 0.85);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .nav-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .brand-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--txt);
+    }
+    .brand-logo {
+        height: 38px;
+        width: auto;
+    }
+    .brand-text {
+        display: flex;
+        flex-direction: column;
+    }
+    .brand-title {
+        font-weight: 800;
+        letter-spacing: .08em;
+        font-size: 1.15rem;
+    }
+    .brand-tagline {
+        font-size: 0.75rem;
+        color: var(--mut);
+        letter-spacing: .05em;
+    }
+    .lang-selector {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .lang-link {
+        color: var(--mut);
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 5px 9px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        transition: all .15s ease;
+    }
+    .lang-link:hover {
+        color: var(--txt);
+        background: var(--card);
+        border-color: var(--line);
+    }
+    .lang-link.active {
+        color: #fff;
+        background: rgba(108, 140, 255, 0.15);
+        border-color: var(--a);
+        font-weight: 600;
+    }
+    .hero {
+        text-align: center;
+        padding: 72px 0 48px;
+    }
+    .badge {
+        display: inline-block;
+        background: rgba(108, 140, 255, 0.12);
+        color: var(--a);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(108, 140, 255, 0.3);
+        margin-bottom: 24px;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+    }
+    h1 {
+        font-size: clamp(2.1rem, 5vw, 3.2rem);
+        line-height: 1.2;
+        font-weight: 800;
+        background: linear-gradient(90deg, var(--a), var(--b));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        margin-bottom: 18px;
+    }
+    .sub {
+        max-width: 760px;
+        margin: 0 auto 36px;
+        color: var(--mut);
+        font-size: 1.15rem;
+    }
+    .pricing-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 36px;
+        margin: 0 auto 40px;
+        max-width: 780px;
+        text-align: left;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+    .price-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+    .price-amount {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #fff;
+    }
+    .price-period {
+        font-size: 1.1rem;
+        color: var(--ok);
+        font-weight: 600;
+    }
+    .license-note {
+        color: var(--mut);
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+        border-left: 3px solid var(--a);
+        padding-left: 12px;
+    }
+    .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        margin: 28px 0;
+    }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 32px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.05rem;
+        transition: transform .15s ease, box-shadow .15s ease;
+        text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-buy {
+        background: linear-gradient(90deg, var(--a), var(--b));
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(108, 140, 255, .35);
+        flex: 1 1 280px;
+    }
+    .btn-demo {
+        border: 1.5px solid var(--a);
+        color: var(--txt);
+        background: transparent;
+        flex: 1 1 240px;
+    }
+    .btn-demo:hover {
+        background: rgba(108, 140, 255, 0.1);
+    }
+    .cta-note {
+        color: var(--mut);
+        font-size: 0.88rem;
+        margin-top: 10px;
+    }
+    section {
+        padding: 48px 0;
+        border-top: 1px solid var(--line);
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 28px;
+        text-align: center;
+        font-weight: 800;
+        color: #fff;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 24px;
+    }
+    .card h3 {
+        margin-bottom: 10px;
+        color: var(--a);
+        font-size: 1.2rem;
+    }
+    .card p {
+        color: var(--mut);
+        font-size: 0.95rem;
+    }
+    .models-box {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 30px;
+        margin-top: 20px;
+    }
+    .models-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 20px;
+    }
+    .model-col {
+        background: rgba(255,255,255,0.02);
+        border: 1px dashed var(--line);
+        border-radius: 12px;
+        padding: 20px;
+    }
+    .model-col h4 {
+        color: var(--a);
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    .model-col p {
+        color: var(--mut);
+        font-size: 0.92rem;
+        line-height: 1.5;
+    }
+    .model-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 12px;
+    }
+    .tag {
+        background: rgba(108, 140, 255, 0.12);
+        color: var(--txt);
+        font-size: 0.8rem;
+        padding: 3px 8px;
+        border-radius: 6px;
+        border: 1px solid rgba(108, 140, 255, 0.25);
+    }
+    ul.ok {
+        list-style: none;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    ul.ok li {
+        padding: 10px 0 10px 34px;
+        position: relative;
+        color: var(--mut);
+        font-size: 1rem;
+    }
+    ul.ok li strong { color: var(--txt); }
+    ul.ok li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--ok);
+        font-weight: 800;
+        font-size: 1.2rem;
+    }
+    .disclaimer-section {
+        background: rgba(19, 26, 38, 0.5);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 24px;
+        margin: 40px auto 0;
+        font-size: 0.88rem;
+        color: var(--mut);
+        line-height: 1.6;
+    }
+    .disclaimer-section p { margin-bottom: 12px; }
+    .disclaimer-section p:last-child { margin-bottom: 0; }
+    footer {
+        padding: 36px 0 20px;
+        border-top: 1px solid var(--line);
+        text-align: center;
+        color: var(--mut);
+        font-size: 0.9rem;
+    }
+    footer a {
+        color: var(--a);
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+
     </style>
 </head>
 <body>
-    <div class="container">
+<header>
+    <div class="wrap nav-wrap">
+        <a href="index.html" class="brand-link" title="OLTREVISTA AI — See beyond.">
+            <img src="logo.png" alt="OLTREVISTA Logo" class="brand-logo" />
+            <div class="brand-text">
+                <span class="brand-title">OLTREVISTA AI</span>
+                <span class="brand-tagline">See beyond.</span>
+                <span style="display:none;">OLTREVISTA AI — See beyond.</span>
+            </div>
+        </a>
+        <div class="lang-selector">
+            <a href="it-solleciti-fatture.html" class="lang-link">🇮🇹 IT</a>
+            <a href="oltrevista-ai.html" class="lang-link">🇬🇧 EN</a>
+            <a href="de-mahnwesen-software.html" class="lang-link">🇩🇪 DE</a>
+            <a href="es-recordatorios-pago.html" class="lang-link active">🇪🇸 ES</a>
+            <a href="fr-relance-factures.html" class="lang-link">🇫🇷 FR</a>
+            <a href="pt-lembrete-faturas.html" class="lang-link">🇵🇹 PT</a>
+        </div>
+    </div>
+</header>
+
+<main class="wrap">
+    <div class="hero">
         <div class="badge">Arquitectura de IA Híbrida — BYOC y Local</div>
-        <h1>ZUKWEND — Agente de IA Híbrido para la Automatización de Recordatorios de Pago y Control de Morosidad</h1>
-        <p class="subheadline">
-            Pon el piloto automático al análisis de facturas impagadas, al control de antigüedad de deudas y a la generación de recordatorios de pago. Aprovecha la velocidad de las API Cloud o la privacidad total de los modelos locales. Sin suscripciones.
-        </p>
+        <h1>Recupere facturas vencidas sin exponer sus datos financieros.</h1>
+        <p class="sub">ZUKWEND es el agente de IA de escritorio que lee sus PDF, calcula la antigüedad de la deuda y genera recordatorios de pago profesionales. Máxima privacidad con modelos locales o velocidad Cloud vía API. Cero suscripciones mensuales.</p>
 
         <div class="pricing-card">
-            <div class="price-tag">249 € <span>/ Licencia de por Vida (Oferta de Lanzamiento)</span></div>
-            <p style="color: var(--text-muted); font-size: 14px;">Paga una vez, tuyo para siempre. Incluye 2 activaciones vinculadas al hardware.</p>
+            <div class="price-header">
+                <div class="price-amount">249 €</div>
+                <div class="price-period">/ Licencia Vitalicia (Oferta de Lanzamiento)</div>
+            </div>
+            <p class="license-note">Pague una vez, use para siempre. Incluye 2 activaciones vinculadas al hardware.</p>
 
-            <ul class="features-list">
-                <li>
-                    <span class="check-icon">✔️</span>
-                    <div class="feature-text">
-                        <span class="feature-title">Máxima Libertad de Motor:</span>
-                        Elige tu modelo, proveedor o flujo de trabajo preferido. Cambia sin fricción entre las mejores API Cloud (Claude, OpenAI, Gemini, Mistral [GDPR], Groq) y modelos locales 100% privados (Ollama).
-                    </div>
-                </li>
-                <li>
-                    <span class="check-icon">✔️</span>
-                    <div class="feature-text">
-                        <span class="feature-title">Automatización de Recordatorios y Control de Antigüedad:</span>
-                        Procesamiento instantáneo de facturas, generación de recordatorios multinivel y seguimiento de vencimientos.
-                    </div>
-                </li>
-                <li>
-                    <span class="check-icon">✔️</span>
-                    <div class="feature-text">
-                        <span class="feature-title">Sin Cautiverio de Proveedor (Vendor Lock-in):</span>
-                        Sin cuotas mensuales de nube, sin recargos obligatorios en las API.
-                    </div>
-                </li>
-                <li>
-                    <span class="check-icon">✔️</span>
-                    <div class="feature-text">
-                        <span class="feature-title">Agente de Escritorio Multiplataforma:</span>
-                        Ejecución nativa en tu estación de trabajo con total propiedad de los datos contables.
-                    </div>
-                </li>
-            </ul>
+            <div class="cta">
+                <a href="https://oltrevista.lemonsqueezy.com/checkout/buy/191492c7-087e-4e04-8c78-2de2a1dcfda6" class="lemonsqueezy-button btn btn-buy">Comprar Ahora — 249 €</a>
+                <a href="https://zukwend.com/downloads/ZUKWEND_DEMO_Setup.zip" class="btn btn-demo">Descargar DEMO Gratuita</a>
+            </div>
+            <p class="cta-note">DEMO: 7 días o máximo 10 facturas. Pago único, sin suscripción.</p>
+        </div>
+    </div>
 
-            <a href="https://oltrevista.lemonsqueezy.com/checkout/buy/191492c7-087e-4e04-8c78-2de2a1dcfda6" 
-               class="lemonsqueezy-button btn-primary">
-                Obtener Acceso de por Vida — 249 €
-            </a>
-
-            <div class="freedom-box">
-                <h3>Total Libertad — Usa tu Motor Preferido</h3>
-                Elige cómo tu IA procesa las facturas. Cambia entre ejecución local 100% privada (Ollama: Gemma, Mistral, Qwen, DeepSeek) o velocidad Cloud (BYOC: Claude, OpenAI, Gemini, Mistral [GDPR], Groq o cualquier proveedor personalizado).
+    <section>
+        <h2>Cómo Funciona</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>1. Lectura de PDF con IA</h3>
+                <p>Arrastre sus facturas en PDF: ZUKWEND extrae al instante número de factura, cliente, importes y fechas de vencimiento.</p>
+            </div>
+            <div class="card">
+                <h3>2. Análisis de Vencimientos</h3>
+                <p>Calcula los días de retraso y clasifica los niveles de riesgo de impago.</p>
+            </div>
+            <div class="card">
+                <h3>3. Recordatorios Listos (Niveles 1-3)</h3>
+                <p>Redacta correos y cartas formales escalonadas (aviso cordial, reclamación formal y requerimiento final).</p>
             </div>
         </div>
+    </section>
 
-        <p class="transparency-note">
-            ⚠️ <strong>Nota de transparencia:</strong> ZUKWEND es un agente administrativo de escritorio diseñado para la automatización de cobros (AR), el seguimiento de facturas vencidas y la generación de borradores de reclamación. No es una herramienta de facturación activa ni una agencia de cobro de deudas.
-        </p>
+    <section>
+        <h2>Libertad Total de Motor — Bring Your Own Engine</h2>
+        <div class="models-box">
+            <p style="color: var(--mut); text-align: center; max-width: 780px; margin: 0 auto;">Elija cómo procesa su IA las facturas. Alterne sin fricciones entre la velocidad Cloud y la privacidad absoluta de los modelos locales.</p>
+            <div class="models-grid">
+                <div class="model-col">
+                    <h4>Cloud de Alto Rendimiento (BYOC)</h4>
+                    <p>Conecte sus claves API personales para aprovechar los modelos de frontera más potentes sin sobrecostes.</p>
+                    <div class="model-tags">
+                        <span class="tag">Claude</span><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">Mistral (RGPD)</span><span class="tag">Groq</span>
+                    </div>
+                </div>
+                <div class="model-col">
+                    <h4>IA Local 100% Privada (Ollama)</h4>
+                    <p>Ejecute modelos open-weight directamente en su equipo (GPU/CPU). Ningún dato sale de sus instalaciones.</p>
+                    <div class="model-tags">
+                        <span class="tag">Gemma</span><span class="tag">Mistral</span><span class="tag">Qwen</span><span class="tag">DeepSeek</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Privacidad por Diseño y Escritorio Nativo</h2>
+        <ul class="ok">
+            <li><strong>Cero Nube Obligatoria:</strong> Sus datos contables confidenciales permanecen únicamente en su ordenador.</li>
+            <li><strong>Operatividad Offline:</strong> Analice facturas y redacte comunicaciones sin necesidad de conexión a internet.</li>
+            <li><strong>Cero Ataduras (Vendor Lock-in):</strong> Sin cuotas mensuales recurrentes ni recargos en el consumo de API.</li>
+            <li><strong>Agente de Escritorio Multiplataforma:</strong> Ejecución local nativa con exportación completa a Excel y CSV.</li>
+        </ul>
+    </section>
+
+    <div class="disclaimer-section">
+        <p><strong>⚠️ Nota de Transparencia Legal:</strong> ZUKWEND es un agente administrativo de escritorio para la gestión de Cuentas por Cobrar (Accounts Receivable), seguimiento de vencimientos y redacción de reclamaciones. No es un software de facturación activa ni una agencia de cobro de deudas.</p>
+        <p><strong>🛡️ Descargo de Seguridad de IA:</strong> Las respuestas generadas por la IA deben ser revisadas por el usuario. El software proporciona sugerencias y borradores, no decisiones contables o jurídicas vinculantes.</p>
     </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        ZUKWEND by <a href="index.html" rel="noopener">OLTREVISTA AI</a>. AI outputs must be verified by the user.
+    </div>
+</footer>
 </body>
 </html>

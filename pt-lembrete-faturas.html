@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZUKWEND — Agente de IA Híbrido para Lembretes de Faturas e Gestão de Cobrança | OLTREVISTA AI</title>
-    <meta name="description" content="Recupere faturas em atraso sem expor dados financeiros. Agente de IA Desktop híbrido: 100% offline ou API Cloud. Licença vitalícia 249 €.">
+    <meta name="description" content="Recupere faturas em atraso sem expor dados financeiros. Agente de IA Desktop híbrido: 100% offline nativo, Ollama local ou API Cloud. Licença vitalícia 249 €.">
+    <link rel="canonical" href="https://oltrevista.com/pt-lembrete-faturas.html">
+    <meta property="og:title" content="ZUKWEND — Agente de IA Híbrido para Lembretes de Faturas e Gestão de Cobrança | OLTREVISTA AI">
+    <meta property="og:description" content="Recupere faturas em atraso sem expor dados financeiros. Agente de IA Desktop híbrido: 100% offline nativo, Ollama local ou API Cloud. Licença vitalícia 249 €.">
+    <meta property="og:url" content="https://oltrevista.com/pt-lembrete-faturas.html">
+    <meta property="og:type" content="website">
         <link rel="alternate" hreflang="en" href="oltrevista-ai.html" />
     <link rel="alternate" hreflang="de" href="de-mahnwesen-software.html" />
     <link rel="alternate" hreflang="it" href="it-solleciti-fatture.html" />
@@ -39,9 +44,7 @@
         border-bottom: 1px solid var(--line);
         background: rgba(11, 15, 23, 0.85);
         backdrop-filter: blur(8px);
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        position: relative;
     }
     .nav-wrap {
         display: flex;
@@ -257,9 +260,14 @@
     }
     .models-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
         margin-top: 20px;
+    }
+    @media (max-width: 860px) {
+        .models-grid {
+            grid-template-columns: 1fr;
+        }
     }
     .model-col {
         background: rgba(255,255,255,0.02);
@@ -282,6 +290,11 @@
         flex-wrap: wrap;
         gap: 6px;
         margin-top: 12px;
+    }
+        .tag-ok {
+        background: rgba(46, 204, 143, 0.15);
+        color: var(--ok);
+        border: 1px solid rgba(46, 204, 143, 0.3);
     }
     .tag {
         background: rgba(108, 140, 255, 0.12);
@@ -370,6 +383,53 @@
         text-decoration: underline;
     }
 
+        .agents-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin: 40px 0;
+    }
+    .agent-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform .2s ease, border-color .2s ease;
+    }
+    .agent-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--a);
+    }
+    .agent-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+    }
+    .badge-soon {
+        background: rgba(154, 166, 196, 0.15);
+        color: var(--mut);
+        border: 1px solid rgba(154, 166, 196, 0.3);
+    }
+    .agent-title {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    .agent-desc {
+        color: var(--mut);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
     </style>
 </head>
 <body>
@@ -396,9 +456,9 @@
 
 <main class="wrap">
     <div class="hero">
-        <div class="badge">Arquitetura de IA Híbrida — BYOC & Local</div>
+        <div class="badge">Arquitetura de IA em 3 Níveis — Motor Nativo Pronto a Usar</div>
         <h1>Recupere faturas em atraso sem expor os seus dados financeiros.</h1>
-        <p class="sub">O ZUKWEND é o agente de IA desktop que lê as suas faturas em PDF, calcula o atraso de pagamento e gera lembretes profissionais de cobrança. Máxima privacidade com modelos locais ou velocidade Cloud via API. Sem assinaturas mensais.</p>
+        <p class="sub">O ZUKWEND é o agente de IA desktop para cobrança de faturas em atraso com motor de IA nativo incluído: baixe, instale e fique 100% operacional de imediato. Aceleração opcional via Ollama local ou chaves Cloud (BYOC). Sem assinaturas recorrentes.</p>
 
         <div class="pricing-card">
             <div class="price-header">
@@ -434,23 +494,30 @@
         </div>
     </section>
 
-    <section>
-        <h2>Total Liberdade de Motor — Bring Your Own Engine</h2>
+        <section>
+        <h2>Arquitetura de IA em 3 Níveis — Total Liberdade de Execução</h2>
         <div class="models-box">
-            <p style="color: var(--mut); text-align: center; max-width: 780px; margin: 0 auto;">Escolha como a sua IA processa as faturas. Alterne entre execução local 100% privada (Ollama: Gemma, Mistral, Qwen, DeepSeek) ou velocidade Cloud (BYOC: Claude, OpenAI, Gemini, Mistral [RGPD], Groq).</p>
+            <p style="color: var(--mut); text-align: center; max-width: 780px; margin: 0 auto;">O ZUKWEND já inclui um motor de IA nativo pronto para usar: descarregue, instale e opere a 100% de imediato sem configurações nem instalações externas obrigatórias.</p>
             <div class="models-grid">
-                <div class="model-col">
-                    <h4>Cloud de Alta Performance (BYOC)</h4>
-                    <p>Conecte as suas chaves de API para usar os modelos de ponta com total flexibilidade e sem sobretaxas.</p>
+                <div class="model-col" style="border-color: var(--ok); background: rgba(46, 204, 143, 0.03);">
+                    <h4 style="color: var(--ok);">NÍVEL 1 — Built-in Native AI (Incluído)</h4>
+                    <p>Imediatamente operacional out-of-the-box. Descarregue, instale e trabalhe a 100%. Zero configurações, zero ferramentas externas, zero Ollama obrigatório, nenhuma chave API necessária.</p>
                     <div class="model-tags">
-                        <span class="tag">Claude</span><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">Mistral (RGPD)</span><span class="tag">Groq</span>
+                        <span class="tag tag-ok">Motor IA Nativo</span><span class="tag tag-ok">Zero Configuração</span><span class="tag tag-ok">Pronto a Usar</span>
                     </div>
                 </div>
                 <div class="model-col">
-                    <h4>IA Local 100% Privada (Ollama)</h4>
-                    <p>Execute modelos open-weight diretamente na sua estação de trabalho (GPU/CPU). Zero dados saem da sua máquina.</p>
+                    <h4>NÍVEL 2 — Local Ollama Power-Up (Opcional)</h4>
+                    <p>Para quem pretende modelos LLM locais avançados com total privacidade e autonomia offline. Ligação com 1 clique ao Ollama para executar open-weights na GPU/CPU.</p>
                     <div class="model-tags">
                         <span class="tag">Gemma</span><span class="tag">Mistral</span><span class="tag">Qwen</span><span class="tag">DeepSeek</span>
+                    </div>
+                </div>
+                <div class="model-col">
+                    <h4>NÍVEL 3 — Cloud BYOC Power-Up (Opcional)</h4>
+                    <p>Para quem prefere a velocidade e escalabilidade da nuvem. Insira as suas chaves de API pessoais (Bring Your Own Key) sem sobretaxas nos tokens de cálculo.</p>
+                    <div class="model-tags">
+                        <span class="tag">Claude</span><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">Mistral (RGPD)</span><span class="tag">Groq</span>
                     </div>
                 </div>
             </div>
@@ -465,6 +532,39 @@
             <li><strong>Sem Bloqueio de Fornecedor (Zero Vendor Lock-in):</strong> Sem mensalidades de software e sem taxas ocultas sobre APIs.</li>
             <li><strong>Agente Desktop Nativo:</strong> Execução veloz com controle total dos dados e exportação para Excel e CSV.</li>
         </ul>
+    </section>
+
+        <!-- ECOSYSTEM ROADMAP -->
+    <section>
+        <h2>Multi-Agent Pipeline</h2>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div>
+                    <span class="agent-badge badge-soon">Pipeline — Q4 2026</span>
+                    <div class="agent-title">Agent 2 — Ledger Recon AI</div>
+                    <p class="agent-desc">Reconciliação bancária autónoma de múltiplas contas com categorização automática e deteção de divergências.</p>
+                </div>
+                <div style="color: var(--mut); font-size: 0.85rem; font-style: italic;">Em Desenvolvimento</div>
+            </div>
+
+            <div class="agent-card">
+                <div>
+                    <span class="agent-badge badge-soon">Pipeline — Q1 2027</span>
+                    <div class="agent-title">Agent 3 — Corporate Treasury AI</div>
+                    <p class="agent-desc">Previsão de tesouraria e projeção de liquidez empresarial com inferência estatística local e testes de stress.</p>
+                </div>
+                <div style="color: var(--mut); font-size: 0.85rem; font-style: italic;">Em Arquitetura</div>
+            </div>
+
+            <div class="agent-card">
+                <div>
+                    <span class="agent-badge badge-soon">Pipeline — Q2 2027</span>
+                    <div class="agent-title">OLTREVISTA AI Suite</div>
+                    <p class="agent-desc">Orquestrador desktop unificado para gestão administrativa e financeira empresarial autónoma.</p>
+                </div>
+                <div style="color: var(--mut); font-size: 0.85rem; font-style: italic;">Em Breve</div>
+            </div>
+        </div>
     </section>
 
     <div class="disclaimer-section">
@@ -486,7 +586,7 @@
         </div>
     </div>
         <div class="footer-credit">
-            ZUKWEND by <a href="index.html" rel="noopener">OLTREVISTA AI</a>. Generated outputs must be verified by the user.
+            ZUKWEND by <a href="index.html" rel="noopener">OLTREVISTA AI</a>. Generated outputs must be verified by the user. See <a href="https://zukwend.com/disclaimer.html" rel="noopener">DISCLAIMER_EULA</a>.
         </div>
     </div>
 </footer>

@@ -23,7 +23,7 @@
 
 - Portale Holding: [https://oltrevista.com](https://oltrevista.com)
 - Portale Prodotto ZUKWEND: [https://zukwend.com](https://zukwend.com)
-- Pagine geolocalizzate multilingue: `/it/`, `/de/`, `/fr/`, `/es/`, `/pt/`, `/en/` con routing verso [zukwend.com](https://zukwend.com).
+- Pagine geolocalizzate multilingue: `/it/`, `/de/`, `/fr/`, `/es/`, `/pt/`, `/en/` con routing verso [zukwend.com](https://zukwend.com) (inclusa documentazione legale geolocalizzata).
 
 ---
 © 2026 **OLTREVISTA AI** — *See beyond*. Tutti i diritti riservati.

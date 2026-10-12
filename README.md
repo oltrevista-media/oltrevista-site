@@ -59,7 +59,13 @@ La piattaforma distribuisce 6 landing page geolocalizzate ad alte prestazioni:
 ### 2. Architettura di Routing verso `zukwend.com`
 Tutte le landing regionali e i portali dell'ecosistema convogliano il download dei pacchetti applicativi, i termini contrattuali e il checkout verso i percorsi ufficiali su `zukwend.com`:
 - **Download DEMO**: `https://zukwend.com/downloads/ZUKWEND_DEMO_Setup.zip`
-- **Documentazione Legale & EULA**: `https://zukwend.com/disclaimer.html`
+- **Documentazione Legale & EULA (Routing Multilingue)**:
+  - 🇬🇧 **EN**: `https://zukwend.com/#disclaimer` (oppure `https://zukwend.com/en-invoice-reminder-software.html#disclaimer`)
+  - 🇮🇹 **IT**: `https://zukwend.com/it-solleciti-fatture.html#disclaimer` (documento esteso: `https://zukwend.com/disclaimer.html`)
+  - 🇩🇪 **DE**: `https://zukwend.com/de-mahnwesen-software.html#disclaimer`
+  - 🇫🇷 **FR**: `https://zukwend.com/fr-relance-factures.html#disclaimer`
+  - 🇪🇸 **ES**: `https://zukwend.com/es-recordatorios-de-pago.html#disclaimer`
+  - 🇵🇹 **PT**: `https://zukwend.com/pt-lembrete-de-faturas.html#disclaimer`
 - **Checkout Ufficiale**: Integrazione diretta LemonSqueezy per licenza a vita (249 € una tantum).
 
 ---

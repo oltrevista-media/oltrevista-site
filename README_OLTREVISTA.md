@@ -10,11 +10,11 @@
    - Automazione ciclo attivo (Accounts Receivable), calcolo aging dello scaduto e generazione solleciti in 6 lingue.
    - Motore AI 3-Tier: Level 1 Nativo out-of-the-box incluso (zero setup, zero API keys, zero Ollama obbligatorio), Level 2 Ollama opzionale, Level 3 Cloud BYOC opzionale.
    - Licenza a vita: 249 € una tantum (2 attivazioni con blocco hardware).
-2. **Agent 2: Ledger Recon AI** (Pipeline — Q4 2026)
+2. **Agent 2: Ledger Recon AI** (Pipeline — In Development)
    - Riconciliazione bancaria autonoma multi-conto, categorizzazione automatica e rilevamento anomalie contabili.
-3. **Agent 3: Corporate Treasury AI** (Pipeline — Q1 2027)
+3. **Agent 3: Corporate Treasury AI** (Pipeline — Planned)
    - Previsione flussi di cassa, tesoreria aziendale e stress-test di liquidità con inferenza statistica locale.
-4. **OLTREVISTA AI Suite** (Pipeline — Q2 2027)
+4. **ZUKWEND AI Suite** (Pipeline — Planned)
    - Hub desktop integrato per la governance autonoma end-to-end.
 
 ---

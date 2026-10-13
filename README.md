@@ -27,15 +27,15 @@ L'ecosistema OLTREVISTA AI si sviluppa attraverso una pipeline progressiva di ag
 - **Licenza**: Licenza a vita (Lifetime License / 2 attivazioni hardware-locked) a 249 € una tantum, zero canoni ricorrenti.
 - Portale dedicato: [https://zukwend.com](https://zukwend.com)
 
-### 2. Agent 2: Ledger Recon AI (Pipeline — Q4 2026)
+### 2. Agent 2: Ledger Recon AI (Pipeline — In Development)
 - Riconciliazione bancaria autonoma multi-conto ed estratto conto con matching intelligente tra movimenti bancari e mastrini contabili.
 - Categorizzazione automatica delle transazioni, riconciliazione differenziali e rilevamento anomalie di cassa.
 
-### 3. Agent 3: Corporate Treasury AI (Pipeline — Q1 2027)
+### 3. Agent 3: Corporate Treasury AI (Pipeline — Planned)
 - Previsione dei flussi di cassa (cash-flow forecast), pianificazione della tesoreria e proiezione della liquidità aziendale.
 - Inferenza statistica locale su scenari di incasso/pagamento e stress-testing finanziario.
 
-### 4. OLTREVISTA AI Suite (Pipeline — Q2 2027)
+### 4. ZUKWEND AI Suite (Pipeline — Planned)
 - Piattaforma desktop integrata e centro di comando unificato che orchestra l'intera suite di agenti amministrativi e finanziari per una governance aziendale end-to-end senza dispersione di dati su piattaforme terze.
 
 ---

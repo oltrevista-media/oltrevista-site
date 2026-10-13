@@ -137,6 +137,7 @@
     </script>
     
     <style>
+html { scroll-behavior: smooth; }
     :root {
         --bg: #0b0f17;
         --card: #131a26;
@@ -409,45 +410,6 @@
         border-radius: 0;
     }
     
-    /* Hero Video Callout */
-    .video-callout {
-        background: radial-gradient(circle at center, #151d2f 0%, #0d121e 100%);
-        border: 1px solid rgba(108, 140, 255, 0.3);
-        border-radius: 16px;
-        padding: 28px;
-        margin: 44px 0;
-        text-align: center;
-        box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-    }
-    .video-callout-title {
-        font-size: 1.3rem;
-        font-weight: 800;
-        color: #fff;
-        margin-bottom: 10px;
-    }
-    .video-callout-desc {
-        color: var(--mut);
-        font-size: 0.95rem;
-        max-width: 620px;
-        margin: 0 auto 20px;
-    }
-    .video-callout-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: linear-gradient(90deg, var(--a), var(--b));
-        color: #fff;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .video-callout-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(108, 140, 255, 0.4);
-    }
-    
     /* Final Pricing & Checkout CTA Section */
     .cta-section {
         margin-top: 60px;
@@ -666,6 +628,9 @@
         </div>
     </div>
 </header>
+            <div class="hero-cta" style="margin-top: 22px;">
+                <a href="#features" class="btn btn-demo">Funktionen Entdecken</a>
+            </div>
 
 <main class="wrap">
     <!-- Breadcrumbs -->
@@ -691,7 +656,7 @@
         </header>
 
         <!-- Converted Body Content -->
-        <div class="article-body">
+        <div class="article-body" id="features">
             <p>Offene Forderungen und Zahlungsverzug belasten die Liquidität von Unternehmen nachhaltig. Jeder Tag, den ein Kunde später zahlt, verlängert die Days Sales Outstanding (DSO) und bindet wertvolles Betriebskapital.</p>
 <p>Bislang standen Finanzverantwortliche und Debitorenmanager vor einem unlösbaren Widerspruch:
 1. <strong>Die SaaS-Kostenfalle:</strong> Wiederkehrende Gebühren von 150 € bis 350 € pro Monat und Arbeitsplatz für Cloud-Plattformen, deren Preise kontinuierlich steigen.
@@ -822,56 +787,7 @@
 🌐 <strong>Das OLTREVISTA AI Ökosystem im Überblick:</strong> <a href="https://oltrevista.com">https://oltrevista.com</a></p>
         </div>
 
-        <!-- Hero Video Callout -->
-        <div class="video-callout">
-            <div style="display: inline-block; background: rgba(46, 204, 143, 0.15); color: #2ecc8f; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; text-transform: uppercase;">
-                Interactive Demo Available
-            </div>
-            <h3 class="video-callout-title">Watch 30s Interactive Demo — Drag & Drop Invoice Aging Analysis</h3>
-            <p class="video-callout-desc">
-                Experience how ZUKWEND processes invoice PDFs locally, calculates risk aging buckets, and generates calibrated reminders in seconds without cloud exposure.
-            </p>
-            <a href="https://zukwend.com/#demo" class="video-callout-btn">
-                <span>▶</span> Watch 30s Video Demo on ZUKWEND.com
-            </a>
-        </div>
-
-        <!-- High-Converting Lemon Squeezy Checkout Section -->
-        <section class="cta-section">
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h2>B2B-Mahnwesen jetzt automatisieren & absichern</h2>
-                    <p>Schluss mit teuren Monatsabos und ungesicherten Cloud-Speichern. Nutzen Sie den 100% lokalen Desktop-KI-Agenten für Ihr Forderungsmanagement.</p>
-                </div>
-
-                <div class="price-box">
-                    <span class="price-amount">249 €</span>
-                    <span class="price-period">/ Einmallizenz (Einführungsangebot)</span>
-                </div>
-                <p class="license-note">Einmal zahlen, dauerhaft nutzen. Beinhaltet 2 Hardware-Aktivierungen. Keine monatlichen Abogebühren.</p>
-
-                <div class="cta-actions">
-                    <a href="https://oltrevista.lemonsqueezy.com/checkout/buy/191492c7-087e-4e04-8c78-2de2a1dcfda6" class="lemonsqueezy-button btn btn-buy">Jetzt kaufen — 249 €</a>
-                    <a href="https://zukwend.com/downloads/ZUKWEND_DEMO_Setup.zip" class="btn btn-demo">Kostenlose DEMO herunterladen (7 Tage / 10 Rechnungen)</a>
-                </div>
-
-                <p class="cta-note">DEMO: 7 Tage oder bis zu 10 Rechnungen. Sofortiger Download, 100% offline & sicher.</p>
-                <p class="smartscreen-note">🛡️ Windows-Hinweis: Als 100% native Offline-Software ohne Cloud-Telemetrie kann Windows Defender beim ersten Start 'Unbekannte App' anzeigen. Klicken Sie auf 'Weitere Informationen' ➔ 'Trotzdem ausführen'. 100% lokal & sicher.</p>
-            </div>
-        </section>
-
-        <!-- Cross-Language Editions Matrix -->
-        <div class="editions-box">
-            <div class="editions-title">Lokalisierte Ausgaben & Vollständige Dokumentation:</div>
-            <div class="editions-links">
-                <a href="/seo/accounts-receivable-ai-agent/">🇬🇧 English — Accounts Receivable Desktop AI Agent</a>
-                <a href="/de/mahnwesen-software-local-ai/">🇩🇪 Deutsch — Mahnwesen Software Local AI</a>
-                <a href="/it/automazione-solleciti-fatture-privacy/">🇮🇹 Italiano — Automazione Solleciti Fatture Privacy</a>
-                <a href="/es/automatizacion-cobro-facturas/">🇪🇸 Español — Automatización Cobro Facturas Agente IA Local</a>
-                <a href="/fr/agent-ia-facturation/">🇫🇷 Français — Agent IA Facturation & Relance Client</a>
-                <a href="/pt/gestao-contas-a-receber/">🇵🇹 Português — Gestão de Contas a Receber e Cobrança IA</a>
-            </div>
-        </div>
+        
     </article>
 </main>
 
@@ -888,7 +804,7 @@
             </div>
         </div>
         <div class="footer-credit">
-            ZUKWEND von <a href="https://oltrevista.com" rel="noopener">OLTREVISTA AI</a>. KI-Ergebnisse sind vom Nutzer zu prüfen. Siehe <a href="/de-disclaimer.html" target="_blank" rel="noopener">DISCLAIMER_EULA</a>. &bull; Kontakt: <a href="mailto:contact@oltrevista.com">contact@oltrevista.com</a>
+            ZUKWEND von <a href="https://oltrevista.com" rel="noopener">OLTREVISTA AI</a>. KI-Ergebnisse sind vom Nutzer zu prüfen. Siehe <a href="/de-disclaimer.html" target="_blank" rel="noopener">DISCLAIMER_EULA</a> &bull; <a href="de-disclaimer.html" target="_blank" rel="noopener">Privacy Policy</a>. &bull; Kontakt: <a href="mailto:contact@oltrevista.com">contact@oltrevista.com</a>
         </div>
     </div>
 </footer>

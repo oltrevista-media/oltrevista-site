@@ -137,6 +137,7 @@
     </script>
     
     <style>
+html { scroll-behavior: smooth; }
     :root {
         --bg: #0b0f17;
         --card: #131a26;
@@ -409,45 +410,6 @@
         border-radius: 0;
     }
     
-    /* Hero Video Callout */
-    .video-callout {
-        background: radial-gradient(circle at center, #151d2f 0%, #0d121e 100%);
-        border: 1px solid rgba(108, 140, 255, 0.3);
-        border-radius: 16px;
-        padding: 28px;
-        margin: 44px 0;
-        text-align: center;
-        box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-    }
-    .video-callout-title {
-        font-size: 1.3rem;
-        font-weight: 800;
-        color: #fff;
-        margin-bottom: 10px;
-    }
-    .video-callout-desc {
-        color: var(--mut);
-        font-size: 0.95rem;
-        max-width: 620px;
-        margin: 0 auto 20px;
-    }
-    .video-callout-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: linear-gradient(90deg, var(--a), var(--b));
-        color: #fff;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .video-callout-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(108, 140, 255, 0.4);
-    }
-    
     /* Final Pricing & Checkout CTA Section */
     .cta-section {
         margin-top: 60px;
@@ -666,6 +628,9 @@
         </div>
     </div>
 </header>
+            <div class="hero-cta" style="margin-top: 22px;">
+                <a href="#features" class="btn btn-demo">Decouvrir les Fonctionnalites</a>
+            </div>
 
 <main class="wrap">
     <!-- Breadcrumbs -->
@@ -691,7 +656,7 @@
         </header>
 
         <!-- Converted Body Content -->
-        <div class="article-body">
+        <div class="article-body" id="features">
             <p>Les factures impayées et les retards de règlement représentent la première cause de fragilisation de la trésorerie des entreprises. Chaque jour d'allongement du délai moyen de paiement (DSO - Days Sales Outstanding) immobilise du fonds de roulement et mobilise inutilement les équipes administratives sur des tâches fastidieuses de relance manuelle.</p>
 <p>Pourtant, le marché des logiciels a jusqu'ici enfermé les directions financières dans un dilemme pénalisant :
 1. <strong>La Rente des Abonnements SaaS :</strong> Des coûts mensuels de 150 € à 350 € par utilisateur qui grèvent les charges d'exploitation année après année.
@@ -822,56 +787,7 @@
 🌐 <strong>Explorer l'écosystème OLTREVISTA AI :</strong> <a href="https://oltrevista.com">https://oltrevista.com</a></p>
         </div>
 
-        <!-- Hero Video Callout -->
-        <div class="video-callout">
-            <div style="display: inline-block; background: rgba(46, 204, 143, 0.15); color: #2ecc8f; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; text-transform: uppercase;">
-                Interactive Demo Available
-            </div>
-            <h3 class="video-callout-title">Watch 30s Interactive Demo — Drag & Drop Invoice Aging Analysis</h3>
-            <p class="video-callout-desc">
-                Experience how ZUKWEND processes invoice PDFs locally, calculates risk aging buckets, and generates calibrated reminders in seconds without cloud exposure.
-            </p>
-            <a href="https://zukwend.com/#demo" class="video-callout-btn">
-                <span>▶</span> Watch 30s Video Demo on ZUKWEND.com
-            </a>
-        </div>
-
-        <!-- High-Converting Lemon Squeezy Checkout Section -->
-        <section class="cta-section">
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h2>Reprenez le Contrôle de Votre Recouvrement Client Dès Aujourd'hui</h2>
-                    <p>En finir avec les abonnements logiciels récurrents et la dispersion des données comptables dans le cloud. Optez pour la souveraineté desktop.</p>
-                </div>
-
-                <div class="price-box">
-                    <span class="price-amount">249 €</span>
-                    <span class="price-period">/ Licence Perpétuelle (Offre de Lancement)</span>
-                </div>
-                <p class="license-note">Payez une fois, utilisez pour toujours. Comprend 2 activations matérielles. Aucun abonnement récurrent.</p>
-
-                <div class="cta-actions">
-                    <a href="https://oltrevista.lemonsqueezy.com/checkout/buy/191492c7-087e-4e04-8c78-2de2a1dcfda6" class="lemonsqueezy-button btn btn-buy">Acheter Maintenant — 249 €</a>
-                    <a href="https://zukwend.com/downloads/ZUKWEND_DEMO_Setup.zip" class="btn btn-demo">Télécharger la DÉMO Gratuite (7 Jours / 10 Factures)</a>
-                </div>
-
-                <p class="cta-note">DÉMO : 7 jours ou jusqu'à 10 factures. Téléchargement immédiat, 100% hors ligne et sécurisé.</p>
-                <p class="smartscreen-note">🛡️ Note Windows : En tant que logiciel 100% natif hors ligne sans télémétrie cloud, Windows Defender peut afficher un avertissement 'Application non reconnue' au premier lancement. Cliquez sur 'Informations complémentaires' ➔ 'Exécuter quand même'. 100% local et sécurisé.</p>
-            </div>
-        </section>
-
-        <!-- Cross-Language Editions Matrix -->
-        <div class="editions-box">
-            <div class="editions-title">Découvrez les Éditions Localisées et la Documentation Complète :</div>
-            <div class="editions-links">
-                <a href="/seo/accounts-receivable-ai-agent/">🇬🇧 English — Accounts Receivable Desktop AI Agent</a>
-                <a href="/de/mahnwesen-software-local-ai/">🇩🇪 Deutsch — Mahnwesen Software Local AI</a>
-                <a href="/it/automazione-solleciti-fatture-privacy/">🇮🇹 Italiano — Automazione Solleciti Fatture Privacy</a>
-                <a href="/es/automatizacion-cobro-facturas/">🇪🇸 Español — Automatización Cobro Facturas Agente IA Local</a>
-                <a href="/fr/agent-ia-facturation/">🇫🇷 Français — Agent IA Facturation & Relance Client</a>
-                <a href="/pt/gestao-contas-a-receber/">🇵🇹 Português — Gestão de Contas a Receber e Cobrança IA</a>
-            </div>
-        </div>
+        
     </article>
 </main>
 
@@ -888,7 +804,7 @@
             </div>
         </div>
         <div class="footer-credit">
-            ZUKWEND par <a href="https://oltrevista.com" rel="noopener">OLTREVISTA AI</a>. Les résultats générés doivent être vérifiés par l'utilisateur. Voir <a href="/fr-disclaimer.html" target="_blank" rel="noopener">DISCLAIMER_EULA</a>. &bull; Contact : <a href="mailto:contact@oltrevista.com">contact@oltrevista.com</a>
+            ZUKWEND par <a href="https://oltrevista.com" rel="noopener">OLTREVISTA AI</a>. Les résultats générés doivent être vérifiés par l'utilisateur. Voir <a href="/fr-disclaimer.html" target="_blank" rel="noopener">DISCLAIMER_EULA</a> &bull; <a href="disclaimer.html" target="_blank" rel="noopener">Privacy Policy</a>. &bull; Contact : <a href="mailto:contact@oltrevista.com">contact@oltrevista.com</a>
         </div>
     </div>
 </footer>

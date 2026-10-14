@@ -4,7 +4,7 @@
 **Target URL Slug:** `/accounts-receivable-desktop-ai-agent`  
 **Target Canonical:** [https://zukwend.com/](https://zukwend.com/)  
 **Publisher:** OLTREVISTA AI ([https://oltrevista.com](https://oltrevista.com))  
-**Support Contact:** contact@oltrevista.com  
+**Official Contact & Licensing:** contact@oltrevista.com (Administrative and licensing inquiries for "As-Is" autonomous desktop software)  
 
 ---
 

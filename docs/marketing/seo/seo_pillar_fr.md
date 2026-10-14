@@ -4,7 +4,7 @@
 **Slug URL recommandé :** `/agent-ia-facturation-relance-client`  
 **URL Canonique :** [https://zukwend.com/fr-relance-factures.html](https://zukwend.com/fr-relance-factures.html)  
 **Éditeur :** OLTREVISTA AI ([https://oltrevista.com](https://oltrevista.com))  
-**Contact support :** contact@oltrevista.com  
+**Contact Officiel & Licences :** contact@oltrevista.com (Questions administratives et licences pour logiciel autonome de bureau « As-Is »)  
 
 ---
 

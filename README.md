@@ -70,11 +70,15 @@ Tutte le landing regionali e i portali dell'ecosistema convogliano il download d
 
 ---
 
-## 🔒 Sicurezza, Privacy & Note Windows Defender
+## 🔒 Sicurezza, Privacy & Note Legali
 
 Tutti i software dell'ecosistema OLTREVISTA AI sono sviluppati secondo gli standard più rigorosi:
-- **Zero Telemetria Esterna**: Nessun tracking delle abitudini o invio non autorizzato di documenti su cloud proprietari.
+- **Zero Telemetria Esterna & Architettura Local-First**: Nessun tracking delle abitudini o invio non autorizzato di documenti su cloud proprietari.
+- **Privacy Policy (Local-First)**: [https://oltrevista.com/DISCLAIMER_EULA.html#privacy](https://oltrevista.com/DISCLAIMER_EULA.html#privacy)
+- **Termini di Licenza & EULA**: [https://oltrevista.com/DISCLAIMER_EULA.html](https://oltrevista.com/DISCLAIMER_EULA.html)
+- **Contatti Ufficiali & Licenze**: contact@oltrevista.com *(destinato esclusivamente a quesiti amministrativi e licenze commerciali per il software desktop autonomo fornito As-Is)*
 - **Supporto SmartScreen**: Come applicazione desktop nativa offline non invasa da telemetria continua, al primo avvio su Windows l'utente può visualizzare l'avviso standard *"PC protetto da Windows / App non riconosciuta"* (risolvibile cliccando su *"Ulteriori informazioni"* ➔ *"Esegui comunque"*).
 
 ---
 © 2026 **OLTREVISTA AI** — [oltrevista.com](https://oltrevista.com) | [zukwend.com](https://zukwend.com). Tutti i diritti riservati.
+

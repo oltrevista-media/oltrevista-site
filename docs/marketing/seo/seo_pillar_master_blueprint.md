@@ -2,7 +2,7 @@
 
 **Project:** REPO_SITE (oltrevista-site)  
 **Product:** ZUKWEND by OLTREVISTA AI ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))  
-**Support Contact:** contact@oltrevista.com  
+**Official Contact & Licensing:** contact@oltrevista.com (Administrative and licensing inquiries for "As-Is" autonomous desktop software)  
 **Target Personas:** Chief Financial Officers (CFOs), Credit Managers, Accounting Firms, Business Advisors  
 **Core Message:** The definitive, privacy-first solution for B2B accounts receivable and invoice recovery without exposing sensitive corporate data to external clouds and without recurring monthly SaaS fees.
 

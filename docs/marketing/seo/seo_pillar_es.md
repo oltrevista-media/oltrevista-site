@@ -4,7 +4,7 @@
 **Slug URL recomendado:** `/automatizacion-cobro-facturas-agente-ia-local`  
 **URL Canónica:** [https://zukwend.com/es-recordatorios-pago.html](https://zukwend.com/es-recordatorios-pago.html)  
 **Editor:** OLTREVISTA AI ([https://oltrevista.com](https://oltrevista.com))  
-**Contacto de soporte:** contact@oltrevista.com  
+**Contacto Oficial & Licencias:** contact@oltrevista.com (Consultas administrativas y de licencias para software de escritorio autónomo "As-Is")  
 
 ---
 

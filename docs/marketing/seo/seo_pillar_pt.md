@@ -4,7 +4,7 @@
 **Slug URL recomendado:** `/gestao-contas-receber-cobranca-ia-desktop`  
 **URL Canónico:** [https://zukwend.com/pt-lembrete-faturas.html](https://zukwend.com/pt-lembrete-faturas.html)  
 **Editor:** OLTREVISTA AI ([https://oltrevista.com](https://oltrevista.com))  
-**Contacto de suporte:** contact@oltrevista.com  
+**Contacto Oficial & Licenças:** contact@oltrevista.com (Questões administrativas e licenças para software desktop autónomo "As-Is")  
 
 ---
 

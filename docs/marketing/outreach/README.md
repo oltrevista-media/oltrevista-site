@@ -54,7 +54,7 @@ Before launching outreach sequences:
 2. **Dedicated Inboxes & Warm-up:** Warm new inboxes for at least 14 days; limit sending to 30–45 emails/day per domain.
 3. **Plain Text / Minimal HTML:** Keep emails lightweight, avoid tracking pixels where possible, and avoid multiple image attachments.
 4. **Clean CTA & Opt-Out:** Clear one-click opt-out line complying with GDPR / ePrivacy regulations.
-5. **Support & Verification:** Official support channel: `contact@oltrevista.com`.
+5. **Official Contact & Licensing:** Official licensing and administrative inquiries: `contact@oltrevista.com` (autonomous desktop software provided "As-Is").
 
 ---
 

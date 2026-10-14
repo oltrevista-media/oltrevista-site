@@ -27,3 +27,8 @@
 
 ---
 © 2026 **OLTREVISTA AI** — *See beyond*. Tutti i diritti riservati.
+
+## Note Legali, Licenze & Privacy
+- **EULA:** [https://oltrevista.com/DISCLAIMER_EULA.html](https://oltrevista.com/DISCLAIMER_EULA.html)
+- **Privacy Policy:** [https://oltrevista.com/DISCLAIMER_EULA.html#privacy](https://oltrevista.com/DISCLAIMER_EULA.html#privacy)
+- **Contatti Ufficiali & Licenze:** contact@oltrevista.com *(destinato a quesiti amministrativi e licenze per software autonomo fornito As-Is)*

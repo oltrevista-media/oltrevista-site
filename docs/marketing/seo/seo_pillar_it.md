@@ -4,7 +4,7 @@
 **Slug URL consigliato:** `/automazione-solleciti-fatture-privacy`  
 **Canonical di riferimento:** [https://zukwend.com/it-solleciti-fatture.html](https://zukwend.com/it-solleciti-fatture.html)  
 **Editore:** OLTREVISTA AI ([https://oltrevista.com](https://oltrevista.com))  
-**Contatto di supporto:** contact@oltrevista.com  
+**Contatti Ufficiali & Licenze:** contact@oltrevista.com (Quesiti amministrativi e licenze per software autonomo desktop "As-Is")  
 
 ---
 

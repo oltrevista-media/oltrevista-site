@@ -44,7 +44,7 @@ We built a radically different architecture for enterprise finance teams.
 **ZUKWEND** (by OLTREVISTA AI) is an autonomous, desktop-native AR & billing AI agent designed with an **Offline-First & Privacy-by-Design** standard:
 
 - **100% Local Execution:** Your debtor aging lists, balance sheets, and turnover data stay strictly inside your corporate hardware. Zero external data leak risk, zero compliance headaches under GDPR/SOC-2.
-- **Zero Recurring Fees:** A perpetual lifetime license at **€249 one-time** (2 workstation activations). No monthly per-seat drip, no cut taken from your recovered invoices.
+- **Zero Recurring Fees:** A perpetual lifetime license at **~~€349~~ €249 one-time (Launch Offer)** (2 workstation activations). No monthly per-seat drip, no cut taken from your recovered invoices.
 - **Immediate DSO Reduction:** Classifies aging buckets (30/60/90+ days) and drafts multi-tier recovery notices in 6 languages (EN, DE, IT, ES, FR, PT) automatically.
 
 If you could eliminate recurring AR software subscriptions while ensuring 100% on-prem data sovereignty, would you be open to a 3-minute read on how it works?
@@ -112,7 +112,7 @@ Enterprise Growth Lead | OLTREVISTA AI
 - *Oggetto B:* Una domanda sulla gestione crediti e fatture insolute di {{company}}
 - *Oggetto C:* Canone mensile vs licenza lifetime 249 € per il recupero crediti?
 
-**Testo di anteprima:** Perché caricare il partitario clienti su cloud terzi quando un agente AI locale costa 249 € una tantum?
+**Testo di anteprima:** Perché caricare il partitario clienti su cloud terzi quando un agente AI locale costa ~~349 €~~ 249 € una tantum (Offerta di Lancio)?
 
 **Corpo dell'Email:**
 
@@ -125,7 +125,7 @@ In OLTREVISTA AI abbiamo sviluppato un approccio diametralmente opposto.
 **ZUKWEND** è l'agente AI desktop ibrido per la gestione del credito e il sollecito fatture progettato secondo i principi di **Offline-First e Privacy-by-Design**:
 
 - **Esecuzione 100% Locale:** Il partitario scaduto e i dati contabili sensibili restano confinati sulla macchina aziendale (Windows, macOS o Linux). Nessuna dispersione esterna, piena conformità GDPR e zero rischi di data breach.
-- **Nessun Abbonamento Ricorrente:** Licenza a vita a **249 € una tantum** (valida per 2 postazioni). Nessun canone mensile, nessuna percentuale sugli importi recuperati.
+- **Nessun Abbonamento Ricorrente:** Licenza a vita a **~~349 €~~ 249 € una tantum (Offerta di Lancio)** (valida per 2 postazioni). Nessun canone mensile, nessuna percentuale sugli importi recuperati.
 - **Abbattimento Immediato del DSO:** Analizza l'aging dello scaduto (30/60/90+ giorni) e genera solleciti graduati e personalizzati in 6 lingue (IT, EN, DE, FR, ES, PT).
 
 Se l'idea di azzerare i costi fissi software mantenendo il controllo assoluto sui dati finanziari aziendali è in linea con le priorità di {{company}}, sarebbe disponibile a un approfondimento di tre minuti?
@@ -161,7 +161,7 @@ Mi permetto di ricontattarla in merito alla mia nota di qualche giorno fa sui pr
 
 La ragione per cui molti colleghi Direttori Finance stanno adottando ZUKWEND risiede in un calcolo economico elementare:
 
-Il recupero anticipato di una singola fattura insoluta ammortizza all'istante l'investimento di 249 € una tantum, contro i 2.000 € – 4.000 € annui tipicamente assorbiti dalle soluzioni SaaS concorrenti.
+Il recupero anticipato di una singola fattura insoluta ammortizza all'istante l'investimento di ~~349 €~~ 249 € una tantum (Offerta di Lancio), contro i 2.000 € – 4.000 € annui tipicamente assorbiti dalle soluzioni SaaS concorrenti.
 
 La procedura con ZUKWEND è immediata:
 1. **Importazione:** Caricamento del report scaduto (CSV/Excel) dal vostro gestionale.

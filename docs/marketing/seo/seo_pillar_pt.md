@@ -114,7 +114,7 @@ Nenhum aviso é enviado automaticamente sem revisão. O utilizador consulta as p
 
 | Critério | Plataformas Cloud Tradicionais | ZUKWEND (OLTREVISTA AI) |
 |---|---|---|
-| **Modelo de Aquisição** | 150 € a 350 € mensais por utilizador | **249 € pagamento único (Licença vitalícia)** |
+| **Modelo de Aquisição** | 150 € a 350 € mensais por utilizador | **~~349 €~~ 249 € pagamento único** [OFERTA DE LANÇAMENTO — LICENÇA VITALÍCIA] |
 | **Custo a 3 Anos (2 Postos)** | 10.800 € a 25.200 € | **Apenas 249 € no total** |
 | **Localização dos Dados** | Servidores externos partilhados | **100 % Local no computador da empresa** |
 | **Operação Sem Internet** | Impossível | **Totalmente funcional em modo offline** |

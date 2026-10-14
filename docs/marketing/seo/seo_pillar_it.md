@@ -114,7 +114,7 @@ Nessuna comunicazione parte all'insaputa dell'azienda. L'operatore visualizza l'
 
 | Parametro | Piattaforme Cloud Tradizionali | ZUKWEND (OLTREVISTA AI) |
 |---|---|---|
-| **Modello Economico** | Da 150 € a 350 € al mese per utente | **249 € una tantum (Licenza a vita)** |
+| **Modello Economico** | Da 150 € a 350 € al mese per utente | **~~349 €~~ 249 € una tantum** [OFFERTA DI LANCIO — LICENZA A VITA] |
 | **Costo Triennale (2 Postazioni)** | Da 10.800 € a 25.200 € | **249 € complessivi** |
 | **Ubicazione dei Dati Finanziari** | Cloud condiviso (server terzi) | **100% Locale sul computer dell'azienda** |
 | **Funzionamento a Rete Disconnessa** | Impossibile | **Completamente offline** |
@@ -133,7 +133,7 @@ Assolutamente no. ZUKWEND è un software desktop locale. Nessun dato relativo a 
 ZUKWEND è compatibile con Windows 10 e Windows 11 (64-bit), macOS (processori Intel e serie Apple Silicon M1/M2/M3) e le principali distribuzioni Linux (Ubuntu, Debian, Fedora).
 
 ### Come funziona l'attivazione della licenza?
-La licenza a vita da 249 € include 2 attivazioni hardware (per due distinte postazioni aziendali), garantendo tutti gli aggiornamenti futuri senza alcun abbonamento.
+La licenza a vita da ~~349 €~~ 249 € (Offerta di Lancio) include 2 attivazioni hardware (per due distinte postazioni aziendali), garantendo tutti gli aggiornamenti futuri senza alcun abbonamento.
 
 ---
 

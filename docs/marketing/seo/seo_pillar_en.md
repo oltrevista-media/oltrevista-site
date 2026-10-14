@@ -142,7 +142,7 @@ ZUKWEND runs natively on Windows 10/11 (64-bit), macOS (Intel and Apple Silicon)
 No. ZUKWEND works immediately with its Tier 1 deterministic engine out-of-the-box. If you choose to enable Tier 2 local AI, ZUKWEND includes guided one-click configuration with Ollama.
 
 ### How does licensing work?
-Each €249 lifetime license includes hardware-locked activations for 2 workstations, with lifetime updates and no recurring subscription charges.
+Each €249 lifetime license (Launch offer, regular €349) includes hardware-locked activations for 2 workstations, with lifetime updates and no recurring subscription charges.
 
 ### Where can I verify product documentation and support?
 Official product information is available at [https://zukwend.com](https://zukwend.com). Technical inquiries can be directed to the engineering team at `contact@oltrevista.com`.

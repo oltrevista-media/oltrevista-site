@@ -51,7 +51,7 @@ ZUKWEND is an autonomous desktop AI agent built for credit managers who demand s
 - **Multi-Tier Tone Escalation:** Calibrate tone from a courteous day-5 reminder to a formal 60-day notice, with full review and override before anything is sent.
 - **Private & Local (Ollama or Cloud BYOC):** Run an on-premise AI model (like Llama 3 or Mistral via Ollama) completely offline on your desktop, or plug in your preferred cloud API.
 
-A perpetual license is just **€249 one-time** for 2 workstations—no recurring monthly fees or per-seat penalties.
+A perpetual license is just **~~€349~~ €249 one-time (Launch Offer)** for 2 workstations—no recurring monthly fees or per-seat penalties.
 
 Would you be open to a quick 2-minute look at how our aging parser operates? You can explore the workflow directly at [https://zukwend.com](https://zukwend.com).
 
@@ -129,7 +129,7 @@ Abbiamo sviluppato **ZUKWEND** (di OLTREVISTA AI) proprio per restituire efficie
 - **Escalation Graduata a 3 Livelli:** Dal promemoria cortese alla diffida formale pre-legale, mantenendo sempre la supervisione dell'operatore prima dell'invio.
 - **AI Ibrida su Misura (Ollama o Cloud BYOC):** Utilizzabile al 100% offline su computer con modelli open-source (es. Llama 3 o Mistral via Ollama) oppure tramite API Cloud di vostra scelta.
 
-La licenza desktop a vita costa solo **249 € una tantum** (valida per 2 postazioni), senza alcun canone mensile né costi ricorrenti.
+La licenza desktop a vita costa solo **~~349 €~~ 249 € una tantum (Offerta di Lancio)** (valida per 2 postazioni), senza alcun canone mensile né costi ricorrenti.
 
 Le andrebbe di valutare una rapida panoramica di come funziona il flusso di lavoro? Può visionare la presentazione completa su [https://zukwend.com](https://zukwend.com).
 

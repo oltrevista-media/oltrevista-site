@@ -133,7 +133,7 @@ Ja, zu 100 %. Da ZUKWEND als lokale Desktop-Anwendung konzipiert ist und Ihre De
 ZUKWEND ist für Windows 10/11 (64-Bit), macOS (Intel und Apple Silicon M-Serie) sowie Linux (Ubuntu, Debian, Fedora) verfügbar.
 
 ### Wie viele Computer können mit einer Lizenz genutzt werden?
-Jede Einmallizenz für 249 € umfasst 2 Hardware-Aktivierungen für Ihren Betrieb, inklusive künftiger Software-Updates ohne Folgekosten.
+Jede Einmallizenz für ~~349 €~~ 249 € (Einführungsangebot) umfasst 2 Hardware-Aktivierungen für Ihren Betrieb, inklusive künftiger Software-Updates ohne Folgekosten.
 
 ---
 

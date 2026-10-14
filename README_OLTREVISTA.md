@@ -9,7 +9,8 @@
 1. **ZUKWEND — Hybrid AR & Billing AI Agent** (Disponibile / Live su [zukwend.com](https://zukwend.com))
    - Automazione ciclo attivo (Accounts Receivable), calcolo aging dello scaduto e generazione solleciti in 6 lingue.
    - Motore AI 3-Tier: Level 1 Nativo out-of-the-box incluso (zero setup, zero API keys, zero Ollama obbligatorio), Level 2 Ollama opzionale, Level 3 Cloud BYOC opzionale.
-   - Licenza a vita: 249 € una tantum (2 attivazioni con blocco hardware).
+   - Licenza a vita: **~~349 €~~ 249 € una tantum** [OFFERTA DI LANCIO — LICENZA A VITA] (Pagamento unico. Zero abbonamenti — 2 attivazioni con blocco hardware).
+   - Video Demo Interattiva (30s): [https://youtu.be/a6V65LRN4oc](https://youtu.be/a6V65LRN4oc)
 2. **Agent 2: Ledger Recon AI** (Pipeline — In Development)
    - Riconciliazione bancaria autonoma multi-conto, categorizzazione automatica e rilevamento anomalie contabili.
 3. **Agent 3: Corporate Treasury AI** (Pipeline — Planned)

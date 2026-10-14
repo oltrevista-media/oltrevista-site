@@ -24,7 +24,7 @@ L'ecosistema OLTREVISTA AI si sviluppa attraverso una pipeline progressiva di ag
   - **Level 1 — Built-in Native AI Agent (Included)**: 100% operativo out-of-the-box subito dopo l'installazione. Zero configurazioni, zero installazioni esterne, zero Ollama obbligatorio, zero chiavi API richieste per iniziare.
   - **Level 2 — Local Ollama Power-Up (Optional)**: Integrazione 1-click per LLM open-weights locali (*Gemma, Mistral, Qwen, DeepSeek*) per massima privacy offline.
   - **Level 3 — Cloud BYOC Power-Up (Optional)**: Connessione diretta con chiavi personali (*Claude, OpenAI, Gemini, DeepSeek, Groq*).
-- **Licenza**: Licenza a vita (Lifetime License / 2 attivazioni hardware-locked) a 249 € una tantum, zero canoni ricorrenti.
+- **Licenza**: **~~349 €~~ 249 € una tantum** [OFFERTA DI LANCIO — LICENZA A VITA] (Pagamento unico una tantum. Zero abbonamenti). Licenza a vita con 2 attivazioni hardware-locked.
 - Portale dedicato: [https://zukwend.com](https://zukwend.com)
 
 ### 2. Agent 2: Ledger Recon AI (Pipeline — In Development)
@@ -66,7 +66,8 @@ Tutte le landing regionali e i portali dell'ecosistema convogliano il download d
   - 🇫🇷 **FR**: `https://zukwend.com/fr-relance-factures.html#disclaimer`
   - 🇪🇸 **ES**: `https://zukwend.com/es-recordatorios-de-pago.html#disclaimer`
   - 🇵🇹 **PT**: `https://zukwend.com/pt-lembrete-de-faturas.html#disclaimer`
-- **Checkout Ufficiale**: Integrazione diretta LemonSqueezy per licenza a vita (249 € una tantum).
+- **Checkout Ufficiale**: Integrazione diretta LemonSqueezy per licenza a vita (~~349 €~~ 249 € una tantum — Offerta di Lancio).
+- **Video Demo Interattiva (30s)**: [https://youtu.be/a6V65LRN4oc](https://youtu.be/a6V65LRN4oc)
 
 ---
 

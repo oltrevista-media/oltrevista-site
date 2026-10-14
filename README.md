@@ -14,11 +14,11 @@ Ispirato ai principi di sovranità del dato, architettura *Offline-First* e *Pri
 
 ---
 
-## 🌟 Panoramica Ecosystem & Roadmap Multi-Agente
+## 🌟 Panoramica Ecosistema — ZUKWEND
 
-L'ecosistema OLTREVISTA AI si sviluppa attraverso una pipeline progressiva di agenti verticali specializzati e interoperabili:
+L'ecosistema OLTREVISTA AI presenta la sua soluzione software desktop:
 
-### 1. Agent 1: ZUKWEND — Hybrid AR & Billing AI Agent (Disponibile / Live)
+### Agent 1: ZUKWEND — Hybrid AR & Billing AI Agent (Disponibile / Live)
 - Agente desktop specializzato nella gestione e automazione del ciclo attivo (Accounts Receivable), aging analysis, monitoraggio delle fatture scadute e generazione autonoma di bozze di sollecito multilivello e multilingue.
 - **Architettura AI 3-Tier Nativa**:
   - **Level 1 — Built-in Native AI Agent (Included)**: 100% operativo out-of-the-box subito dopo l'installazione. Zero configurazioni, zero installazioni esterne, zero Ollama obbligatorio, zero chiavi API richieste per iniziare.
@@ -26,17 +26,6 @@ L'ecosistema OLTREVISTA AI si sviluppa attraverso una pipeline progressiva di ag
   - **Level 3 — Cloud BYOC Power-Up (Optional)**: Connessione diretta con chiavi personali (*Claude, OpenAI, Gemini, DeepSeek, Groq*).
 - **Licenza**: **~~349 €~~ 249 € una tantum** [OFFERTA DI LANCIO — LICENZA A VITA] (Pagamento unico una tantum. Zero abbonamenti). Licenza a vita con 2 attivazioni hardware-locked.
 - Portale dedicato: [https://zukwend.com](https://zukwend.com)
-
-### 2. Agent 2: Ledger Recon AI (Pipeline — In Development)
-- Riconciliazione bancaria autonoma multi-conto ed estratto conto con matching intelligente tra movimenti bancari e mastrini contabili.
-- Categorizzazione automatica delle transazioni, riconciliazione differenziali e rilevamento anomalie di cassa.
-
-### 3. Agent 3: Corporate Treasury AI (Pipeline — Planned)
-- Previsione dei flussi di cassa (cash-flow forecast), pianificazione della tesoreria e proiezione della liquidità aziendale.
-- Inferenza statistica locale su scenari di incasso/pagamento e stress-testing finanziario.
-
-### 4. ZUKWEND AI Suite (Pipeline — Planned)
-- Piattaforma desktop integrata e centro di comando unificato che orchestra l'intera suite di agenti amministrativi e finanziari per una governance aziendale end-to-end senza dispersione di dati su piattaforme terze.
 
 ---
 
@@ -67,7 +56,7 @@ Tutte le landing regionali e i portali dell'ecosistema convogliano il download d
   - 🇪🇸 **ES**: `https://zukwend.com/es-recordatorios-de-pago.html#disclaimer`
   - 🇵🇹 **PT**: `https://zukwend.com/pt-lembrete-de-faturas.html#disclaimer`
 - **Checkout Ufficiale**: Integrazione diretta LemonSqueezy per licenza a vita (~~349 €~~ 249 € una tantum — Offerta di Lancio).
-- **Video Demo Interattiva (30s)**: [https://youtu.be/a6V65LRN4oc](https://youtu.be/a6V65LRN4oc)
+- **Video Demo Interattiva (40s)**: [https://youtu.be/a6V65LRN4oc](https://youtu.be/a6V65LRN4oc)
 
 ---
 

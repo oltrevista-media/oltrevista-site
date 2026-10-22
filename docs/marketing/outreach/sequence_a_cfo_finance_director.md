@@ -83,7 +83,7 @@ Here is the straightforward math that is winning over Finance Directors:
 A single overdue invoice recovered 10 days earlier pays back our €249 lifetime license instantly. Compare that to enterprise cloud billing suites that cost €2,000 to €5,000 annually in recurring OPEX.
 
 With ZUKWEND:
-1. **Import:** Drag & drop your standard aging report (CSV/Excel).
+1. **Import:** Import invoice PDFs & aging calculation (standard aging report) (CSV/Excel).
 2. **Analyze:** The local AI engine categorizes risk tiers and flags critical insolvencies without moving data off your disk.
 3. **Act:** Generates calibrated, legally compliant reminder cadences in seconds.
 

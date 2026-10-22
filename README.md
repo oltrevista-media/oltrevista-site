@@ -55,7 +55,7 @@ Tutte le landing regionali e i portali dell'ecosistema convogliano il download d
   - 🇪🇸 **ES**: `https://zukwend.com/es-recordatorios-de-pago.html#disclaimer`
   - 🇵🇹 **PT**: `https://zukwend.com/pt-lembrete-de-faturas.html#disclaimer`
 - **Checkout Ufficiale**: [Integrazione diretta LemonSqueezy](https://zukwend.lemonsqueezy.com/checkout/buy/c6c7d5b7-7ee9-4717-a708-c386ad1d2344) per licenza a vita (~~349 €~~ 249 € una tantum — Offerta di Lancio).
-- **Video Demo Interattiva (40s)**: [https://youtu.be/a6V65LRN4oc](https://youtu.be/a6V65LRN4oc)
+- **Video Presentazione Ufficiale — Guarda come Funziona**: [https://youtu.be/a6V65LRN4oc](https://youtu.be/a6V65LRN4oc)
 
 ---
 

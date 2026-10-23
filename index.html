@@ -563,7 +563,14 @@ html { scroll-behavior: smooth; }
 
             
 
-            <div class="price-header">
+                        <ul class="agent-features" style="list-style: none; padding: 0; margin: 16px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px;">
+                <li style="color: var(--txt); font-size: 0.9rem; display: flex; align-items: center; gap: 8px;"><span style="color: var(--ok);">✓</span> Built-in Native AI engine out-of-the-box (zero configuration)</li>
+                <li style="color: var(--txt); font-size: 0.9rem; display: flex; align-items: center; gap: 8px;"><span style="color: var(--ok);">✓</span> Consolidated AR &amp; Client Dossiers Automation (Zero Solleciti Duplicati)</li>
+                <li style="color: var(--txt); font-size: 0.9rem; display: flex; align-items: center; gap: 8px;"><span style="color: var(--ok);">✓</span> 100% Offline &amp; Privacy-First by default (Air-Gapped)</li>
+                <li style="color: var(--txt); font-size: 0.9rem; display: flex; align-items: center; gap: 8px;"><span style="color: var(--ok);">✓</span> Multi-Currency &amp; Triple-Export (PDF, ERP ISO Excel, JSON)</li>
+            </ul>
+
+<div class="price-header">
                 <div class="price-amount"><span style="text-decoration: line-through; opacity: 0.55; font-size: 0.6em; margin-right: 10px; color: var(--mut); font-weight: 500;">499 €</span>249 €</div>
                 <div class="price-period">/ 🔥 LAUNCH OFFER — LAUNCH BATCH v2.1.5</div>
             </div>
@@ -635,6 +642,11 @@ html { scroll-behavior: smooth; }
         <h3 style="font-size:1.1rem;margin-bottom:8px;color:#fff;display:flex;align-items:center;gap:8px;">👤 Q5: Can the AI send emails or legal notices autonomously without oversight?</h3>
         <p style="color:var(--mut);font-size:0.92rem;line-height:1.5;"><strong>A:</strong> No. ZUKWEND operates strictly under Human-in-the-Loop governance. No irreversible actions occur automatically: every aging classification, deduction score, formal notice, and export (PDF, Excel, JSON) is fully reviewable and requires human verification prior to dispatch.</p>
       </div>
+      <div class="card" style="background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:12px;padding:22px;">
+        <h3 style="font-size:1.1rem;margin-bottom:8px;color:#fff;display:flex;align-items:center;gap:8px;">📁 Q6: Come gestisce ZUKWEND i clienti con più fatture scadute contemporaneamente?</h3>
+        <p style="color:var(--mut);font-size:0.92rem;line-height:1.5;"><strong>A:</strong> ZUKWEND raggruppa automaticamente le posizioni aperte dello stesso debitore tramite verifica rigorosa al 100% della Partita IVA / Tax ID, creando un dossier cliente unico e permanente in <code>output/CLIENTS/{CLIENT_VAT}/{DATE}/</code>. Genera un unico <strong>Estratto Conto Consolidato (STATEMENT_OF_ACCOUNT_CONSOLIDATED.pdf)</strong> con tabella analitica e subtotali separati per valuta (es. EUR, USD), e un'unica e-mail unificata (<strong>REMINDER_EMAIL_CONSOLIDATED.txt</strong>), azzerando i solleciti duplicati e frammentati. Le singole fatture vengono archiviate ordinatamente nella sottocartella <code>Individual_Invoices_Archive/</code>.</p>
+      </div>
+
     </div>
   </div>
 </section>

@@ -1,6 +1,6 @@
-# OLTREVISTA AI — Intelligent Multi-Agent Ecosystem
+# OLTREVISTA — Intelligent Multi-Agent Ecosystem
 
-**OLTREVISTA AI** ([oltrevista.com](https://oltrevista.com)) è l'ecosistema tecnologico dedicato alla progettazione di agenti software autonomi per l'automazione dei processi amministrativi, contabili e finanziari con architettura *Offline-First* e *Privacy-by-Design*.
+**OLTREVISTA** ([oltrevista.com](https://oltrevista.com)) è l'ecosistema tecnologico dedicato alla progettazione di agenti software autonomi per l'automazione dei processi amministrativi, contabili e finanziari con architettura *Offline-First* e *Privacy-by-Design*.
 
 ---
 
@@ -21,7 +21,7 @@
 - Pagine geolocalizzate multilingue: `/it/`, `/de/`, `/fr/`, `/es/`, `/pt/`, `/en/` con routing verso [zukwend.com](https://zukwend.com) (inclusa documentazione legale geolocalizzata).
 
 ---
-© 2026 **OLTREVISTA AI** — *See beyond*. Tutti i diritti riservati.
+© 2026 **OLTREVISTA** — *See beyond*. Tutti i diritti riservati.
 
 ## Note Legali, Licenze & Privacy
 - **EULA:** [https://oltrevista.com/DISCLAIMER_EULA.html](https://oltrevista.com/DISCLAIMER_EULA.html)

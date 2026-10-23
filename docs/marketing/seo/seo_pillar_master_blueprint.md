@@ -1,7 +1,7 @@
 # B2B SEO Pillar Article Master Blueprint — 6-Language Global Strategy
 
 **Project:** REPO_SITE (oltrevista-site)  
-**Product:** ZUKWEND by OLTREVISTA AI ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))  
+**Product:** ZUKWEND by OLTREVISTA ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))  
 **Official Contact & Licensing:** contact@oltrevista.com (Administrative and licensing inquiries for "As-Is" autonomous desktop software)  
 **Target Personas:** Chief Financial Officers (CFOs), Credit Managers, Accounting Firms, Business Advisors  
 **Core Message:** The definitive, privacy-first solution for B2B accounts receivable and invoice recovery without exposing sensitive corporate data to external clouds and without recurring monthly SaaS fees.
@@ -38,7 +38,7 @@
 
 ### 2. Schema.org Structured Data Blueprint (JSON-LD)
 Every published article variant includes a compound Schema graph:
-1. `Article` (Author: OLTREVISTA AI, Headline, Publisher).
+1. `Article` (Author: OLTREVISTA, Headline, Publisher).
 2. `SoftwareApplication` (Name: ZUKWEND, OperatingSystem: Windows, macOS, Linux, ApplicationCategory: BusinessApplication, Offers: 249 EUR one-time).
 3. `FAQPage` (Addressing enterprise cloud privacy, 3-tier local AI architecture, zero monthly fees).
 
@@ -60,7 +60,7 @@ Every published article variant includes a compound Schema graph:
       },
       "author": {
         "@type": "Organization",
-        "name": "OLTREVISTA AI",
+        "name": "OLTREVISTA",
         "url": "https://oltrevista.com"
       }
     },
@@ -70,7 +70,7 @@ Every published article variant includes a compound Schema graph:
       "inLanguage": "en",
       "author": {
         "@type": "Organization",
-        "name": "OLTREVISTA AI",
+        "name": "OLTREVISTA",
         "url": "https://oltrevista.com"
       }
     }

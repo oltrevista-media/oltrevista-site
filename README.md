@@ -1,13 +1,13 @@
-# OLTREVISTA AI — Multi-Agent Ecosystem & Official Holding Repository
+# OLTREVISTA — Multi-Agent Ecosystem & Official Holding Repository
 
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-OLTREVISTA%20AI-orange.svg)](https://oltrevista.com)
 [![Main Product](https://img.shields.io/badge/Flagship-ZUKWEND%20Billing%20AI-blue.svg)](https://zukwend.com)
 [![Architecture](https://img.shields.io/badge/AI%20Engine-3--Tier%20Native%20Out--of--the--Box-purple.svg)](https://zukwend.com)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Offline%20First-green.svg)](https://oltrevista.com)
 
-**OLTREVISTA AI** ([oltrevista.com](https://oltrevista.com)) è l'ecosistema tecnologico dedicato alla progettazione e distribuzione di agenti software autonomi e ibridi per la governance amministrativa, contabile e finanziaria d'impresa. 
+**OLTREVISTA** ([oltrevista.com](https://oltrevista.com)) è l'ecosistema tecnologico dedicato alla progettazione e distribuzione di agenti software autonomi e ibridi per la governance amministrativa, contabile e finanziaria d'impresa. 
 
-Ispirato ai principi di sovranità del dato, architettura *Offline-First* e *Privacy-by-Design*, OLTREVISTA AI combina motori analitici nativi eseguiti localmente con la flessibilità opzionale dei modelli di intelligenza artificiale open-weights (on-premise) e cloud (BYOC).
+Ispirato ai principi di sovranità del dato, architettura *Offline-First* e *Privacy-by-Design*, OLTREVISTA combina motori analitici nativi eseguiti localmente con la flessibilità opzionale dei modelli di intelligenza artificiale open-weights (on-premise) e cloud (BYOC).
 
 - **Holding & Suite**: [https://oltrevista.com](https://oltrevista.com)
 - **Prodotto Flagship (ZUKWEND)**: [https://zukwend.com](https://zukwend.com)
@@ -16,7 +16,7 @@ Ispirato ai principi di sovranità del dato, architettura *Offline-First* e *Pri
 
 ## 🌟 Panoramica Ecosistema — ZUKWEND
 
-L'ecosistema OLTREVISTA AI presenta la sua soluzione software desktop:
+L'ecosistema OLTREVISTA presenta la sua soluzione software desktop:
 
 ### Agent 1: ZUKWEND — Hybrid AR & Billing AI Agent (Disponibile / Live)
 - Agente desktop specializzato nella gestione e automazione del ciclo attivo (Accounts Receivable), aging analysis, monitoraggio delle fatture scadute e generazione autonoma di bozze di sollecito multilivello e multilingue.
@@ -61,7 +61,7 @@ Tutte le landing regionali e i portali dell'ecosistema convogliano il download d
 
 ## 🔒 Sicurezza, Privacy & Note Legali
 
-Tutti i software dell'ecosistema OLTREVISTA AI sono sviluppati secondo gli standard più rigorosi:
+Tutti i software dell'ecosistema OLTREVISTA sono sviluppati secondo gli standard più rigorosi:
 - **Zero Telemetria Esterna & Architettura Local-First**: Nessun tracking delle abitudini o invio non autorizzato di documenti su cloud proprietari.
 - **Privacy Policy (Local-First)**: [https://oltrevista.com/DISCLAIMER_EULA.html#privacy](https://oltrevista.com/DISCLAIMER_EULA.html#privacy)
 - **Termini di Licenza & EULA**: [https://oltrevista.com/DISCLAIMER_EULA.html](https://oltrevista.com/DISCLAIMER_EULA.html)
@@ -69,5 +69,5 @@ Tutti i software dell'ecosistema OLTREVISTA AI sono sviluppati secondo gli stand
 - **Supporto SmartScreen**: Come applicazione desktop nativa offline non invasa da telemetria continua, al primo avvio su Windows l'utente può visualizzare l'avviso standard *"PC protetto da Windows / App non riconosciuta"* (risolvibile cliccando su *"Ulteriori informazioni"* ➔ *"Esegui comunque"*).
 
 ---
-© 2026 **OLTREVISTA AI** — [oltrevista.com](https://oltrevista.com) | [zukwend.com](https://zukwend.com). Tutti i diritti riservati.
+© 2026 **OLTREVISTA** — [oltrevista.com](https://oltrevista.com) | [zukwend.com](https://zukwend.com). Tutti i diritti riservati.
 

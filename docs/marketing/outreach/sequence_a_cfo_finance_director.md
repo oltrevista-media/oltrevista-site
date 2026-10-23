@@ -4,7 +4,7 @@
 **Primary Value Hook:** Elimination of recurring SaaS/Cloud subscriptions, immediate ROI via a €249 lifetime license, 100% local privacy on sensitive financial ledgers.  
 **Languages:** English (EN) & Italian (IT)  
 **Cadence:** Email 1 (Day 0) + Email 2 (Day 3 Follow-up)  
-**Product:** ZUKWEND by OLTREVISTA AI ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))
+**Product:** ZUKWEND by OLTREVISTA ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))
 
 ---
 
@@ -41,7 +41,7 @@ Most CFOs we speak with are frustrated by the same recurring pattern: accounts r
 
 We built a radically different architecture for enterprise finance teams.
 
-**ZUKWEND** (by OLTREVISTA AI) is an autonomous, desktop-native AR & billing AI agent designed with an **Offline-First & Privacy-by-Design** standard:
+**ZUKWEND** (by OLTREVISTA) is an autonomous, desktop-native AR & billing AI agent designed with an **Offline-First & Privacy-by-Design** standard:
 
 - **100% Local Execution:** Your debtor aging lists, balance sheets, and turnover data stay strictly inside your corporate hardware. Zero external data leak risk, zero compliance headaches under GDPR/SOC-2.
 - **Zero Recurring Fees:** A perpetual lifetime license at **~~€349~~ €249 one-time (Launch Offer)** (2 workstation activations). No monthly per-seat drip, no cut taken from your recovered invoices.
@@ -54,7 +54,7 @@ You can review our technical architecture directly at [https://zukwend.com](http
 Best regards,
 
 {{sender_name}}  
-Enterprise Growth Lead | OLTREVISTA AI  
+Enterprise Growth Lead | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com) | contact@oltrevista.com  
 
 ---
@@ -94,7 +94,7 @@ Alternatively, you can examine our product specifications at [https://zukwend.co
 Best regards,
 
 {{sender_name}}  
-Enterprise Growth Lead | OLTREVISTA AI  
+Enterprise Growth Lead | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com)  
 
 ---
@@ -120,7 +120,7 @@ Gentile {{first_name}},
 
 Nel confronto quotidiano con CFO e Direttori Finanziari emerge costantemente la medesima criticità: le piattaforme cloud per la gestione dei crediti commerciali impongono canoni compresi tra 150 € e 350 €/mese per postazione, costringendo l'azienda a caricare estratti conto, fidi e anagrafiche debitori su server cloud condivisi.
 
-In OLTREVISTA AI abbiamo sviluppato un approccio diametralmente opposto.
+In OLTREVISTA abbiamo sviluppato un approccio diametralmente opposto.
 
 **ZUKWEND** è l'agente AI desktop ibrido per la gestione del credito e il sollecito fatture progettato secondo i principi di **Offline-First e Privacy-by-Design**:
 
@@ -135,7 +135,7 @@ La documentazione tecnica e le specifiche sono disponibili su [https://zukwend.c
 Cordiali saluti,
 
 {{sender_name}}  
-Head of Enterprise Solutions | OLTREVISTA AI  
+Head of Enterprise Solutions | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com) | contact@oltrevista.com  
 
 ---
@@ -177,7 +177,7 @@ Resto a disposizione per qualsiasi chiarimento.
 Cordiali saluti,
 
 {{sender_name}}  
-Head of Enterprise Solutions | OLTREVISTA AI  
+Head of Enterprise Solutions | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com)  
 
 ---

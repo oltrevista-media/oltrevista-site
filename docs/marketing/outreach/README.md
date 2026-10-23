@@ -1,6 +1,6 @@
 # B2B Cold Outreach Campaign — Executive Master Playbook
 
-This directory contains the high-conversion cold outreach email sequences designed for **ZUKWEND by OLTREVISTA AI** ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com)).
+This directory contains the high-conversion cold outreach email sequences designed for **ZUKWEND by OLTREVISTA** ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com)).
 
 ---
 

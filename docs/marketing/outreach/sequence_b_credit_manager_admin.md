@@ -4,7 +4,7 @@
 **Primary Value Hook:** Reclaim 10+ hours per week in invoice aging analysis, automated multi-language reminders in 6 languages via Ollama or Cloud BYOC, dramatic DSO reduction without robotic spam.  
 **Languages:** English (EN) & Italian (IT)  
 **Cadence:** Email 1 (Day 0) + Email 2 (Day 3 Follow-up)  
-**Product:** ZUKWEND by OLTREVISTA AI ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))
+**Product:** ZUKWEND by OLTREVISTA ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))
 
 ---
 
@@ -42,7 +42,7 @@ If your team is like most credit management departments, your week likely involv
 
 For international clients across Europe, that friction doubles as you adapt phrasing and tone between English, German, French, and Spanish.
 
-We designed **ZUKWEND** (by OLTREVISTA AI) specifically to eliminate that manual grind.
+We designed **ZUKWEND** (by OLTREVISTA) specifically to eliminate that manual grind.
 
 ZUKWEND is an autonomous desktop AI agent built for credit managers who demand speed without sacrificing control:
 
@@ -58,7 +58,7 @@ Would you be open to a quick 2-minute look at how our aging parser operates? You
 Best regards,
 
 {{sender_name}}  
-Credit & AR Solutions Lead | OLTREVISTA AI  
+Credit & AR Solutions Lead | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com) | contact@oltrevista.com  
 
 ---
@@ -94,7 +94,7 @@ Or feel free to review the feature breakdown at [https://zukwend.com](https://zu
 Warm regards,
 
 {{sender_name}}  
-Credit & AR Solutions Lead | OLTREVISTA AI  
+Credit & AR Solutions Lead | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com)  
 
 ---
@@ -122,7 +122,7 @@ Chi gestisce quotidianamente il recupero crediti e l'amministrazione clienti aff
 
 La complessità aumenta quando i clienti operano all'estero (Germania, Francia, Spagna, etc.) e richiedono comunicazioni puntuali e impeccabili nella loro lingua madre.
 
-Abbiamo sviluppato **ZUKWEND** (di OLTREVISTA AI) proprio per restituire efficienza e precisione al Credit Manager:
+Abbiamo sviluppato **ZUKWEND** (di OLTREVISTA) proprio per restituire efficienza e precisione al Credit Manager:
 
 - **Oltre 10 Ore Risparmiate Ogni Settimana:** È sufficiente importare il file dell'aging (CSV o Excel). L'agente analizza i crediti, rileva le criticità e redige solleciti pronti per l'invio.
 - **6 Lingue Native:** Genera comunicazioni native in Italiano, Inglese, Tedesco, Francese, Spagnolo e Portoghese, rispettando formule e convenzioni commerciali locali.
@@ -136,7 +136,7 @@ Le andrebbe di valutare una rapida panoramica di come funziona il flusso di lavo
 Cordiali saluti,
 
 {{sender_name}}  
-Head of Credit Management Solutions | OLTREVISTA AI  
+Head of Credit Management Solutions | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com) | contact@oltrevista.com  
 
 ---
@@ -172,7 +172,7 @@ Tutti i dettagli tecnici sono consultabili alla pagina dedicata: [https://zukwen
 Un cordiale saluto,
 
 {{sender_name}}  
-Head of Credit Management Solutions | OLTREVISTA AI  
+Head of Credit Management Solutions | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com)  
 
 ---

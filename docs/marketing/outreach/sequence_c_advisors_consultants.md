@@ -4,7 +4,7 @@
 **Primary Value Hook:** Turnkey desktop tool to recommend to B2B business clients to eliminate overdue invoices without cloud servers, subscriptions, or complex IT infrastructure. Enhances client cash flow health with zero advisory liability.  
 **Languages:** English (EN) & Italian (IT)  
 **Cadence:** Email 1 (Day 0) + Email 2 (Day 3 Follow-up)  
-**Product:** ZUKWEND by OLTREVISTA AI ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))
+**Product:** ZUKWEND by OLTREVISTA ([https://zukwend.com](https://zukwend.com) / [https://oltrevista.com](https://oltrevista.com))
 
 ---
 
@@ -44,7 +44,7 @@ Recommending traditional enterprise credit-collection SaaS rarely works for SMEs
 
 We created an alternative that accounting firms and advisors are actively recommending to their client base.
 
-**ZUKWEND** (developed by OLTREVISTA AI) is an autonomous desktop AI agent that resolves invoice collections locally:
+**ZUKWEND** (developed by OLTREVISTA) is an autonomous desktop AI agent that resolves invoice collections locally:
 
 - **Zero Technical Overhead:** Works directly on the client's PC (Windows, macOS, Linux). No servers, no cloud databases, no IT maintenance required.
 - **Strict Financial Privacy:** Data never leaves the client's local workstation. Sensitive debtor lists, bank IBANs, and transaction histories remain 100% confidential.
@@ -60,7 +60,7 @@ You can review our product specifications at [https://zukwend.com](https://zukwe
 Kind regards,
 
 {{sender_name}}  
-Strategic Partnerships | OLTREVISTA AI  
+Strategic Partnerships | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com) | contact@oltrevista.com  
 
 ---
@@ -93,7 +93,7 @@ Feel free to also browse the technical details directly at [https://zukwend.com]
 Best regards,
 
 {{sender_name}}  
-Strategic Partnerships | OLTREVISTA AI  
+Strategic Partnerships | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com)  
 
 ---
@@ -123,7 +123,7 @@ Proporre a queste PMI le tipiche piattaforme cloud di gestione del credito spess
 
 Abbiamo progettato uno strumento che molti studi professionali stanno raccomandando con successo alle proprie aziende clienti.
 
-**ZUKWEND** (sviluppato da OLTREVISTA AI) è l'agente AI desktop autonomo per il recupero crediti e il sollecito fatture progettato specificamente per le imprese:
+**ZUKWEND** (sviluppato da OLTREVISTA) è l'agente AI desktop autonomo per il recupero crediti e il sollecito fatture progettato specificamente per le imprese:
 
 - **Nessuna Complessità Informatica:** Si installa come una normale applicazione desktop (Windows, macOS, Linux). Zero server da configurare, nessun database esterno o manutenzione tecnica.
 - **Privacy Totale e Garanzia GDPR:** I dati finanziari restano esclusivamente sul computer dell'azienda cliente. Nessun dato contabile viene inviato a server terzi.
@@ -139,7 +139,7 @@ Tutti i riferimenti sono disponibili su [https://zukwend.com](https://zukwend.co
 Cordiali saluti,
 
 {{sender_name}}  
-Relazioni con gli Studi Professionali | OLTREVISTA AI  
+Relazioni con gli Studi Professionali | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com) | contact@oltrevista.com  
 
 ---
@@ -172,7 +172,7 @@ Può trovare ulteriori informazioni e la documentazione sul nostro sito: [https:
 Ringraziandola per il tempo dedicato, le porgo i miei migliori saluti.
 
 {{sender_name}}  
-Relazioni con gli Studi Professionali | OLTREVISTA AI  
+Relazioni con gli Studi Professionali | OLTREVISTA  
 [https://oltrevista.com](https://oltrevista.com)  
 
 ---

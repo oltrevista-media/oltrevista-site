@@ -590,6 +590,30 @@ html { scroll-behavior: smooth; }
 
 footer a { color: #e2e8f0; text-decoration: none; transition: color .2s ease; }
 footer a:hover { color: #ffffff; text-decoration: underline; }
+
+.card, .trust-card, .faq-card, .faq-answer, #trust .card, .trust-center .card {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+.card p, .trust-card p, .faq-answer p, #trust .card p, .trust-center .card p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+code, .inline-code {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.88em;
+}
+
 </style>
     <!-- VideoObject JSON-LD (SEO) -->
     <script type="application/ld+json">

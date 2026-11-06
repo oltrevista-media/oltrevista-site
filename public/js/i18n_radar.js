@@ -65,7 +65,8 @@ window.I18N_RADAR = {
     "lemonSqueezyNotice": "Instant digital fulfillment via Lemon Squeezy secure checkout. Zero manual IBAN transfers.",
     "loadingAudit": "Analyzing failure modes via ISO 42001 Lead Auditor engine...",
     "statusSuccess": "Executive summary successfully generated.",
-    "statusLeadSent": "Audit parameters dispatched to contact@oltrevista.com for 24h SLA review."
+    "complianceNoticeCorporateEmail": "⚠️ Compliance Notice: ISO 42001 & EU AI Act Dossiers are restricted to registered corporate entities. Please enter a valid business email (e.g., name@company.com).",
+    "statusLeadSent": "Dossier unlocked and generated. Executive copy archived in CRM for priority review."
   },
   "de": {
     "radarTitle": "EU AI Act & ISO/IEC 42001 Risiko- und Chancen-Radar",
@@ -121,7 +122,8 @@ window.I18N_RADAR = {
     "lemonSqueezyNotice": "Direkte digitale Bereitstellung via Lemon Squeezy Checkout. Keine manuellen IBAN-Überweisungen.",
     "loadingAudit": "Fehlermodi werden über die ISO 42001 Lead Auditor Engine analysiert...",
     "statusSuccess": "Executive Summary erfolgreich generiert.",
-    "statusLeadSent": "Audit-Parameter an contact@oltrevista.com für 24h-SLA-Prüfung übermittelt."
+    "complianceNoticeCorporateEmail": "⚠️ Compliance-Hinweis: ISO 42001 & EU AI Act Dossiers sind registrierten Unternehmenseinheiten vorbehalten. Bitte geben Sie eine geschäftliche E-Mail-Adresse ein (z. B. name@unternehmen.de).",
+    "statusLeadSent": "Dossier freigeschaltet und erstellt. Executive-Kopie im CRM zur vorrangigen Prüfung archiviert."
   },
   "it": {
     "radarTitle": "Radar Rischi e Opportunità EU AI Act & ISO/IEC 42001",
@@ -177,7 +179,8 @@ window.I18N_RADAR = {
     "lemonSqueezyNotice": "Attivazione digitale immediata via checkout sicuro Lemon Squeezy. Zero bonifici IBAN manuali.",
     "loadingAudit": "Analisi dei vettori di non conformità con motore ISO 42001 Lead Auditor...",
     "statusSuccess": "Executive summary generato con successo.",
-    "statusLeadSent": "Parametri di audit trasmessi a contact@oltrevista.com per la revisione con SLA 24h."
+    "complianceNoticeCorporateEmail": "⚠️ Avviso di Conformità: I Dossier ISO 42001 ed EU AI Act sono riservati a entità aziendali registrate. Inserire un'email aziendale valida (es. nome@azienda.com).",
+    "statusLeadSent": "Dossier sbloccato e generato. Copia esecutiva archiviata nel CRM per revisione prioritaria."
   },
   "es": {
     "radarTitle": "Radar de Riesgos y Oportunidades EU AI Act & ISO/IEC 42001",
@@ -233,7 +236,8 @@ window.I18N_RADAR = {
     "lemonSqueezyNotice": "Entrega digital inmediata mediante checkout seguro Lemon Squeezy. Sin transferencias IBAN manuales.",
     "loadingAudit": "Analizando modos de fallo con el motor Lead Auditor ISO 42001...",
     "statusSuccess": "Resumen ejecutivo generado con éxito.",
-    "statusLeadSent": "Parámetros de auditoría remitidos a contact@oltrevista.com para revisión SLA 24h."
+    "complianceNoticeCorporateEmail": "⚠️ Aviso de Cumplimiento: Los expedientes ISO 42001 y Ley de IA de la UE están reservados a entidades corporativas registradas. Ingrese un correo electrónico corporativo válido (p. ej., nombre@empresa.com).",
+    "statusLeadSent": "Dossier desbloqueado y generado. Copia ejecutiva archivada en CRM para revisión prioritaria."
   },
   "fr": {
     "radarTitle": "Radar des Risques et Opportunités EU AI Act & ISO/IEC 42001",
@@ -289,7 +293,8 @@ window.I18N_RADAR = {
     "lemonSqueezyNotice": "Livraison numérique instantanée via paiement sécurisé Lemon Squeezy. Zéro virement IBAN manuel.",
     "loadingAudit": "Analyse des vecteurs de défaillance via le moteur Lead Auditor ISO 42001...",
     "statusSuccess": "Synthèse exécutive générée avec succès.",
-    "statusLeadSent": "Paramètres d'audit transmis à contact@oltrevista.com pour examen SLA 24h."
+    "complianceNoticeCorporateEmail": "⚠️ Avis de Conformité: Les dossiers ISO 42001 & Règlement IA de l'UE sont réservés aux entités corporatives enregistrées. Veuillez saisir une adresse e-mail professionnelle valide (ex. nom@entreprise.com).",
+    "statusLeadSent": "Dossier déverrouillé et généré. Copie exécutive archivée dans le CRM pour examen prioritaire."
   },
   "pt": {
     "radarTitle": "Radar de Riscos e Oportunidades EU AI Act & ISO/IEC 42001",
@@ -345,6 +350,7 @@ window.I18N_RADAR = {
     "lemonSqueezyNotice": "Ativação digital imediata através do checkout seguro Lemon Squeezy. Sem transferências IBAN manuais.",
     "loadingAudit": "A analisar vetores de falha com o motor Lead Auditor ISO 42001...",
     "statusSuccess": "Sumário executivo gerado com sucesso.",
-    "statusLeadSent": "Parâmetros de auditoria transmitidos para contact@oltrevista.com para revisão SLA 24h."
+    "complianceNoticeCorporateEmail": "⚠️ Aviso de Conformidade: Os dossiês ISO 42001 e Regulamento de IA da UE são reservados a entidades corporativas registradas. Insira um e-mail corporativo válido (ex. nome@empresa.com).",
+    "statusLeadSent": "Dossiê desbloqueado e gerado. Cópia executiva arquivada no CRM para revisão prioritária."
   }
 };

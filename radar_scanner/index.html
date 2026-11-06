@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="js/i18n_radar.js"></script>
+  <script src="/js/i18n_radar.js"></script>
   <style>
   .nav-logo { height: 38px; width: auto; object-fit: contain; vertical-align: middle; }
     :root {
@@ -1059,6 +1059,9 @@
         <div class="form-group">
           <label class="form-label" id="lblModalEmail">Corporate Email</label>
           <input type="email" id="leadEmail" class="form-input" required placeholder="j.weber@enterprise.com">
+          <div id="leadEmailError" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #f87171; padding: 0.65rem 0.85rem; border-radius: 8px; font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.4;">
+            ⚠️ Compliance Notice: ISO 42001 & EU AI Act Dossiers are restricted to registered corporate entities. Please enter a valid business email (e.g., name@company.com).
+          </div>
         </div>
         <div class="form-group">
           <label class="form-label" id="lblModalCompany">Company Name</label>
@@ -1305,53 +1308,106 @@
     }
 
     async function handleLeadSubmit(e) {
-      e.preventDefault();
-      const submitBtn = document.getElementById('btnModalSubmit');
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Connecting to Sovereign Local-First Engine via Cloudflare Worker...';
+      if (e && e.preventDefault) e.preventDefault();
 
-      const name = document.getElementById('leadName').value;
-      const email = document.getElementById('leadEmail').value;
-      const company = document.getElementById('leadCompany').value;
-      const role = document.getElementById('leadRole').value;
+      const emailInput = document.getElementById('leadEmail');
+      const email = emailInput ? emailInput.value.trim() : '';
+      const emailErrorEl = document.getElementById('leadEmailError');
 
-      const failed = CONTROLS_DATA.filter(c => controlStates[c.id] === 'noncompliant');
-      const passed = CONTROLS_DATA.filter(c => controlStates[c.id] === 'compliant');
-      const score = parseInt(document.getElementById('scoreDisplay').innerText, 10) || 0;
+      // SECTION B: CORPORATE EMAIL VALIDATION FILTER (JS REGEX ENFORCEMENT)
+      const consumerRegex = /@(gmail\.com|yahoo\.|hotmail\.|outlook\.|icloud\.com|proton\.|protonmail\.|aol\.com|live\.com|yandex\.|mail\.ru|tempmail|mailinator|10minutemail)/i;
+      if (!email || consumerRegex.test(email)) {
+        if (emailErrorEl) {
+          const i18n = window.I18N_RADAR?.[currentLang] || window.I18N_RADAR?.['en'];
+          emailErrorEl.innerText = (i18n && i18n.complianceNoticeCorporateEmail)
+            ? i18n.complianceNoticeCorporateEmail
+            : "⚠️ Compliance Notice: ISO 42001 & EU AI Act Dossiers are restricted to registered corporate entities. Please enter a valid business email (e.g., name@company.com).";
+          emailErrorEl.style.display = 'block';
+        }
+        if (emailInput) {
+          emailInput.style.borderColor = '#ef4444';
+          emailInput.focus();
+        }
+        return false;
+      }
+
+      // Valid corporate email domain: clear errors
+      if (emailErrorEl) emailErrorEl.style.display = 'none';
+      if (emailInput) emailInput.style.borderColor = '';
+
+      const name = document.getElementById('leadName') ? document.getElementById('leadName').value.trim() : '';
+      const company = document.getElementById('leadCompany') ? document.getElementById('leadCompany').value.trim() : '';
+      const role = document.getElementById('leadRole') ? document.getElementById('leadRole').value.trim() : '';
+
+      const failed = typeof CONTROLS_DATA !== 'undefined' ? CONTROLS_DATA.filter(c => controlStates[c.id] === 'noncompliant') : [];
+      const passed = typeof CONTROLS_DATA !== 'undefined' ? CONTROLS_DATA.filter(c => controlStates[c.id] === 'compliant') : [];
+      const score = parseInt(document.getElementById('scoreDisplay')?.innerText, 10) || 0;
       const sector = document.getElementById('radarSector') ? document.getElementById('radarSector').value : 'mfg';
       const overdue = document.getElementById('sliderOverdue') ? document.getElementById('sliderOverdue').value : 1850000;
       const dso = document.getElementById('sliderDso') ? document.getElementById('sliderDso').value : 74;
+      const slaPenalties = document.getElementById('kpiSlaPenalties') ? document.getElementById('kpiSlaPenalties').innerText : '€0';
 
       const leadPayload = {
-        name,
-        email,
-        company,
-        role,
-        score,
-        sector,
-        overdue,
-        dso,
+        name: name || 'Executive Auditor',
+        email: email,
+        company: company || 'Enterprise Reviewer',
+        role: role || 'Executive Director',
+        score: score,
+        sector: sector,
+        overdue: overdue,
+        revenue: '€' + Number(overdue).toLocaleString(),
+        dso: `${dso} days`,
+        slaPenalties: slaPenalties,
         failedCount: failed.length,
         failedControls: failed,
         passedControls: passed,
-        language: currentLang,
+        language: typeof currentLang !== 'undefined' ? currentLang : 'en',
         requestedProduct: 'Executive AI Audit Diagnostic'
       };
 
-      try {
+      if (typeof unlockExecutiveDossierInstant === 'function') {
+        unlockExecutiveDossierInstant(leadPayload);
+      } else {
+        closeLeadModal();
         fetch('/api/lead-notify', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(leadPayload)
         }).catch(err => console.warn('Lead dispatch background notice:', err));
 
-        await runRadarAssessment(leadPayload);
-      } catch (err) {
-        showRadarErrorState(err.message);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerText = 'Generate Audit Report';
+        const card = document.getElementById('execSummaryCard');
+        if (card) {
+          card.classList.add('active');
+          card.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const sec1 = document.getElementById('execSec1Text');
+        const sec2 = document.getElementById('execSec2Text');
+        const sec3 = document.getElementById('execSec3Text');
+        if (sec1 && (!sec1.innerText || sec1.innerText.includes('Analyzing'))) {
+          sec1.innerText = `Critical ISO 42001 & EU AI Act Annex III liabilities detected (${failed.length} control gaps). Statutory exposure under Regulation 2024/1689 Art. 99 requires executive oversight.`;
+        }
+        if (sec2 && (!sec2.innerText || sec2.innerText.includes('Evaluating'))) {
+          sec2.innerText = `Operational risk profile evaluated at ${score}% risk index. Immobilized working capital and SLA penalties estimated at ${slaPenalties} across sector ${sector.toUpperCase()}.`;
+        }
+        if (sec3 && (!sec3.innerText || sec3.innerText.includes('Prioritizing'))) {
+          sec3.innerText = `Immediate sovereign air-gapped remediation recommended: deploy local-first execution to isolate data and eliminate recurring SaaS governance exposure.`;
+        }
+
+        setTimeout(() => {
+          window.print();
+        }, 100);
+
+        const modalSubtitle = document.getElementById('txtModalSubtitle');
+        if (modalSubtitle) {
+          modalSubtitle.innerText = "Dossier unlocked and generated. Executive copy archived in CRM for priority review.";
+        }
+
+        if (typeof runRadarAssessment === 'function') {
+          runRadarAssessment(leadPayload).catch(err => console.warn('Background assessment sync:', err));
+        }
       }
+      return false;
     }
 
     // Initialize on window load

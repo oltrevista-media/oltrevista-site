@@ -385,6 +385,74 @@ function onYouTubeIframeAPIReady() {
   }
 }
 
+// Section F: Corporate Email Validation Filter & Instant Executive Unlock (v3.67)
+const CONSUMER_EMAIL_REGEX = /@(gmail\.com|yahoo\.|hotmail\.|outlook\.|icloud\.com|proton\.|protonmail\.|aol\.com|live\.com|yandex\.|mail\.ru|tempmail|mailinator|10minutemail)/i;
+
+function validateCorporateEmail(email) {
+  if (!email || typeof email !== 'string') return false;
+  return !CONSUMER_EMAIL_REGEX.test(email.trim());
+}
+
+function unlockExecutiveDossierInstant(leadPayload) {
+  // 1. Close lead capture modal instantly
+  if (typeof closeLeadModal === 'function') closeLeadModal();
+  const modal = document.getElementById('leadModal');
+  if (modal) modal.style.display = 'none';
+
+  // 2. Send background fetch to /api/lead-notify (asynchronous, non-blocking)
+  try {
+    fetch('/api/lead-notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(leadPayload)
+    }).catch(err => console.warn('Lead dispatch background notice:', err));
+  } catch (e) {
+    console.warn('Lead dispatch error:', e);
+  }
+
+  // 3. Instantly unlock full Executive Dossier view on /radar_scanner/ screen
+  const card = document.getElementById('execSummaryCard');
+  if (card) {
+    card.classList.add('active');
+    card.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Populate preliminary dossier content immediately so print dialog captures populated data
+  const sec1 = document.getElementById('execSec1Text');
+  const sec2 = document.getElementById('execSec2Text');
+  const sec3 = document.getElementById('execSec3Text');
+  const failedCount = leadPayload.failedCount || 0;
+  const score = leadPayload.score || 0;
+  const slaPenalties = leadPayload.slaPenalties || '€0';
+  const sector = (leadPayload.sector || 'mfg').toUpperCase();
+
+  if (sec1 && (!sec1.innerText || sec1.innerText.includes('Analyzing'))) {
+    sec1.innerText = `Critical ISO 42001 & EU AI Act Annex III liabilities detected (${failedCount} control gaps). Statutory exposure under Regulation 2024/1689 Art. 99 requires executive oversight.`;
+  }
+  if (sec2 && (!sec2.innerText || sec2.innerText.includes('Evaluating'))) {
+    sec2.innerText = `Operational risk profile evaluated at ${score}% risk index. Immobilized working capital and SLA penalties estimated at ${slaPenalties} across sector ${sector}.`;
+  }
+  if (sec3 && (!sec3.innerText || sec3.innerText.includes('Prioritizing'))) {
+    sec3.innerText = `Immediate sovereign air-gapped remediation recommended: deploy local-first execution to isolate data and eliminate recurring SaaS governance exposure.`;
+  }
+
+  // 4. Trigger PDF print/download dialogue (window.print()) within 0.1s
+  setTimeout(() => {
+    window.print();
+  }, 100);
+
+  // 5. Update modal copy
+  const modalSubtitle = document.getElementById('txtModalSubtitle');
+  if (modalSubtitle) {
+    modalSubtitle.innerText = "Dossier unlocked and generated. Executive copy archived in CRM for priority review.";
+  }
+
+  // Also trigger runRadarAssessment in background to update AI synthesis from Cloudflare Worker /api/assess
+  if (typeof runRadarAssessment === 'function') {
+    runRadarAssessment(leadPayload).catch(err => console.warn('Background assessment sync:', err));
+  }
+}
+
 // Export to window
 if (typeof window !== 'undefined') {
   window.BRAND_CONSTANTS = BRAND_CONSTANTS;

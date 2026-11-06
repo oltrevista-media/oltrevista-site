@@ -1,9 +1,7 @@
 // functions/api/lead-notify.js
-// Cloudflare Pages Function: Lead Dispatch & Audit Request Notifier to contact@oltrevista.com
+// Cloudflare Pages Function: Google Sheets CRM Webhook Dispatch & Lead Capture v3.67
 
 export async function onRequestPost(context) {
-  const { request, env } = context;
-
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -12,91 +10,31 @@ export async function onRequestPost(context) {
   };
 
   try {
-    const payload = await request.json();
-    const {
-      name = 'Anonymous Lead',
-      email = 'unknown@example.com',
-      company = 'N/A',
-      role = 'N/A',
-      score = 0,
-      failedCount = 0,
-      language = 'en',
-      requestedProduct = 'Executive AI Audit Diagnostic (€249)',
-      notes = ''
-    } = payload;
-
-    const leadTimestamp = new Date().toISOString();
-    const leadId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : `lead_${Date.now()}`;
-
-    const leadSummary = {
-      leadId,
-      timestamp: leadTimestamp,
-      targetRecipient: 'contact@oltrevista.com',
-      client: {
-        name,
-        email,
-        company,
-        role,
-        language
-      },
-      auditMetrics: {
-        score: `${score}%`,
-        failedControlsCount: failedCount,
-        requestedProduct,
-        notes
-      }
-    };
-
-    console.log('[LEAD DISPATCH - contact@oltrevista.com]', JSON.stringify(leadSummary));
-
-    // Optional webhook or Resend dispatch if configured
-    if (env && env.RESEND_API_KEY) {
-      try {
-        await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${env.RESEND_API_KEY}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            from: 'OLTREVISTA Radar <radar@oltrevista.com>',
-            to: ['contact@oltrevista.com'],
-            reply_to: email,
-            subject: `[LEAD AUDIT] ${company} (${score}% Risk Exposure) - ${requestedProduct}`,
-            text: `New Audit Lead Received:\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nRole: ${role}\nRisk Score: ${score}%\nFailed Controls: ${failedCount}\nLanguage: ${language}\nProduct: ${requestedProduct}\nLead ID: ${leadId}\nTimestamp: ${leadTimestamp}`
-          })
-        });
-      } catch (mailErr) {
-        console.error('Email dispatch error:', mailErr);
-      }
-    } else if (env && env.LEAD_WEBHOOK_URL) {
-      try {
-        await fetch(env.LEAD_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadSummary)
-        });
-      } catch (hookErr) {
-        console.error('Webhook dispatch error:', hookErr);
-      }
-    }
-
-    return new Response(JSON.stringify({
-      success: true,
-      message: 'Lead parameters securely captured and notified to contact@oltrevista.com',
-      leadId,
-      timestamp: leadTimestamp
-    }), {
+    const payload = await context.request.json();
+    const googleSheetsWebhookUrl = "https://script.google.com/macros/s/AKfycbwjZUzhAXEPMdebIgrURYt9w2WqckIMny3XjjsRiaItG28wuPX3YR4MJZH84mLbELi-LA/exec";
+    
+    // Forward payload to Google Apps Script Webhook
+    const response = await fetch(googleSheetsWebhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: payload.name || "N/D",
+        email: payload.email || "N/D",
+        company: payload.company || "N/D",
+        sector: payload.sector || "N/D",
+        revenue: payload.revenue || (payload.overdue ? "€" + Number(payload.overdue).toLocaleString() : "N/D"),
+        dso: payload.dso || "N/D",
+        slaPenalties: payload.slaPenalties || "N/D"
+      })
+    });
+    
+    return new Response(JSON.stringify({ result: "success", status: "dispatched_to_google_sheet" }), {
       status: 200,
       headers: corsHeaders
     });
-
-  } catch (error) {
-    return new Response(JSON.stringify({
-      success: false,
-      error: error.message || 'Lead notification failed'
-    }), {
-      status: 400,
+  } catch (err) {
+    return new Response(JSON.stringify({ result: "error", error: err.message }), {
+      status: 500,
       headers: corsHeaders
     });
   }

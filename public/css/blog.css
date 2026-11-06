@@ -1,7 +1,7 @@
-/* OLTREVISTA Blog & Header Alignment v3.58 */
+/* OLTREVISTA Blog & Header Alignment v3.59 */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px !important;
+  scroll-padding-top: 140px !important;
 }
 
 header {
@@ -13,8 +13,8 @@ header {
 }
 
 main.wrap, main.wrap-narrow {
-  padding-top: 120px !important;
-  scroll-margin-top: 120px !important;
+  padding-top: 140px !important;
+  scroll-margin-top: 140px !important;
 }
 
 .nav-logo {

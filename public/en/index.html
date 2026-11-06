@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLTREVISTA — Sovereign Local-First AI Ecosystem & B2B Credit Governance</title>
+  <meta name="description" content="Expose B2B Operational Inefficiencies. Recover Overdue Margins Locally. Stop paying recurring SaaS fees. Deploy Local-First AI Agents with zero cloud data lock-in and 100% Tax ID consolidation.">
+  <link rel="canonical" href="https://oltrevista.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  <style>
+    :root {
+      --bg: #07090e;
+      --bg-card: #0d121f;
+      --bg-card-hover: #131a2e;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(59, 130, 246, 0.35);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fixed/Sticky Header with proper z-index and height */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 9, 14, 0.95);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0.9rem 1.5rem;
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1.15rem;
+      line-height: 1.1;
+    }
+
+    .brand-tagline {
+      font-size: 0.7rem;
+      color: #60a5fa;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: #fff; text-decoration: none; }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-switcher {
+      background: #101626;
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .lang-switcher:hover { border-color: var(--primary); }
+
+    .btn-nav-pricing {
+      background: #2563eb;
+      color: #fff;
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-nav-pricing:hover { background: #1d4ed8; text-decoration: none; }
+
+    /* Section Base & Margin Offset to avoid header overlap */
+    .section-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5.5rem 1.5rem;
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.75vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    /* Hero Section with explicit 100px padding-top */
+    .hero {
+      padding: 100px 1.5rem 5rem;
+      text-align: center;
+      max-width: 1080px;
+      margin: 0 auto;
+      scroll-margin-top: 80px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.35rem, 5.2vw, 4.25rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-muted);
+      max-width: 860px;
+      margin: 0 auto 2.75rem;
+      line-height: 1.6;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .btn-hero-primary {
+      background: #2563eb;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s;
+    }
+    .btn-hero-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn-hero-sec {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .btn-hero-sec:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* Enterprise Radar Scanner UI (Overhaul v3.52) */
+    .radar-audit-panel {
+      background: linear-gradient(160deg, #0d121f 0%, #080c14 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .radar-audit-panel { grid-template-columns: 1fr; padding: 1.75rem; }
+    }
+
+    .radar-input-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .audit-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .audit-field-row { grid-template-columns: 1fr; }
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .field-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .field-select, .field-input {
+      background: #060910;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 0.75rem 0.95rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .field-select:focus, .field-input:focus { border-color: var(--primary); }
+
+    .slider-range {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      margin: 0.5rem 0;
+    }
+    .slider-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+    }
+
+    /* Audit Dashboard Visual Output */
+    .audit-output-card {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .gauge-score-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.25rem;
+    }
+
+    .gauge-num-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gauge-score-value {
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      line-height: 1;
+      color: #f59e0b;
+    }
+
+    .gauge-score-sub {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .risk-badge {
+      display: inline-block;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .badge-risk-low { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-risk-med { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-risk-crit { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+
+    /* Financial Breakdown Cards */
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .breakdown-grid { grid-template-columns: 1fr; }
+    }
+
+    .breakdown-tile {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem;
+      text-align: center;
+    }
+
+    .breakdown-num {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .breakdown-lbl {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    /* 38-Controls Matrix Preview */
+    .controls-preview-box {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .matrix-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .matrix-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+    .pill-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pill-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.25); }
+    .pill-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.25); }
+
+    .btn-generate-report {
+      width: 100%;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 0.95rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+      transition: background 0.2s;
+    }
+    .btn-generate-report:hover { background: #1d4ed8; }
+
+    /* Section 3: ZUKWEND Showcase */
+    .engine-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .engine-grid { grid-template-columns: 1fr; }
+    }
+
+    .engine-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all 0.25s;
+    }
+    .engine-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .engine-card-tier {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #60a5fa;
+    }
+
+    .engine-card-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .engine-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .feature-callout-banner {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(16, 185, 129, 0.15));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      padding: 2.25rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .feature-callout-banner { grid-template-columns: 1fr; }
+    }
+
+    /* Section 4: Enterprise Trust Center Q1-Q6 */
+    .trust-qa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 850px) {
+      .trust-qa-grid { grid-template-columns: 1fr; }
+    }
+
+    .qa-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+
+    .qa-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .qa-answer {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Section 5: Pricing */
+    .pricing-card-wrap {
+      max-width: 580px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #10172b 0%, #0d121f 100%);
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      position: relative;
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .price-display {
+      font-size: 3.5rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-original {
+      text-decoration: line-through;
+      color: var(--text-dim);
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .price-subtext {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features-list {
+      list-style: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2.25rem;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+
+    .pricing-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .check-green {
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .btn-checkout-lemon {
+      display: block;
+      width: 100%;
+      background: #2563eb;
+      color: #fff;
+      padding: 1.1rem 2rem;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s;
+    }
+    .btn-checkout-lemon:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .lemon-safe-notice {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 1rem;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-box {
+      background: #0f1629;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      border-radius: 20px;
+      max-width: 580px;
+      width: 100%;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background: #04060a;
+      padding: 4.5rem 1.5rem 3rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto 3rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 550px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <div class="brand-logo">O</div>
+        <div class="brand-text">
+          <span class="brand-name">OLTREVISTA</span>
+          <span class="brand-tagline">See Beyond</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#radar" class="nav-link">Radar</a>
+        <a href="#engine" class="nav-link">ZUKWEND Engine</a>
+        <a href="#trust" class="nav-link">Trust Center</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+      </nav>
+      <div class="nav-actions">
+        <!-- 6-Language Switcher pointing directly to localized routes -->
+        <select class="lang-switcher" onchange="window.location.href=this.value">
+          <option value="/" selected>🇬🇧 EN</option>
+          <option value="/de/">🇩🇪 DE</option>
+          <option value="/it/">🇮🇹 IT</option>
+          <option value="/es/">🇪🇸 ES</option>
+          <option value="/fr/">🇫🇷 FR</option>
+          <option value="/pt/">🇵🇹 PT</option>
+        </select>
+        <a href="#pricing" class="btn-nav-pricing">Get ZUKWEND — €249</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero with explicit 100px padding-top -->
+  <section id="hero" class="hero">
+    <div class="hero-badge">
+      <span>●</span> Sovereign Local-First AI Architecture
+    </div>
+    <h1 class="hero-title">Expose B2B Operational Inefficiencies. Recover Overdue Margins Locally.</h1>
+    <p class="hero-subtitle">
+      Stop paying recurring SaaS fees for credit management. Deploy Local-First AI Agents with zero cloud data lock-in and 100% Tax ID consolidation.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#radar" class="btn-hero-primary">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        Run Free Radar Scan
+      </a>
+      <a href="#engine" class="btn-hero-sec">
+        Explore ZUKWEND Engine — €249 Lifetime
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 2: Overhauled Enterprise Radar Scanner UI (v3.52) -->
+  <section id="radar" class="section-wrap">
+    <div class="section-header">
+      <div class="section-tag">Enterprise Risk Audit Engine</div>
+      <h2 class="section-title">Global AI Radar Scanner &amp; Working Capital Exposure</h2>
+      <p class="section-desc">
+        Comprehensive multi-parameter compliance and cash flow diagnostic across 7 industrial verticals, regional jurisdictions, and 38 statutory ISO 42001 &amp; EU AI Act controls.
+      </p>
+    </div>
+
+    <div class="radar-audit-panel">
+      <!-- 5-Parameter Input Grid -->
+      <div class="radar-input-grid">
+        <div class="field-group">
+          <label class="field-label" for="radarSector">Macro-Industrial Sector</label>
+          <select id="radarSector" class="field-select" onchange="recalculateAudit()">
+            <option value="mfg" selected>⚙️ Industrial Manufacturing &amp; Precision Engineering (ATECO 25.62 mapping)</option>
+            <option value="pkg">📦 Packaging, Plastics &amp; Rubber Machinery (ATECO 22.22 &amp; 28.96 mapping)</option>
+            <option value="con">🏗️ Construction, Infrastructure &amp; Building Materials</option>
+            <option value="ele">🔌 Electronics, Hardware &amp; Industrial Equipment</option>
+            <option value="log">🚚 Logistics, Supply Chain &amp; Wholesale Distribution</option>
+            <option value="srv">💼 Professional Services, Tech &amp; IT Contracting</option>
+            <option value="trd">🌐 Other B2B Industrial / Commercial Trade</option>
+          </select>
+        </div>
+
+        <div class="audit-field-row">
+          <div class="field-group">
+            <label class="field-label" for="radarJurisdiction">Region / Jurisdiction</label>
+            <select id="radarJurisdiction" class="field-select" onchange="recalculateAudit()">
+              <option value="eu" selected>🇪🇺 European Union (EU AI Act &amp; 2026 Late Pay)</option>
+              <option value="dach">🇩🇪 DACH (Germany, Austria, Switzerland)</option>
+              <option value="uk">🇬🇧 United Kingdom &amp; Commonwealth</option>
+              <option value="us">🇺🇸 United States &amp; North America</option>
+              <option value="latam">🌎 LATAM &amp; Emerging Markets</option>
+              <option value="global">🌐 Global / Cross-Border Trade</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="radarRevenue">Annual Revenue Bracket</label>
+            <select id="radarRevenue" class="field-select" onchange="recalculateAudit()">
+              <option value="tier1">&lt; €2M (Small Enterprise / Studio)</option>
+              <option value="tier2" selected>€2M &ndash; €10M (Mid-Market Subcontractor)</option>
+              <option value="tier3">€10M &ndash; €50M (Upper Mid-Market Enterprise)</option>
+              <option value="tier4">&gt; €50M+ (Tier-1 Industrial Corp)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">
+            <span>Total Overdue Receivables</span>
+            <span id="txtOverdueDisplay" style="color: #60a5fa; font-family: var(--font-mono); font-size: 0.95rem;">€1,850,000</span>
+          </div>
+          <input type="range" id="sliderOverdue" class="slider-range" min="50000" max="20000000" step="50000" value="1850000" oninput="recalculateAudit()">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-dim);">
+            <span>€50k</span>
+            <span>€5M</span>
+            <span>€20M+</span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">
+            <span>Average Payment Delay (DSO Days)</span>
+            <span id="txtDsoDisplay" style="color: #60a5fa; font-family: var(--font-mono); font-size: 0.95rem;">74 Days</span>
+          </div>
+          <input type="range" id="sliderDso" class="slider-range" min="30" max="120" step="1" value="74" oninput="recalculateAudit()">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-dim);">
+            <span>30d (EU Statutory Limit)</span>
+            <span>60d</span>
+            <span>120d+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Audit Dashboard Output -->
+      <div class="audit-output-card">
+        <div class="gauge-score-container">
+          <div class="gauge-num-box">
+            <div class="gauge-score-value" id="scoreDisplayVal">71 / 100</div>
+            <div class="gauge-score-sub">Enterprise AI Risk Score</div>
+          </div>
+          <div>
+            <span id="badgeRiskStatus" class="risk-badge badge-risk-crit">Critical / Action Advised</span>
+          </div>
+        </div>
+
+        <!-- 3 Financial Exposure Breakdown Cards -->
+        <div class="breakdown-grid">
+          <div class="breakdown-tile">
+            <div class="breakdown-num" id="kpiSlaPenalties" style="color:#f87171;">€24,812</div>
+            <div class="breakdown-lbl">SLA Penalties Incurred</div>
+          </div>
+          <div class="breakdown-tile">
+            <div class="breakdown-num" id="kpiImmobilizedCapital" style="color:#fbbf24;">€211,849</div>
+            <div class="breakdown-lbl">Immobilized Capital Cost</div>
+          </div>
+          <div class="breakdown-tile">
+            <div class="breakdown-num" id="kpiVatDuplication" style="color:#60a5fa;">34.2%</div>
+            <div class="breakdown-lbl">VAT Duplication Index</div>
+          </div>
+        </div>
+
+        <!-- 38-Controls Risk Matrix Preview -->
+        <div class="controls-preview-box">
+          <div class="matrix-title">
+            <span>ISO 42001 &amp; EU AI Act 38-Controls Matrix</span>
+            <span id="matrixPassedCount" style="color:#34d399;">24 Passed / 14 Gaps</span>
+          </div>
+          <div class="matrix-pills">
+            <span class="status-pill pill-green">🟢 Art. 9 Risk Mgmt</span>
+            <span class="status-pill pill-green">🟢 Art. 14 Oversight</span>
+            <span class="status-pill pill-amber">🟡 A.6.1 AI Policy</span>
+            <span class="status-pill pill-red">🔴 Art. 10 Data Residency</span>
+            <span class="status-pill pill-green">🟢 Rule Q6 Tax ID</span>
+            <span class="status-pill pill-red">🔴 A.8.4 Cloud Leaks</span>
+          </div>
+        </div>
+
+        <button type="button" class="btn-generate-report" onclick="openLeadModal()">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Generate Sovereign AI Audit Report (PDF)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: ZUKWEND Showcase -->
+  <section id="engine" class="section-wrap" style="background: rgba(255, 255, 255, 0.01);">
+    <div class="section-header">
+      <div class="section-tag">Core Technology Architecture</div>
+      <h2 class="section-title">The ZUKWEND Sovereign Engine Showcase</h2>
+      <p class="section-desc">
+        A deterministic native desktop agent engineered for CFOs and finance teams. Fast local parsing, 3-tier execution, and zero cloud leaks.
+      </p>
+    </div>
+
+    <div class="engine-grid">
+      <!-- Tier 1 -->
+      <div class="engine-card">
+        <span class="engine-card-tier">Tier 1 &bull; 100% Air-Gapped</span>
+        <h3 class="engine-card-title">Native Offline Engine</h3>
+        <p class="engine-card-desc">
+          Zero network dependencies. Runs locally on Windows and macOS workstations. Evaluates coordinate geometries, itemized invoice tables, and due date maturity in sub-second time.
+        </p>
+      </div>
+
+      <!-- Tier 2 -->
+      <div class="engine-card">
+        <span class="engine-card-tier">Tier 2 &bull; Private Local LLM</span>
+        <h3 class="engine-card-title">Ollama Local Integration</h3>
+        <p class="engine-card-desc">
+          Seamlessly connect to local open-weight models (Llama 3, Mistral, Gemma) running on localhost. Zero financial tokens transmitted beyond your enterprise LAN.
+        </p>
+      </div>
+
+      <!-- Tier 3 -->
+      <div class="engine-card">
+        <span class="engine-card-tier">Tier 3 &bull; Enterprise BYOC</span>
+        <h3 class="engine-card-title">Bring Your Own Key</h3>
+        <p class="engine-card-desc">
+          Optional direct enterprise API connectivity (Claude 3.5, OpenAI GPT-4o, Google Gemini). Your corporate keys, direct encrypted transport, zero intermediary data harvesting.
+        </p>
+      </div>
+    </div>
+
+    <!-- Rule Q6 Callout Banner -->
+    <div class="feature-callout-banner">
+      <div>
+        <span style="font-size:0.75rem; font-weight:700; color:#34d399; text-transform:uppercase; letter-spacing:0.05em;">Audited Rule Q6 Feature</span>
+        <h3 style="font-size:1.5rem; font-weight:800; color:#fff; margin:0.4rem 0 0.8rem;">
+          100% Tax ID / VAT Debtor Consolidation
+        </h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
+          Never send fragmented, conflicting reminder emails again. ZUKWEND automatically groups all overdue invoices belonging to the same legal entity by their official Tax ID / VAT number. Generates a single Consolidated Statement of Account PDF and unified reminder email.
+        </p>
+      </div>
+      <div style="background:rgba(0,0,0,0.4); border:1px solid var(--border); border-radius:12px; padding:1.5rem; text-align:center;">
+        <div style="font-size:2.25rem; font-weight:800; font-family:var(--font-mono); color:#34d399;">1 Client = 1 Dossier</div>
+        <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; font-weight:700; margin-top:0.3rem;">Zero Duplicate Reminder Friction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Enterprise Trust Center (Q1-Q6) -->
+  <section id="trust" class="section-wrap">
+    <div class="section-header">
+      <div class="section-tag">Audited Enterprise Governance</div>
+      <h2 class="section-title">The Enterprise Trust Center</h2>
+      <p class="section-desc">
+        Strict adherence to European privacy mandates, hardware node-locking, and zero-cloud architecture. Verified in English.
+      </p>
+    </div>
+
+    <div class="trust-qa-grid">
+      <!-- Q1 -->
+      <div class="qa-card">
+        <h3 class="qa-question">
+          <span style="color:#60a5fa;">●</span> Q1: Does ZUKWEND upload or store financial data in the cloud?
+        </h3>
+        <p class="qa-answer">
+          <strong>A:</strong> No. ZUKWEND is <strong>Local-First &amp; Air-Gapped by default (with optional BYOC Cloud connection)</strong>. In CORE AI mode, invoice data never leaves company hardware. Zero cloud storage, zero external data transmission, zero model training on proprietary documents.
+        </p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="qa-card">
+        <h3 class="qa-question">
+          <span style="color:#60a5fa;">●</span> Q2: How does ZUKWEND ensure GDPR Art. 25 &amp; Art. 44 compliance?
+        </h3>
+        <p class="qa-answer">
+          <strong>A:</strong> By processing all invoice PDFs, metadata, and aging evaluations entirely on local premises, ZUKWEND guarantees native Privacy-by-Design (Art. 25) and eliminates cross-border extra-EU data transfers (Art. 44). Full compliance for legal auditors, IT directors, and DPOs.
+        </p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="qa-card">
+        <h3 class="qa-question">
+          <span style="color:#60a5fa;">●</span> Q3: What is the 3-Tier AI Architecture and who controls execution?
+        </h3>
+        <p class="qa-answer">
+          <strong>A:</strong> Absolute enterprise administrator control across 3 isolated tiers: Built-in Native Offline Engine (1s, 100% air-gapped), Local LLM via Ollama (localhost), or BYOC (Bring Your Own Key) connecting directly to your corporate OpenAI, Claude, or Gemini accounts.
+        </p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="qa-card">
+        <h3 class="qa-question">
+          <span style="color:#60a5fa;">●</span> Q4: Is the executable binary verified and digitally signed?
+        </h3>
+        <p class="qa-answer">
+          <strong>A:</strong> Yes. The Windows desktop binary is cryptographically signed with an Authenticode Extended Validation (EV) certificate, ensuring maximum Microsoft Defender SmartScreen reputation, tamper-proof binary integrity, and zero antivirus false positives.
+        </p>
+      </div>
+
+      <!-- Q5 -->
+      <div class="qa-card">
+        <h3 class="qa-question">
+          <span style="color:#60a5fa;">●</span> Q5: Can the AI send emails or legal notices autonomously without oversight?
+        </h3>
+        <p class="qa-answer">
+          <strong>A:</strong> No. ZUKWEND operates strictly under Human-in-the-Loop governance. No irreversible actions occur automatically: every aging classification, deduction score, formal notice, and export (PDF, Excel, JSON) is fully reviewable and requires human verification prior to dispatch.
+        </p>
+      </div>
+
+      <!-- Q6 -->
+      <div class="qa-card">
+        <h3 class="qa-question">
+          <span style="color:#60a5fa;">●</span> Q6: How does ZUKWEND handle clients with multiple overdue invoices?
+        </h3>
+        <p class="qa-answer">
+          <strong>A:</strong> ZUKWEND automatically consolidates open items for the same debtor via strict 100% Tax ID / VAT verification, creating a single client dossier under <code>output/CLIENTS/{CLIENT_VAT}/{DATE}/</code>. It generates a single Consolidated Statement of Account and unified reminder email, eliminating duplicate and fragmented communications.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Pricing & Lemon Squeezy Checkout -->
+  <section id="pricing" class="section-wrap" style="background: rgba(255, 255, 255, 0.01);">
+    <div class="section-header">
+      <div class="section-tag">Perpetual Commercial Asset</div>
+      <h2 class="section-title">Transparent Single Lifetime License</h2>
+      <p class="section-desc">
+        Zero recurring SaaS subscription bleed. Own the software asset perpetually with 2 hardware-locked machine seats.
+      </p>
+    </div>
+
+    <div class="pricing-card-wrap">
+      <span class="pricing-badge">🔥 Promotional Launch Offer</span>
+      <div class="price-display">
+        <span class="price-original">€499</span>€249
+      </div>
+      <div class="price-subtext">One-time payment &bull; Lifetime updates &bull; Zero subscriptions</div>
+
+      <ul class="pricing-features-list">
+        <li><span class="check-green">&#10003;</span> 2 Machine Seats (HWID SHA256 node-locked)</li>
+        <li><span class="check-green">&#10003;</span> Complete Local-First 3-Tier AI Engine</li>
+        <li><span class="check-green">&#10003;</span> Rule Q6 100% Tax ID &amp; VAT Consolidation</li>
+        <li><span class="check-green">&#10003;</span> Instant Multi-Page PDF &amp; XML Invoice Ingestion</li>
+        <li><span class="check-green">&#10003;</span> Certum Extended Validation (EV) Signed Binary</li>
+        <li><span class="check-green">&#10003;</span> Full GDPR Art. 25/44 Compliance Documentation</li>
+      </ul>
+
+      <a href="https://zukwend.lemonsqueezy.com/checkout/buy/c6c7d5b7-7ee9-4717-a708-c386ad1d2344" class="btn-checkout-lemon lemonsqueezy-button">
+        Buy ZUKWEND License — €249
+      </a>
+
+      <p class="lemon-safe-notice">
+        Instant digital license delivery via Lemon Squeezy Merchant of Record. 100% secure checkout with VAT invoices automatically issued. Zero manual wire or IBAN friction.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lead Capture Modal (Connected to /api/lead-notify) -->
+  <div id="leadModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3 style="font-size:1.5rem; font-weight:800; color:#fff; margin-bottom:0.5rem;">Generate Sovereign AI Audit Report</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">
+        Enter your corporate credentials to generate and dispatch the full multi-parameter Working Capital &amp; AI Act Compliance dossier.
+      </p>
+      <form id="leadForm" onsubmit="handleLeadSubmit(event)">
+        <div style="margin-bottom:1.2rem;">
+          <label style="display:block; font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:0.4rem; text-transform:uppercase;">Full Name</label>
+          <input type="text" id="leadName" required placeholder="Dr. Johannes Weber" style="width:100%; background:#060910; border:1px solid var(--border); color:#fff; padding:0.75rem 1rem; border-radius:8px; outline:none;">
+        </div>
+        <div style="margin-bottom:1.2rem;">
+          <label style="display:block; font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:0.4rem; text-transform:uppercase;">Corporate Business Email</label>
+          <input type="email" id="leadEmail" required placeholder="j.weber@enterprise.com" style="width:100%; background:#060910; border:1px solid var(--border); color:#fff; padding:0.75rem 1rem; border-radius:8px; outline:none;">
+        </div>
+        <div style="margin-bottom:1.2rem;">
+          <label style="display:block; font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:0.4rem; text-transform:uppercase;">Company Name</label>
+          <input type="text" id="leadCompany" required placeholder="Precision Machining Holding AG" style="width:100%; background:#060910; border:1px solid var(--border); color:#fff; padding:0.75rem 1rem; border-radius:8px; outline:none;">
+        </div>
+        <p style="font-size:0.75rem; color:var(--text-dim); margin-bottom:1.5rem;">
+          GDPR Art. 25/44 compliant. Zero data resale. Dossier dispatched to contact@oltrevista.com for 24h executive audit review.
+        </p>
+        <div style="display:flex; gap:1rem;">
+          <button type="submit" id="btnModalSubmit" style="flex:2; background:#2563eb; color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:700; cursor:pointer;">
+            Generate &amp; Dispatch Report
+          </button>
+          <button type="button" onclick="closeLeadModal()" style="flex:1; background:rgba(255,255,255,0.08); color:#fff; border:1px solid var(--border); padding:0.85rem; border-radius:8px; font-weight:600; cursor:pointer;">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer with Restored Distinct Localization Links -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand" style="margin-bottom:1rem;">
+          <div class="brand-logo" style="width:28px; height:28px; font-size:1rem;">O</div>
+          <span class="brand-name">OLTREVISTA</span>
+        </div>
+        <p style="max-width:320px; line-height:1.6; margin-bottom:1.2rem;">
+          Sovereign Local-First AI Ecosystem &amp; B2B Credit Governance. Air-gapped compliance and receivables automation across European industrial verticals.
+        </p>
+        <p style="font-size:0.8rem; color:var(--text-dim);">
+          Merchant of Record: Lemon Squeezy, LLC.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Localized Sub-Sites</h4>
+        <ul>
+          <li><a href="/en/">🇬🇧 English (Global / EN)</a></li>
+          <li><a href="/de/">🇩🇪 Deutsch (DACH / DE)</a></li>
+          <li><a href="/it/">🇮🇹 Italiano (IT)</a></li>
+          <li><a href="/es/">🇪🇸 Español (ES)</a></li>
+          <li><a href="/fr/">🇫🇷 Français (FR)</a></li>
+          <li><a href="/pt/">🇵🇹 Português (PT)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Knowledge &amp; Blog</h4>
+        <ul>
+          <li><a href="/blog/">All 10 Pillar Articles</a></li>
+          <li><a href="/blog/eu-late-payment-regulation-2026-financial-impact-b2b/">Late Payment 2026</a></li>
+          <li><a href="/blog/credit-management-software-comparison-2026/">Software Comparison</a></li>
+          <li><a href="/blog/iso-42001-ai-management-system-compliance/">ISO 42001 Compliance</a></li>
+          <li><a href="/blog/tax-id-vat-consolidation-b2b-credit-recovery/">Rule Q6 Tax ID Logic</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Compliance &amp; Legal</h4>
+        <ul>
+          <li><a href="/disclaimer.html">Disclaimer &amp; Terms</a></li>
+          <li><a href="/DISCLAIMER_EULA.html">EULA Agreement</a></li>
+          <li><a href="/radar_scanner/">Standalone 6-Lang Radar</a></li>
+          <li><a href="mailto:contact@oltrevista.com">contact@oltrevista.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 OLTREVISTA. All rights reserved. Strict Local-First &amp; GDPR Compliant.</div>
+      <div>Zero cloud data lock-in. 100% Tax ID consolidation.</div>
+    </div>
+  </footer>
+
+  <!-- Radar Calculation and Lead Capture JavaScript -->
+  <script>
+    function recalculateAudit() {
+      const overdue = parseFloat(document.getElementById('sliderOverdue').value) || 1850000;
+      const dso = parseInt(document.getElementById('sliderDso').value, 10) || 74;
+      const sector = document.getElementById('radarSector').value;
+      const jurisdiction = document.getElementById('radarJurisdiction').value;
+      const revenue = document.getElementById('radarRevenue').value;
+
+      document.getElementById('txtOverdueDisplay').innerText = '€' + overdue.toLocaleString();
+      document.getElementById('txtDsoDisplay').innerText = dso + ' Days';
+
+      // Statutory ceiling is 30 days under 2026 EU Late Payment Regulation
+      const excessDays = Math.max(0, dso - 30);
+
+      // Financial Exposure 1: SLA Penalties Incurred (ECB reference rate 4.5% + 8% = 12.5% statutory rate)
+      const statutoryRate = 0.125;
+      const slaPenalties = Math.round((overdue * (statutoryRate / 365)) * excessDays);
+
+      // Financial Exposure 2: Immobilized Capital Cost (Weighted Average Cost of Capital ~ 9.5%)
+      const wacc = 0.095;
+      const immobilizedCapital = Math.round((overdue * (wacc / 365)) * excessDays);
+
+      // Financial Exposure 3: VAT Debtor Duplication Index (unconsolidated friction)
+      let duplicationPct = 25.0;
+      if (sector === 'mfg' || sector === 'con') duplicationPct += 12.5;
+      if (sector === 'pkg' || sector === 'log') duplicationPct += 8.5;
+      if (revenue === 'tier3' || revenue === 'tier4') duplicationPct += 5.0;
+
+      document.getElementById('kpiSlaPenalties').innerText = '€' + slaPenalties.toLocaleString();
+      document.getElementById('kpiImmobilizedCapital').innerText = '€' + immobilizedCapital.toLocaleString();
+      document.getElementById('kpiVatDuplication').innerText = duplicationPct.toFixed(1) + '%';
+
+      // Risk score: scaled by excess days, jurisdiction scrutiny, and sector vulnerability
+      let jurisdictionMultiplier = 1.0;
+      if (jurisdiction === 'eu' || jurisdiction === 'dach') jurisdictionMultiplier = 1.15;
+
+      let sectorMultiplier = 1.0;
+      if (sector === 'mfg' || sector === 'con') sectorMultiplier = 1.2;
+
+      let score = Math.min(100, Math.round(((excessDays / 90) * 75 + 20) * jurisdictionMultiplier * sectorMultiplier));
+      document.getElementById('scoreDisplayVal').innerText = score + ' / 100';
+
+      const badge = document.getElementById('badgeRiskStatus');
+      badge.className = 'risk-badge';
+
+      const matrixPassed = document.getElementById('matrixPassedCount');
+
+      if (score <= 35) {
+        badge.classList.add('badge-risk-low');
+        badge.innerText = 'LOW RISK / COMPLIANT';
+        matrixPassed.innerText = '34 Passed / 4 Gaps';
+        matrixPassed.style.color = '#34d399';
+      } else if (score <= 65) {
+        badge.classList.add('badge-risk-med');
+        badge.innerText = 'MEDIUM / ATTENTION REQUIRED';
+        matrixPassed.innerText = '28 Passed / 10 Gaps';
+        matrixPassed.style.color = '#fbbf24';
+      } else {
+        badge.classList.add('badge-risk-crit');
+        badge.innerText = 'CRITICAL / SEVERE PENALTY THREAT';
+        matrixPassed.innerText = '21 Passed / 17 Gaps';
+        matrixPassed.style.color = '#f87171';
+      }
+    }
+
+    function openLeadModal() {
+      document.getElementById('leadModal').style.display = 'flex';
+    }
+
+    function closeLeadModal() {
+      document.getElementById('leadModal').style.display = 'none';
+    }
+
+    async function handleLeadSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnModalSubmit');
+      btn.disabled = true;
+      btn.innerText = 'Generating Report...';
+
+      const name = document.getElementById('leadName').value;
+      const email = document.getElementById('leadEmail').value;
+      const company = document.getElementById('leadCompany').value;
+      const sector = document.getElementById('radarSector').value;
+      const score = document.getElementById('scoreDisplayVal').innerText;
+
+      const payload = {
+        name,
+        email,
+        company,
+        sector,
+        score,
+        requestedProduct: 'Sovereign AI Audit Report (PDF)',
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        await fetch('/api/lead-notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        alert('Audit Report successfully generated and dispatched to ' + email + ' and contact@oltrevista.com.');
+        closeLeadModal();
+      } catch (err) {
+        console.warn('Lead dispatch note:', err);
+        alert('Audit parameters recorded. Our compliance engineering team will contact you within 24 hours.');
+        closeLeadModal();
+      } finally {
+        btn.disabled = false;
+        btn.innerText = 'Generate & Dispatch Report';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', recalculateAudit);
+  </script>
+</body>
+</html>

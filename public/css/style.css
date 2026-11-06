@@ -1,0 +1,13 @@
+/* OLTREVISTA Global Layout & Scroll Anchoring v3.54 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px !important;
+}
+
+body {
+  padding-top: 120px !important;
+}
+
+section, .hero, .features, .pricing, .faq, main {
+  scroll-margin-top: 120px !important;
+}

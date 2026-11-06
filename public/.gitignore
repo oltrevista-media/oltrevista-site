@@ -1,0 +1,41 @@
+# Ambienti ed Environment Secrets
+.env
+.env.*
+*.env
+
+# Chiavi private, credenziali e certificati crittografici
+*.key
+*.pem
+*.pfx
+*.p12
+*.pkcs12
+*.crt
+*.cert
+id_rsa*
+id_ed25519*
+secrets/
+credentials/
+
+# File di configurazione sensibili / utente
+config.json
+*config*.json
+*config*.local.json
+
+# Cartelle dati personali, elaborazioni e log
+output/
+output/**
+CLIENTS/
+logs/
+*.log
+temp/
+tmp/
+cache/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node / dependencies
+node_modules/
+.npm/

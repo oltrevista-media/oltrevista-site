@@ -1,0 +1,73 @@
+# OLTREVISTA — Multi-Agent Ecosystem & Official Holding Repository
+
+[![Ecosystem](https://img.shields.io/badge/Ecosystem-OLTREVISTA%20AI-orange.svg)](https://oltrevista.com)
+[![Main Product](https://img.shields.io/badge/Flagship-ZUKWEND%20Billing%20AI-blue.svg)](https://zukwend.com)
+[![Architecture](https://img.shields.io/badge/AI%20Engine-3--Tier%20Native%20Out--of--the--Box-purple.svg)](https://zukwend.com)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Offline%20First-green.svg)](https://oltrevista.com)
+
+**OLTREVISTA** ([oltrevista.com](https://oltrevista.com)) è l'ecosistema tecnologico dedicato alla progettazione e distribuzione di agenti software autonomi e ibridi per la governance amministrativa, contabile e finanziaria d'impresa. 
+
+Ispirato ai principi di sovranità del dato, architettura *Offline-First* e *Privacy-by-Design*, OLTREVISTA combina motori analitici nativi eseguiti localmente con la flessibilità opzionale dei modelli di intelligenza artificiale open-weights (on-premise) e cloud (BYOC).
+
+- **Holding & Suite**: [https://oltrevista.com](https://oltrevista.com)
+- **Prodotto Flagship (ZUKWEND)**: [https://zukwend.com](https://zukwend.com)
+
+---
+
+## 🌟 Panoramica Ecosistema — ZUKWEND
+
+L'ecosistema OLTREVISTA presenta la sua soluzione software desktop:
+
+### Agent 1: ZUKWEND — Hybrid AR & Billing AI Agent (Disponibile / Live)
+- Agente desktop specializzato nella gestione e automazione del ciclo attivo (Accounts Receivable), aging analysis, monitoraggio delle fatture scadute e generazione autonoma di bozze di sollecito multilivello e multilingue.
+- **Architettura AI 3-Tier Nativa**:
+  - **Level 1 — Built-in Native AI Agent (Included)**: 100% operativo out-of-the-box subito dopo l'installazione. Zero configurazioni, zero installazioni esterne, zero Ollama obbligatorio, zero chiavi API richieste per iniziare.
+  - **Level 2 — Local Ollama Power-Up (Optional)**: Integrazione 1-click per LLM open-weights locali (*Gemma, Mistral, Qwen, DeepSeek*) per massima privacy offline.
+  - **Level 3 — Cloud BYOC Power-Up (Optional)**: Connessione diretta con chiavi personali (*Claude, OpenAI, Gemini, DeepSeek, Groq*).
+- **Licenza**: **~~349 €~~ 249 € una tantum** [OFFERTA DI LANCIO — LICENZA A VITA] (Pagamento unico una tantum. Zero abbonamenti). Licenza a vita con 2 attivazioni hardware-locked.
+- Portale dedicato: [https://zukwend.com](https://zukwend.com)
+
+---
+
+## 🌐 Struttura Multilingue & Routing verso DOMAIN_MAIN (`zukwend.com`)
+
+Il repository `oltrevista-site` gestisce la presenza web istituzionale e le pagine di atterraggio geolocalizzate, garantendo indicizzazione organica internazionale e un'esperienza d'uso fluida verso il dominio principale di prodotto `zukwend.com`.
+
+### 1. Pagine e Mercati Geolocalizzati
+La piattaforma distribuisce 6 landing page geolocalizzate ad alte prestazioni:
+
+| Mercato / Lingua | File Repository | Canale Tematico | Routing Risorse Prodotto |
+| :--- | :--- | :--- | :--- |
+| 🇬🇧 **Global / English** | `index.html` / `oltrevista-ai.html` | Autonomous AI Ecosystem & AR Agent | ➔ `https://zukwend.com` |
+| 🇮🇹 **Italiano** | `it-solleciti-fatture.html` | Solleciti di Pagamento & Gestione Crediti | ➔ `https://zukwend.com/it-solleciti-fatture.html` |
+| 🇩🇪 **Deutsch** | `de-mahnwesen-software.html` | Mahnwesen Software & Rechnungs-Mahnungen | ➔ `https://zukwend.com/de-mahnwesen-software.html` |
+| 🇫🇷 **Français** | `fr-relance-factures.html` | Logiciel de Relance Factures Impayées | ➔ `https://zukwend.com/fr-relance-factures.html` |
+| 🇪🇸 **Español** | `es-recordatorios-pago.html` | Recordatorios de Pago & Gestión de Cobranzas | ➔ `https://zukwend.com/es-recordatorios-de-pago.html` |
+| 🇵🇹 **Português** | `pt-lembrete-faturas.html` | Gestão de Cobrança e Lembretes de Faturas | ➔ `https://zukwend.com/pt-lembrete-de-faturas.html` |
+
+### 2. Architettura di Routing verso `zukwend.com`
+Tutte le landing regionali e i portali dell'ecosistema convogliano il download dei pacchetti applicativi, i termini contrattuali e il checkout verso i percorsi ufficiali su `zukwend.com`:
+- **Documentazione Legale & EULA (Routing Multilingue)**:
+  - 🇬🇧 **EN**: `https://zukwend.com/#disclaimer` (oppure `https://zukwend.com/en-invoice-reminder-software.html#disclaimer`)
+  - 🇮🇹 **IT**: `https://zukwend.com/it-solleciti-fatture.html#disclaimer` (documento esteso: `https://zukwend.com/disclaimer.html`)
+  - 🇩🇪 **DE**: `https://zukwend.com/de-mahnwesen-software.html#disclaimer`
+  - 🇫🇷 **FR**: `https://zukwend.com/fr-relance-factures.html#disclaimer`
+  - 🇪🇸 **ES**: `https://zukwend.com/es-recordatorios-de-pago.html#disclaimer`
+  - 🇵🇹 **PT**: `https://zukwend.com/pt-lembrete-de-faturas.html#disclaimer`
+- **Checkout Ufficiale**: [Integrazione diretta LemonSqueezy](https://zukwend.lemonsqueezy.com/checkout/buy/c6c7d5b7-7ee9-4717-a708-c386ad1d2344) per licenza a vita (~~349 €~~ 249 € una tantum — Offerta di Lancio).
+- **Video Presentazione Ufficiale — Guarda come Funziona**: [https://youtu.be/a6V65LRN4oc](https://youtu.be/a6V65LRN4oc)
+
+---
+
+## 🔒 Sicurezza, Privacy & Note Legali
+
+Tutti i software dell'ecosistema OLTREVISTA sono sviluppati secondo gli standard più rigorosi:
+- **Zero Telemetria Esterna & Architettura Local-First**: Nessun tracking delle abitudini o invio non autorizzato di documenti su cloud proprietari.
+- **Privacy Policy (Local-First)**: [https://oltrevista.com/DISCLAIMER_EULA.html#privacy](https://oltrevista.com/DISCLAIMER_EULA.html#privacy)
+- **Termini di Licenza & EULA**: [https://oltrevista.com/DISCLAIMER_EULA.html](https://oltrevista.com/DISCLAIMER_EULA.html)
+- **Contatti Ufficiali & Licenze**: contact@oltrevista.com *(destinato esclusivamente a quesiti amministrativi e licenze commerciali per il software desktop autonomo fornito As-Is)*
+- **Supporto SmartScreen**: Come applicazione desktop nativa offline non invasa da telemetria continua, al primo avvio su Windows l'utente può visualizzare l'avviso standard *"PC protetto da Windows / App non riconosciuta"* (risolvibile cliccando su *"Ulteriori informazioni"* ➔ *"Esegui comunque"*).
+
+---
+© 2026 **OLTREVISTA** — [oltrevista.com](https://oltrevista.com) | [zukwend.com](https://zukwend.com). Tutti i diritti riservati.
+

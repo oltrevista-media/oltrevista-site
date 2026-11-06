@@ -113,7 +113,7 @@
     
     <style>
 html {
-  scroll-padding-top: 110px;
+  scroll-padding-top: 120px !important;
   scroll-behavior: smooth; scroll-behavior: smooth; }
     :root {
         --bg: #0b0f17;
@@ -594,7 +594,7 @@ html {
 
 footer a { color: #e2e8f0; text-decoration: none; transition: color .2s ease; }
 footer a:hover { color: #ffffff; text-decoration: underline; }
-  section, .hero, .features, .pricing, .faq { scroll-margin-top: 110px; }
+  section, .hero, .features, .pricing, .faq { scroll-margin-top: 120px !important; }
   </style>
     <!-- VideoObject JSON-LD (SEO) -->
     <script type="application/ld+json">
@@ -640,7 +640,7 @@ footer a:hover { color: #ffffff; text-decoration: underline; }
                 <a href="#features" class="btn btn-demo">Ver Funcionalidades</a>
             </div>
 
-<main class="wrap">
+<main class="wrap" style="padding-top: 120px !important;">
     <!-- Breadcrumbs -->
     <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="/index.html">OLTREVISTA</a>
@@ -701,8 +701,7 @@ footer a:hover { color: #ffffff; text-decoration: underline; }
 </code></pre>
 
 <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);">
-  <iframe 
-    src="https://www.youtube.com/embed/8br111qJf8E?vq=hd1080&hd=1&cc_load_policy=1&rel=0&modestbranding=1" 
+  <iframe id="zukwend-demo-player" src="https://www.youtube.com/embed/8br111qJf8E?vq=hd1080&hd=1&cc_load_policy=1&rel=0&modestbranding=1&enablejsapi=1" 
     title="ZUKWEND - Autónomous Accounts Receivable AI Agent Demo" 
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -815,8 +814,7 @@ footer a:hover { color: #ffffff; text-decoration: underline; }
     <div class="wrap">
                 <div class="footer-social" style="margin-bottom: 16px;">
         <div class="social-links" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-            <a href="https://www.youtube.com/watch?v=8br111qJf8E" target="_blank" rel="noopener">📺 Video Demo HD</a>
-            <a href="https://youtu.be/8br111qJf8E" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.youtube.com/watch?v=8br111qJf8E" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);padding:6px 14px;border-radius:6px;font-size:0.85rem;font-weight:700;text-decoration:none;">📺 Watch 1080p HD Demo</a>
             <a href="https://x.com/oltrevista_ai" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
         </div>
     </div>
@@ -826,5 +824,22 @@ footer a:hover { color: #ffffff; text-decoration: underline; }
     </div>
 </footer>
 
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    function onYouTubeIframeAPIReady() {
+      var player = new YT.Player('zukwend-demo-player', {
+        events: {
+          'onReady': function(e) {
+            e.target.setPlaybackQuality('hd1080');
+          },
+          'onStateChange': function(e) {
+            if (e.data === YT.PlayerState.PLAYING) {
+              e.target.setPlaybackQuality('hd1080');
+            }
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>

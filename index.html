@@ -30,7 +30,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 120px !important; }
 
     body {
       background-color: var(--bg);
@@ -154,7 +154,7 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 5.5rem 1.5rem;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 120px !important;
     }
 
     .section-header {
@@ -190,11 +190,11 @@
     /* Hero Section with explicit 100px padding-top */
     .hero {
       padding: 110px 1.5rem 5rem;
-      scroll-margin-top: 110px;
+      scroll-margin-top: 120px !important;
       text-align: center;
       max-width: 1080px;
       margin: 0 auto;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 120px !important;
     }
 
     .hero-badge {
@@ -832,7 +832,7 @@
   </header>
 
   <!-- Section 1: Hero with explicit 100px padding-top -->
-  <section id="hero" class="hero">
+  <section id="hero" class="hero" style="padding-top: 120px !important;">
     <div class="hero-badge">
       <span>●</span> Sovereign Local-First AI Architecture
     </div>
@@ -1025,7 +1025,7 @@
 
     
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/8br111qJf8E?vq=hd1080&amp;rel=0&amp;modestbranding=1" title="ZUKWEND Sovereign AI Agent Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="zukwend-demo-player" src="https://www.youtube.com/embed/8br111qJf8E?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;enablejsapi=1" title="ZUKWEND Sovereign AI Agent Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
 
@@ -1236,7 +1236,7 @@
           <li><a href="/disclaimer.html">Disclaimer &amp; Terms</a></li>
           <li><a href="/DISCLAIMER_EULA.html">EULA Agreement</a></li>
           <li><a href="/radar_scanner/">Standalone 6-Lang Radar</a></li>
-          <li><a href="https://www.youtube.com/watch?v=8br111qJf8E" target="_blank" rel="noopener">📺 YouTube Demo (1080p HD)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=8br111qJf8E" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);padding:4px 10px;border-radius:6px;font-size:0.8rem;font-weight:700;text-decoration:none;">📺 Watch 1080p HD Demo</a></li>
           <li><a href="mailto:contact@oltrevista.com">contact@oltrevista.com</a></li>
         </ul>
       </div>
@@ -1363,6 +1363,23 @@
     }
 
     window.addEventListener('DOMContentLoaded', recalculateAudit);
+  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    function onYouTubeIframeAPIReady() {
+      var player = new YT.Player('zukwend-demo-player', {
+        events: {
+          'onReady': function(e) {
+            e.target.setPlaybackQuality('hd1080');
+          },
+          'onStateChange': function(e) {
+            if (e.data === YT.PlayerState.PLAYING) {
+              e.target.setPlaybackQuality('hd1080');
+            }
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>

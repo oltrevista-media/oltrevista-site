@@ -1,3 +1,13 @@
+// Immutable Brand Constants (Whitelisted against translation — v3.63)
+const BRAND_CONSTANTS = Object.freeze({
+  BRAND_NAME: "OLTREVISTA",
+  BRAND_PRODUCT: "ZUKWEND",
+  BRAND_TAGLINE: "See Beyond"
+});
+if (typeof window !== 'undefined') {
+  window.BRAND_CONSTANTS = BRAND_CONSTANTS;
+}
+
 // OLTREVISTA 6-Language Dictionary for AI Act & ISO 42001 Radar
 // Auto-generated for EN, DE, IT, ES, FR, PT
 window.I18N_RADAR = {

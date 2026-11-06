@@ -680,6 +680,36 @@
       color: var(--text-dim);
       margin-top: auto;
     }
+  
+    /* Print Layout for Internal Executive Committee Review (CEO, IT, Legal) — v3.63 */
+    @media print {
+      header, footer, .lang-select, .nav-actions, .filter-bar, .modal-overlay, .share-export-bar, .btn-executive-unlock, button, .video-container, .btn-lock-license {
+        display: none !important;
+      }
+      body, main {
+        background: #fff !important;
+        color: #000 !important;
+        padding-top: 0 !important;
+      }
+      .radar-audit-panel, .cost-of-inaction-box, #atecoBenchmarkBox, .control-card, .score-panel, .product-proof-card {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem !important;
+      }
+      .field-select, input[type=range] {
+        display: none !important;
+      }
+      .breakdown-num, .gauge-pct {
+        color: #000 !important;
+      }
+      .breakdown-lbl, .gauge-lbl {
+        color: #333 !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -689,8 +719,8 @@
       <a href="/" class="brand">
         <img src="/logo.png" alt="OLTREVISTA" class="nav-logo" style="height:38px; width:auto; vertical-align:middle;">
         <div>
-          <span class="brand-name">OLTREVISTA</span>
-          <span class="brand-sub">Sovereign AI Hub</span>
+          <span class="brand-name" translate="no">OLTREVISTA</span>
+          <span class="brand-tagline" translate="no">See Beyond</span>
         </div>
       </a>
       <div class="nav-actions">
@@ -717,6 +747,26 @@
     </div>
 
     
+    
+    <!-- Feature 1: Buying Committee Shareability (PDF & Unique URL — BOOM Feature 1) -->
+    <div class="share-export-bar" style="max-width: 1200px; margin: 0 auto 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: flex-end; align-items: center; padding: 0.85rem 1.25rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 12px;">
+      <div style="margin-right: auto; font-size: 0.82rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
+        <span>📊</span> Executive Audit Committee Toolkit:
+      </div>
+      <button type="button" class="btn-share-action" onclick="printAuditSummary()" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #1e293b; color: #fff; border: 1px solid #334155; padding: 0.55rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        📄 Print / Save PDF Summary
+      </button>
+      <button type="button" class="btn-share-action" id="btnCopyHash" onclick="copyShareableAuditLink()" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #1e293b; color: #60a5fa; border: 1px solid #2563eb; padding: 0.55rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+        <span id="txtCopyLink">🔗 Copy Shareable Link</span>
+      </button>
+      <button type="button" class="btn-share-action" onclick="openLeadModal()" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: #fff; border: none; padding: 0.55rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        📩 Request Official Executive Report
+      </button>
+    </div>
+
     <!-- 5-Parameter Enterprise Risk Audit Dashboard (Mirroring Master Hub) -->
     <div class="radar-audit-panel" style="max-width: 1200px; margin: 0 auto 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
       <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">5-Parameter Enterprise Risk Audit Engine</div>
@@ -777,6 +827,34 @@
             <span>30d (EU Statutory Limit)</span><span>60d</span><span>120d+</span>
           </div>
         </div>
+
+        <!-- Feature 4: Dynamic ATECO Peer Benchmark Alert (CRIBIS 2026 Data — BOOM Feature 4) -->
+        <div id="atecoBenchmarkBox" style="grid-column: 1 / -1; background: rgba(15, 23, 42, 0.7); border: 1px solid #334155; border-radius: 10px; padding: 1.1rem; margin-top: 0.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
+              <span>📊</span> CRIBIS 2026 Sector Benchmark Alert
+            </span>
+            <span id="txtBenchmarkRanking" style="font-size: 0.8rem; font-weight: 800; color: #f87171; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); padding: 0.2rem 0.6rem; border-radius: 6px;">
+              Bottom 22% of Sector ATECO 25.62
+            </span>
+          </div>
+          <p id="txtBenchmarkWarning" style="font-size: 0.88rem; color: #e2e8f0; line-height: 1.5; margin-bottom: 0.85rem;">
+            DSO of 74 Days places your company in the bottom 22% of Sector ATECO 25.62 [General Mechanics]. EU Statutory Limit: 30 Days.
+          </p>
+          <div style="background: #07090e; border-radius: 8px; padding: 0.75rem 1rem; border: 1px solid #1e293b;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.45rem;">
+              <span style="color: #34d399; font-weight: 700;">● EU Statutory Ceiling: 30d</span>
+              <span id="txtSectorAvgLbl" style="color: #fbbf24; font-weight: 700;">● Sector Avg: 78d</span>
+              <span id="txtUserDsoLbl" style="color: #f87171; font-weight: 800;">● Your DSO: 74d</span>
+            </div>
+            <div style="position: relative; height: 12px; background: #1e293b; border-radius: 9999px; overflow: hidden;">
+              <div style="position: absolute; left: 0; width: 25%; height: 100%; background: #10b981;" title="30d Compliant"></div>
+              <div id="barSectorMarker" style="position: absolute; left: 65%; width: 3px; height: 100%; background: #fbbf24; z-index: 2;" title="Sector Avg"></div>
+              <div id="barUserDso" style="position: absolute; left: 0; width: 61%; height: 100%; background: rgba(239, 68, 68, 0.65); z-index: 1;" title="Your DSO"></div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Financial Exposure Breakdown -->
@@ -793,6 +871,29 @@
           <div id="kpiVatDuplication" style="font-size:1.5rem; font-weight:800; color:#60a5fa; font-family:monospace;">34.2%</div>
           <div style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; margin-top:0.3rem;">VAT Duplication Index</div>
         </div>
+      <!-- Feature 2: Price Anchoring on Cost of Inaction (BOOM Feature 2) -->
+      <div class="cost-of-inaction-box" style="margin-top: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(245, 158, 11, 0.08)); border: 1px solid rgba(239, 68, 68, 0.35); border-radius: 12px; padding: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.25rem;">
+        <div>
+          <div style="font-size: 0.75rem; font-weight: 700; color: #f87171; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem;">
+            ⚠️ Executive Financial Exposure
+          </div>
+          <div style="font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.3;">
+            Annual Cost of Inaction: <span id="txtCostOfInaction" style="color: #f87171; font-family: var(--font-mono, monospace);">€236,661</span>/year
+          </div>
+          <div style="font-size: 0.9rem; color: #94a3b8; margin-top: 0.3rem;">
+            vs <strong style="color: #34d399;">ZUKWEND Sovereign License: €249 One-Time Lifetime</strong>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;">
+          <span class="roi-badge" id="txtRoiBadge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); padding: 0.4rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">
+            ROI: Recovers <span id="txtRoiMultiple">950</span>x its license cost on the first consolidated dossier.
+          </span>
+          <a href="https://zukwend.lemonsqueezy.com/checkout/buy/c6c7d5b7-7ee9-4717-a708-c386ad1d2344" class="btn-lock-license lemonsqueezy-button" style="background: #2563eb; color: #fff; padding: 0.65rem 1.25rem; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: background 0.2s;">
+            Eliminate Cost of Inaction — €249
+          </a>
+        </div>
+      </div>
+
       </div>
     </div>
 
@@ -881,6 +982,41 @@
         </div>
       </section>
     </div>
+  
+    <!-- Feature 3: Immediate Visual Product Proof (BOOM Feature 3) -->
+    <div class="product-proof-card" style="max-width: 1200px; margin: 2.5rem auto 3rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 1.75rem;">
+        <div style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #34d399; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25); padding: 0.25rem 0.75rem; border-radius: 9999px;">
+          Deterministic Recovery Engine
+        </div>
+        <h3 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">
+          See How ZUKWEND Eliminates This Working Capital Risk Locally in 30 Seconds
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
+          Watch the air-gapped desktop engine ingest multi-page invoice PDFs, apply Rule Q6 Tax ID debtor consolidation, and export audited collection packages without sending a single byte to external clouds.
+        </p>
+      </div>
+
+      <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 900px; margin: 0 auto 1.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+        <iframe id="zukwend-demo-player" src="https://www.youtube.com/embed/8br111qJf8E?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;enablejsapi=1" title="ZUKWEND Master Demo HD 1080p" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto; text-align: left;">
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem;">
+          <div style="font-weight: 700; color: #34d399; font-size: 0.88rem;">🔒 100% Air-Gapped</div>
+          <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.25rem;">Runs locally on Windows/macOS with zero cloud data lock-in.</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem;">
+          <div style="font-weight: 700; color: #60a5fa; font-size: 0.88rem;">📋 Rule Q6 Tax ID Consolidation</div>
+          <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.25rem;">1 Client = 1 Statement. Never send fragmented reminder emails again.</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem;">
+          <div style="font-weight: 700; color: #fbbf24; font-size: 0.88rem;">⚡ Sub-Second Parsing</div>
+          <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.25rem;">Evaluates itemized coordinate tables & maturity in sub-second time.</div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- Lead Capture / Executive Summary Request Modal -->
@@ -1213,7 +1349,15 @@
     }
 
     // Initialize on window load
-    window.addEventListener('DOMContentLoaded', initRadar);
+    window.addEventListener('DOMContentLoaded', () => {
+      initRadar();
+      if (typeof restoreAuditStateFromHash === 'function') restoreAuditStateFromHash();
+    });
   </script>
+
+  <!-- Scripts for Standalone Radar v3.63 -->
+  <script src="/js/radar_scanner.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+
 </body>
 </html>

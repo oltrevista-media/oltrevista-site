@@ -1,4 +1,4 @@
-/* OLTREVISTA Global Layout & Scroll Anchoring v3.59 */
+/* OLTREVISTA Global Layout & Scroll Anchoring v3.63 */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 140px !important;
@@ -8,7 +8,17 @@ body {
   padding-top: 140px !important;
 }
 
-section, .hero, .features, .pricing, .faq, main, article {
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 140px !important;
+  scroll-margin-top: 140px !important;
+}
+
+section, .section-wrap {
+  padding: 6rem 0 !important;
   scroll-margin-top: 140px !important;
 }
 
@@ -25,4 +35,9 @@ header {
   width: auto;
   object-fit: contain;
   vertical-align: middle;
+}
+
+.nav-link.active {
+  color: #fff !important;
+  border-bottom: 2px solid var(--primary, #3b82f6);
 }

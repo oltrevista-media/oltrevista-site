@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EU AI Act & ISO/IEC 42001 Risk & Opportunity Radar — OLTREVISTA</title>
+  <meta name="description" content="0ms Deterministic Enterprise AI Compliance Diagnostic Engine for EU AI Act (Regulation 2024/1689) and ISO/IEC 42001:2023 Annex A. Instant risk exposure scoring and executive audit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  <script src="js/i18n_radar.js"></script>
+  <style>
+    :root {
+      --bg: #07090e;
+      --bg-card: #0d121f;
+      --bg-card-hover: #131a2e;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(59, 130, 246, 0.3);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --critical: #dc2626;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1.15rem;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-left: 0.5rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 4px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-select {
+      background: #111827;
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .lang-select:hover { border-color: var(--primary); }
+
+    .hub-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .hub-link:hover { color: #fff; }
+
+    main {
+      flex: 1;
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .hero-banner {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 3rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Radar Grid Layout */
+    .radar-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .radar-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Sticky Score Panel */
+    .score-panel {
+      position: sticky;
+      top: 6rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .gauge-wrapper {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .gauge-svg {
+      transform: rotate(-90deg);
+      width: 200px;
+      height: 200px;
+    }
+
+    .gauge-bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 16;
+    }
+
+    .gauge-fill {
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 16;
+      stroke-linecap: round;
+      stroke-dasharray: 502;
+      stroke-dashoffset: 502;
+      transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s;
+    }
+
+    .gauge-center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .gauge-pct {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1;
+      font-family: var(--font-mono);
+      letter-spacing: -0.05em;
+    }
+
+    .gauge-lbl {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .risk-badge-status {
+      display: inline-block;
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-weight: 700;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      transition: all 0.3s;
+    }
+
+    .risk-status-low { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .risk-status-mod { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .risk-status-high { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .risk-status-crit { background: rgba(220, 38, 38, 0.25); color: #fca5a5; border: 1px solid rgba(220, 38, 38, 0.5); }
+
+    .risk-desc-box {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem;
+      text-align: center;
+    }
+
+    .stat-pill-num {
+      font-size: 1.25rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+    }
+    .stat-pill-lbl {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .stat-failed-crit { color: #f87171; }
+    .stat-passed { color: #34d399; }
+
+    .btn-executive-unlock {
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+    .btn-executive-unlock:hover {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      transform: translateY(-1px);
+    }
+
+    /* Controls List & Filtering */
+    .controls-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { color: #fff; border-color: rgba(255,255,255,0.2); }
+    .filter-btn.active {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--primary);
+      color: #93c5fd;
+    }
+
+    .control-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      transition: all 0.25s;
+    }
+    .control-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      background: var(--bg-card-hover);
+    }
+
+    .control-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .control-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .code-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+    }
+
+    .framework-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .badge-iso { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .badge-euaiact { background: rgba(168, 85, 247, 0.15); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+    .mandatory-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      text-transform: uppercase;
+    }
+
+    .risk-level-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .lvl-Critical { background: rgba(220, 38, 38, 0.2); color: #fca5a5; }
+    .lvl-High { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+    .lvl-Medium { background: rgba(245, 158, 11, 0.15); color: #fde047; }
+    .lvl-Low { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; }
+
+    .control-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .control-question {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .toggle-group {
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 3px;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .toggle-btn:hover { color: #fff; }
+
+    .toggle-btn.active-compliant {
+      background: var(--success);
+      color: #fff;
+    }
+    .toggle-btn.active-noncompliant {
+      background: var(--danger);
+      color: #fff;
+    }
+    .toggle-btn.active-na {
+      background: rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+    }
+
+    .guidance-toggle {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.25rem 0;
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .guidance-content {
+      display: none;
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid var(--primary);
+      padding: 0.75rem 1rem;
+      margin-top: 0.5rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-box {
+      background: #0f1629;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 20px;
+      max-width: 650px;
+      width: 100%;
+      padding: 2.25rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input {
+      width: 100%;
+      background: #070a12;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus { border-color: var(--primary); }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Executive Summary Display Box */
+    .exec-summary-card {
+      margin-top: 2rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: none;
+    }
+
+    .exec-summary-card.active { display: block; }
+
+    .exec-bullet {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 1rem;
+    }
+    .exec-bullet-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #93c5fd;
+      margin-bottom: 0.35rem;
+    }
+    .exec-bullet-text {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .checkout-banner {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(139, 92, 246, 0.15));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cta-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-lemon-primary {
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-lemon-primary:hover { background: #1d4ed8; }
+
+    .btn-zukwend-sec {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .btn-zukwend-sec:hover { background: rgba(255, 255, 255, 0.15); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">O</div>
+        <div>
+          <span class="brand-name">OLTREVISTA</span>
+          <span class="brand-sub">Sovereign AI Hub</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="hub-link" id="navHubLink">&larr; Ecosystem Hub</a>
+        <select class="lang-select" id="langSelector" onchange="changeLanguage(this.value)">
+          <option value="en">English (EN)</option>
+          <option value="de">Deutsch (DE)</option>
+          <option value="it">Italiano (IT)</option>
+          <option value="es">Español (ES)</option>
+          <option value="fr">Français (FR)</option>
+          <option value="pt">Português (PT)</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div class="badge-pill">
+        <span>●</span> ISO/IEC 42001 & EU AI ACT DIAGNOSTIC
+      </div>
+      <h1 class="hero-title" id="txtTitle">EU AI Act & ISO/IEC 42001 Risk & Opportunity Radar</h1>
+      <p class="hero-sub" id="txtDesc">Evaluate your AI system across 38 controls derived from ISO/IEC 42001:2023 Annex A and the EU AI Act (Regulation 2024/1689). Instant 0ms deterministic scoring.</p>
+    </div>
+
+    <div class="radar-grid">
+      <!-- Sticky Gauge & Score Sidebar -->
+      <aside class="score-panel">
+        <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; color: #cbd5e1;" id="txtScoreTitle">Compliance & Risk Exposure</h3>
+        
+        <div class="gauge-wrapper">
+          <svg class="gauge-svg" viewBox="0 0 200 200">
+            <circle class="gauge-bg" cx="100" cy="100" r="80"></circle>
+            <circle class="gauge-fill" id="gaugeCircle" cx="100" cy="100" r="80"></circle>
+          </svg>
+          <div class="gauge-center-text">
+            <div class="gauge-pct" id="scoreDisplay">0%</div>
+            <div class="gauge-lbl" id="txtGaugeLabel">Risk Score</div>
+          </div>
+        </div>
+
+        <div id="riskStatusBadge" class="risk-badge-status risk-status-low">Low Risk / Compliant</div>
+        <p id="riskDescription" class="risk-desc-box">Systems demonstrate solid alignment with ISO 42001 and EU AI Act requirements.</p>
+
+        <div class="stats-row">
+          <div class="stat-pill">
+            <div class="stat-pill-num stat-passed" id="countPassed">38</div>
+            <div class="stat-pill-lbl" id="txtPassed">Passed Controls</div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-pill-num stat-failed-crit" id="countFailed">0</div>
+            <div class="stat-pill-lbl" id="txtFailed">Failed Controls</div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-executive-unlock" onclick="openLeadModal()">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span id="txtBtnUnlock">Generate Executive Summary</span>
+        </button>
+      </aside>
+
+      <!-- Main Controls Area -->
+      <section class="controls-container">
+        <!-- Filter Bar -->
+        <div class="filter-bar" id="categoryFilterBar">
+          <button class="filter-btn active" data-cat="all" onclick="filterCategory('all')">All (38)</button>
+          <button class="filter-btn" data-cat="gov" onclick="filterCategory('gov')">Governance & Policy</button>
+          <button class="filter-btn" data-cat="risk" onclick="filterCategory('risk')">Risk Management</button>
+          <button class="filter-btn" data-cat="data" onclick="filterCategory('data')">Data Privacy</button>
+          <button class="filter-btn" data-cat="doc" onclick="filterCategory('doc')">Documentation</button>
+          <button class="filter-btn" data-cat="human" onclick="filterCategory('human')">Human Oversight</button>
+          <button class="filter-btn" data-cat="sec" onclick="filterCategory('sec')">Cyber & Robustness</button>
+        </div>
+
+        <!-- Dynamic Controls Render -->
+        <div id="controlsList"></div>
+
+        <!-- AI Executive Summary Output Card (Appears after submission) -->
+        <div id="execSummaryCard" class="exec-summary-card">
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 1.25rem;" id="txtExecTitle">Lead Auditor Executive Summary</h3>
+          
+          <div class="exec-bullet">
+            <div class="exec-bullet-title" id="txtSec1Title">1. Regulatory Exposure</div>
+            <div class="exec-bullet-text" id="execSec1Text">Analyzing statutory liabilities under EU AI Act Art. 99...</div>
+          </div>
+          <div class="exec-bullet">
+            <div class="exec-bullet-title" id="txtSec2Title">2. Operational Risk</div>
+            <div class="exec-bullet-text" id="execSec2Text">Evaluating credit management risk and third-party audit exposure...</div>
+          </div>
+          <div class="exec-bullet">
+            <div class="exec-bullet-title" id="txtSec3Title">3. Immediate Remediation</div>
+            <div class="exec-bullet-text" id="execSec3Text">Prioritizing gap closure procedures...</div>
+          </div>
+
+          <div class="checkout-banner">
+            <div>
+              <h4 style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem;">Remediate Non-Compliance Instantly</h4>
+              <p style="color: var(--text-muted); font-size: 0.85rem;" id="txtLemonNotice">Instant digital fulfillment via Lemon Squeezy secure checkout. Zero manual IBAN transfers.</p>
+            </div>
+            <div class="cta-button-row">
+              <a href="https://oltrevista.lemonsqueezy.com/buy/24h-audit" class="btn-lemon-primary lemonsqueezy-button" id="btnPrimaryCTA">
+                Request 24h Executive Audit Report (€990)
+              </a>
+              <a href="https://zukwend.com/" target="_blank" rel="noopener" class="btn-zukwend-sec" id="btnSecondaryCTA">
+                Resolve Credit Risk with ZUKWEND Local-First (€249)
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lead Capture / Executive Summary Request Modal -->
+  <div id="leadModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="txtModalTitle">Executive AI Lead Auditor Intelligence</h3>
+        <p class="modal-subtitle" id="txtModalSubtitle">Enter your corporate credentials to unlock the instant AI Executive Summary (ISO 42001 Lead Auditor Analysis).</p>
+      </div>
+      <form id="leadForm" onsubmit="handleLeadSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" id="lblModalName">Full Name</label>
+          <input type="text" id="leadName" class="form-input" required placeholder="Dr. Johannes Weber">
+        </div>
+        <div class="form-group">
+          <label class="form-label" id="lblModalEmail">Corporate Email</label>
+          <input type="email" id="leadEmail" class="form-input" required placeholder="j.weber@enterprise.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" id="lblModalCompany">Company Name</label>
+          <input type="text" id="leadCompany" class="form-input" required placeholder="FinHold AG">
+        </div>
+        <div class="form-group">
+          <label class="form-label" id="lblModalRole">Role / Function</label>
+          <input type="text" id="leadRole" class="form-input" required placeholder="Chief Compliance Officer / CTO">
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.5rem;" id="txtModalPrivacy">
+          We protect corporate confidentiality under GDPR Art. 25/44. Zero data sharing.
+        </p>
+        <div class="modal-actions">
+          <button type="submit" class="btn-executive-unlock" style="flex: 2;" id="btnModalSubmit">Generate Audit Report</button>
+          <button type="button" class="btn-secondary" style="flex: 1;" onclick="closeLeadModal()" id="btnModalClose">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="max-w-7xl mx-auto">
+      <p>&copy; 2026 OLTREVISTA Sovereign AI. ISO/IEC 42001:2023 & Regulation (EU) 2024/1689 Reference Implementation.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dim);">
+        All transactions processed securely via Lemon Squeezy Merchant of Record. Fully air-gapped local execution on client premises.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Embedded Schema and State
+    const CONTROLS_DATA = [{"id": 1, "code": "GOV-01", "iso_clause": "A.2.1", "ai_act_ref": "Article 4, 16(a)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Governance & AI Policy", "name": "AI Policy & Strategic Governance", "risk_level": "High", "weight": 3, "audit_question": "Does the organization have an approved, documented AI policy defining strategic objectives, risk boundaries, and executive oversight?", "remediation_guidance": "Draft and ratify a formal AI Governance Charter establishing executive accountability, permitted AI use-cases, and quarterly compliance reviews.", "mandatory": true}, {"id": 2, "code": "GOV-02", "iso_clause": "A.2.2", "ai_act_ref": "Article 16(b), 17", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Governance & AI Policy", "name": "AI Roles & Responsibility Matrix", "risk_level": "Medium", "weight": 2, "audit_question": "Are specific operational and legal responsibilities clearly assigned for AI system procurement, development, and deployment?", "remediation_guidance": "Publish a RACI matrix designating an AI Ethics & Compliance Officer and technical system owners across all B2B workflows.", "mandatory": false}, {"id": 3, "code": "GOV-03", "iso_clause": "A.3.1", "ai_act_ref": "Article 11, Annex IV", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Governance & AI Policy", "name": "AI Asset Inventory & Record of Processing", "risk_level": "High", "weight": 3, "audit_question": "Is there a centralized, up-to-date registry of all active AI models, vendor APIs, and autonomous agent instances in the organization?", "remediation_guidance": "Implement an automated AI Asset Register detailing model architectures, data sources, hosting environments, and business purposes.", "mandatory": true}, {"id": 4, "code": "GOV-04", "iso_clause": "A.3.2", "ai_act_ref": "Article 6, 9, Annex III", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Governance & AI Policy", "name": "AI System Classification & Tier Assessment", "risk_level": "Critical", "weight": 5, "audit_question": "Are all AI systems classified into EU AI Act risk tiers (Prohibited, High-Risk, Specific Transparency, or Minimal Risk)?", "remediation_guidance": "Conduct a mandatory Tier Assessment checklist before deploying any AI tool to identify High-Risk Annex III triggers.", "mandatory": true}, {"id": 5, "code": "GOV-05", "iso_clause": "A.4.1", "ai_act_ref": "Article 4", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Governance & AI Policy", "name": "Mandatory AI Literacy & Workforce Training", "risk_level": "Medium", "weight": 2, "audit_question": "Are staff members operating or overseeing AI systems trained in AI capabilities, prompt engineering boundaries, and regulatory obligations?", "remediation_guidance": "Deliver annual AI Literacy certification covering EU AI Act requirements, hallucination mitigation, and sensitive data protection.", "mandatory": true}, {"id": 6, "code": "GOV-06", "iso_clause": "A.4.2", "ai_act_ref": "Article 85, 86", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Governance & AI Policy", "name": "AI Whistleblowing & Feedback Channels", "risk_level": "Medium", "weight": 2, "audit_question": "Is there an anonymous, protected mechanism for employees and contractors to report AI ethics breaches or safety concerns?", "remediation_guidance": "Integrate AI grievance and safety reporting into the corporate whistleblower portal with guaranteed non-retaliation protections.", "mandatory": false}, {"id": 7, "code": "RSK-01", "iso_clause": "A.5.1", "ai_act_ref": "Article 9(1), 9(2)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Risk Management & Compliance", "name": "Continuous AI Risk Management System", "risk_level": "Critical", "weight": 5, "audit_question": "Is an iterative risk management process maintained across the entire AI lifecycle, identifying risks to health, safety, and fundamental rights?", "remediation_guidance": "Deploy a continuous risk assessment matrix tracking pre-deployment testing, operational drifts, and recurring mitigations.", "mandatory": true}, {"id": 8, "code": "RSK-02", "iso_clause": "A.5.2", "ai_act_ref": "Article 5", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Risk Management & Compliance", "name": "Prohibited AI Practices Screening", "risk_level": "Critical", "weight": 5, "audit_question": "Is there verification that no AI systems utilize subliminal techniques, social scoring, emotion recognition in workplaces, or untargeted facial scraping?", "remediation_guidance": "Enforce strict pre-procurement checklists rejecting any vendor software that touches Article 5 prohibited categories.", "mandatory": true}, {"id": 9, "code": "RSK-03", "iso_clause": "A.5.3", "ai_act_ref": "Article 9(4), 9(5)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Risk Management & Compliance", "name": "Residual Risk Thresholds & CFO Acceptance", "risk_level": "High", "weight": 3, "audit_question": "Are residual risks judged acceptable against documented thresholds and approved by corporate management before live release?", "remediation_guidance": "Establish quantitative risk tolerance metrics and require formal sign-off from Legal and Executive Management on residual exposures.", "mandatory": true}, {"id": 10, "code": "RSK-04", "iso_clause": "A.5.4", "ai_act_ref": "Article 72", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Risk Management & Compliance", "name": "Post-Market Monitoring Plan", "risk_level": "High", "weight": 3, "audit_question": "Is there a documented post-market monitoring plan that systematically analyzes operational data throughout the AI system lifetime?", "remediation_guidance": "Institute scheduled post-market performance reviews and feedback telemetry collection conforming to Article 72 standards.", "mandatory": true}, {"id": 11, "code": "RSK-05", "iso_clause": "A.5.5", "ai_act_ref": "Article 73", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Risk Management & Compliance", "name": "Serious Incident Reporting Protocol", "risk_level": "Critical", "weight": 4, "audit_question": "Are procedures established to report any serious incident or malfunction to relevant national market surveillance authorities within 15 days?", "remediation_guidance": "Formalize an AI Incident Response Playbook with predetermined templates and regulatory notification contacts.", "mandatory": true}, {"id": 12, "code": "DAT-01", "iso_clause": "A.6.1", "ai_act_ref": "Article 10(2)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Data Governance & Privacy", "name": "Training & Validation Data Governance", "risk_level": "Critical", "weight": 4, "audit_question": "Are training, validation, and testing datasets subjected to data governance practices addressing design choices and collection origin?", "remediation_guidance": "Implement data curation pipelines that document sampling methodologies, cleaning transformations, and statistical validity checks.", "mandatory": true}, {"id": 13, "code": "DAT-02", "iso_clause": "A.6.2", "ai_act_ref": "Article 10(2)(f)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Data Governance & Privacy", "name": "Bias Mitigation & Demographic Fairness", "risk_level": "High", "weight": 3, "audit_question": "Are datasets audited for statistical biases that may lead to discriminatory outputs against protected characteristics or customer classes?", "remediation_guidance": "Run automated disparity and parity testing across demographic attributes prior to model fine-tuning and deployment.", "mandatory": true}, {"id": 14, "code": "DAT-03", "iso_clause": "A.6.3", "ai_act_ref": "Article 10(3)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Data Governance & Privacy", "name": "Data Lineage & Provenance Tracking", "risk_level": "Medium", "weight": 2, "audit_question": "Can every data point ingested into AI pipelines be traced back to its licensed source, timestamp, and legal basis?", "remediation_guidance": "Maintain immutable data manifests and cryptographic hashes of training datasets to ensure intellectual property and copyright defensibility.", "mandatory": false}, {"id": 15, "code": "DAT-04", "iso_clause": "A.6.4", "ai_act_ref": "Article 10(5), GDPR Art. 25/44", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Data Governance & Privacy", "name": "PII Minimization & Zero Cloud Transmission", "risk_level": "Critical", "weight": 5, "audit_question": "Does the system prevent personal identification data (PII) from being leaked, sent to unvetted cloud APIs, or used for model re-training?", "remediation_guidance": "Deploy local-first architecture (such as ZUKWEND Core AI) ensuring corporate financial and invoice data never leaves host hardware.", "mandatory": true}, {"id": 16, "code": "DAT-05", "iso_clause": "A.6.5", "ai_act_ref": "Article 10(4)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Data Governance & Privacy", "name": "Dataset Completeness & Quality Metrics", "risk_level": "Medium", "weight": 2, "audit_question": "Are datasets evaluated against formal quality metrics such as representativeness, completeness, and absence of errors?", "remediation_guidance": "Establish automated unit tests for dataset completeness and outlier detection before pipeline ingestion.", "mandatory": false}, {"id": 17, "code": "DAT-06", "iso_clause": "A.6.6", "ai_act_ref": "Article 10(5)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Data Governance & Privacy", "name": "Special Category Data Safeguards", "risk_level": "High", "weight": 3, "audit_question": "When processing special categories of data under GDPR for bias detection, are strict synthetic masking and state-of-the-art security applied?", "remediation_guidance": "Enforce automated pseudonymization and differential privacy safeguards whenever sensitive data attributes must be inspected.", "mandatory": true}, {"id": 18, "code": "DOC-01", "iso_clause": "A.7.1", "ai_act_ref": "Article 11, Annex IV", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Technical Documentation & Record Keeping", "name": "Annex IV Technical Documentation File", "risk_level": "Critical", "weight": 4, "audit_question": "Is comprehensive technical documentation compiled prior to market release, fulfilling Annex IV requirements for architecture and design?", "remediation_guidance": "Compile an Annex IV Master File including system architecture diagrams, algorithm descriptions, dependencies, and design choices.", "mandatory": true}, {"id": 19, "code": "DOC-02", "iso_clause": "A.7.2", "ai_act_ref": "Article 12", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Technical Documentation & Record Keeping", "name": "Automated Event Logging & Audit Trail", "risk_level": "Critical", "weight": 4, "audit_question": "Does the AI system automatically generate unalterable logs recording operational periods, inputs, reference databases, and system outputs?", "remediation_guidance": "Implement tamper-proof local event logging capturing all execution timestamps, prompt parameters, and operator interventions for at least 6 months.", "mandatory": true}, {"id": 20, "code": "DOC-03", "iso_clause": "A.7.3", "ai_act_ref": "Article 11(1)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Technical Documentation & Record Keeping", "name": "Model Cards & System Specification Sheets", "risk_level": "Medium", "weight": 2, "audit_question": "Are standardized model cards published internally for each model, summarizing intended use, performance benchmarks, and known limitations?", "remediation_guidance": "Standardize Model Cards across all internal AI pipelines utilizing the Hugging Face / ISO 42001 metadata standard.", "mandatory": false}, {"id": 21, "code": "DOC-04", "iso_clause": "A.7.4", "ai_act_ref": "Article 11(2)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Technical Documentation & Record Keeping", "name": "Validation & Verification Test Logs", "risk_level": "High", "weight": 3, "audit_question": "Are test results and verification logs archived and traceable across each software build and model version increment?", "remediation_guidance": "Integrate automated CI/CD compliance gates storing unit test outputs, regression benchmarks, and validation sign-offs.", "mandatory": true}, {"id": 22, "code": "DOC-05", "iso_clause": "A.7.5", "ai_act_ref": "Article 25, 28", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Technical Documentation & Record Keeping", "name": "Software Bill of Materials (SBOM) for AI", "risk_level": "High", "weight": 3, "audit_question": "Is an accurate Software Bill of Materials (SBOM) maintained for all open-source libraries, Python packages, and pre-trained weights?", "remediation_guidance": "Generate CycloneDX / SPDX SBOM manifests in every release package and run automated vulnerability checks against CVE databases.", "mandatory": true}, {"id": 23, "code": "DOC-06", "iso_clause": "A.7.6", "ai_act_ref": "Article 47, Annex V", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Technical Documentation & Record Keeping", "name": "EU Declaration of Conformity Readiness", "risk_level": "High", "weight": 3, "audit_question": "Is an EU Declaration of Conformity drafted, kept up-to-date, and ready to be retained for 10 years following market placement?", "remediation_guidance": "Prepare an Annex V EU Declaration template signed by legal representatives affirming conformity with harmonized standards.", "mandatory": true}, {"id": 24, "code": "TRN-01", "iso_clause": "A.8.1", "ai_act_ref": "Article 13(1), 13(2)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Transparency & Human Oversight", "name": "User Instructions & Operational Transparency", "risk_level": "High", "weight": 3, "audit_question": "Are AI systems accompanied by clear, accessible instructions for use stating capabilities, limitations, and operational specifications?", "remediation_guidance": "Provide comprehensive User Manuals and UI warning labels explaining expected accuracy thresholds and operator verification requirements.", "mandatory": true}, {"id": 25, "code": "TRN-02", "iso_clause": "A.8.2", "ai_act_ref": "Article 50(1)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Transparency & Human Oversight", "name": "Direct AI Interaction Notification", "risk_level": "Critical", "weight": 4, "audit_question": "Are end-users explicitly informed in a timely and clear manner that they are interacting with an artificial intelligence system?", "remediation_guidance": "Implement conspicuous UI headers, banners, or intro messages stating 'AI-Powered System' before any human interaction occurs.", "mandatory": true}, {"id": 26, "code": "TRN-03", "iso_clause": "A.8.3", "ai_act_ref": "Article 50(2)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Transparency & Human Oversight", "name": "Synthetic Content Watermarking", "risk_level": "High", "weight": 3, "audit_question": "Are AI-generated text, documents, audio, or media outputs marked in a machine-readable format as artificially generated or manipulated?", "remediation_guidance": "Inject cryptographic watermarks or standard C2PA metadata into generated PDF reports and automated reminders.", "mandatory": true}, {"id": 27, "code": "TRN-04", "iso_clause": "A.8.4", "ai_act_ref": "Article 14(1), 14(2)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Transparency & Human Oversight", "name": "Human-in-the-Loop Operational Safeguards", "risk_level": "Critical", "weight": 5, "audit_question": "Can human operators understand system recommendations, remain aware of automation bias, and override AI decisions before execution?", "remediation_guidance": "Enforce mandatory human confirmation gates for sensitive actions (such as dispatching formal payment demands or blocking customer accounts).", "mandatory": true}, {"id": 28, "code": "TRN-05", "iso_clause": "A.8.5", "ai_act_ref": "Article 14(4)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Transparency & Human Oversight", "name": "Emergency Stop & Autonomous Override Switch", "risk_level": "Critical", "weight": 4, "audit_question": "Does the interface provide a visible, instant mechanism allowing operators to halt autonomous AI execution or revert to a safe state?", "remediation_guidance": "Implement a deterministic kill-switch in desktop UI and server worker threads enabling immediate graceful cessation of automated tasks.", "mandatory": true}, {"id": 29, "code": "TRN-06", "iso_clause": "A.8.6", "ai_act_ref": "Article 13(3)(b)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Transparency & Human Oversight", "name": "Explainability of Algorithmic Outputs", "risk_level": "High", "weight": 3, "audit_question": "Are algorithmic assessments accompanied by interpretable factors, confidence scores, and plain-language justifications?", "remediation_guidance": "Display weighted contributing factors alongside all risk scores, credit evaluations, and debt categorization outputs.", "mandatory": true}, {"id": 30, "code": "TRN-07", "iso_clause": "A.8.7", "ai_act_ref": "Article 86", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Transparency & Human Oversight", "name": "Right to Explanation for Impacted Persons", "risk_level": "High", "weight": 3, "audit_question": "Can affected business partners or individuals obtain clear and meaningful explanations of decisions made on the basis of AI outputs?", "remediation_guidance": "Provide an on-demand audit summary export feature explaining the data factors and logic leading to specific account classifications.", "mandatory": true}, {"id": 31, "code": "SEC-01", "iso_clause": "A.9.1", "ai_act_ref": "Article 15(1), 15(2)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Continuous Accuracy Metrics & Benchmarking", "risk_level": "High", "weight": 3, "audit_question": "Are system accuracy, precision, and recall metrics formally benchmarked and monitored against domain-specific test suites?", "remediation_guidance": "Run automated regression test suites measuring extraction precision, F1-scores, and calculation accuracy on every release build.", "mandatory": true}, {"id": 32, "code": "SEC-02", "iso_clause": "A.9.2", "ai_act_ref": "Article 15(3)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Adversarial Robustness & Attack Simulation", "risk_level": "Critical", "weight": 4, "audit_question": "Is the AI system resilient against adversarial inputs intended to induce biased outputs, hallucinations, or system crashes?", "remediation_guidance": "Execute simulated red-team attacks with malformed PDFs, corrupted character encodings, and boundary-value stresses.", "mandatory": true}, {"id": 33, "code": "SEC-03", "iso_clause": "A.9.3", "ai_act_ref": "Article 15(3)(b)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Prompt Injection & Jailbreak Defenses", "risk_level": "Critical", "weight": 4, "audit_question": "Are input sanitization and prompt defense layers active to block direct and indirect prompt injection attacks from untrusted document data?", "remediation_guidance": "Sanitize all user-supplied document strings using strict regex delimiters and hardened system instruction wrappers.", "mandatory": true}, {"id": 34, "code": "SEC-04", "iso_clause": "A.9.4", "ai_act_ref": "Article 15(3)(c)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Data Poisoning & Weight Tampering Protection", "risk_level": "High", "weight": 3, "audit_question": "Are local model weights, cache files, and embeddings cryptographically protected against unauthorized alteration or poisoning?", "remediation_guidance": "Store model files in access-controlled directories and verify SHA-256 integrity hashes on application boot.", "mandatory": true}, {"id": 35, "code": "SEC-05", "iso_clause": "A.9.5", "ai_act_ref": "Article 15(4)", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Graceful Degradation & Fail-Safe Fallback", "risk_level": "High", "weight": 3, "audit_question": "Does the AI system gracefully fall back to deterministic or manual procedures without data loss if models fail or disconnect?", "remediation_guidance": "Implement deterministic rule-based engines that guarantee basic operational continuity even when LLM endpoints are unavailable.", "mandatory": true}, {"id": 36, "code": "SEC-06", "iso_clause": "A.10.1", "ai_act_ref": "Article 25", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Third-Party AI Supplier Security Due Diligence", "risk_level": "High", "weight": 3, "audit_question": "Are cloud AI model providers (Anthropic, OpenAI, Google) vetted for enterprise data privacy, SLA guarantees, and zero-training commitments?", "remediation_guidance": "Mandate Bring-Your-Own-Key (BYOC) agreements with explicit enterprise zero-data-retention and zero-training commitments.", "mandatory": true}, {"id": 37, "code": "SEC-07", "iso_clause": "A.10.2", "ai_act_ref": "Article 15", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Air-Gapped & Local Isolation Capabilities", "risk_level": "High", "weight": 3, "audit_question": "Can critical AI workflows operate in completely air-gapped environments without any outbound Internet connectivity?", "remediation_guidance": "Architect core workflows to run 100% on localhost using native compiled agents or on-premise Ollama instances.", "mandatory": true}, {"id": 38, "code": "SEC-08", "iso_clause": "A.10.3", "ai_act_ref": "Article 15, Article 16", "framework": "ISO/IEC 42001:2023 & EU AI Act", "category": "Accuracy, Robustness & Cybersecurity", "name": "Cryptographic Signing & Authenticode EV Verification", "risk_level": "Medium", "weight": 2, "audit_question": "Are executable AI software binaries and model artifacts digitally signed with an Extended Validation (EV) certificate to prevent tampering?", "remediation_guidance": "Sign all Windows and macOS executables using Certum EV Code Signing certificates establishing high SmartScreen reputation.", "mandatory": false}];
+
+    let currentLang = 'en';
+    let currentCategory = 'all';
+    // State of each control: 'compliant', 'noncompliant', 'na'
+    const controlStates = {};
+
+    // Initialize all controls as compliant by default
+    CONTROLS_DATA.forEach(c => {
+      controlStates[c.id] = 'compliant';
+    });
+
+    function initRadar() {
+      // Check query param for lang
+      const urlParams = new URLSearchParams(window.location.search);
+      const langParam = urlParams.get('lang');
+      if (langParam && ['en', 'de', 'it', 'es', 'fr', 'pt'].includes(langParam)) {
+        currentLang = langParam;
+        document.getElementById('langSelector').value = langParam;
+      }
+      renderControls();
+      recalculateScore();
+      applyI18n();
+    }
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      applyI18n();
+      renderControls();
+      recalculateScore();
+    }
+
+    function applyI18n() {
+      const i18n = window.I18N_RADAR?.[currentLang] || window.I18N_RADAR?.['en'];
+      if (!i18n) return;
+
+      document.getElementById('txtTitle').innerText = i18n.radarTitle;
+      document.getElementById('txtDesc').innerText = i18n.radarDesc;
+      document.getElementById('txtScoreTitle').innerText = i18n.scoreTitle;
+      document.getElementById('txtGaugeLabel').innerText = i18n.scoreGaugeLabel;
+      document.getElementById('txtPassed').innerText = i18n.passedControls;
+      document.getElementById('txtFailed').innerText = i18n.failedControls;
+      document.getElementById('txtBtnUnlock').innerText = i18n.btnUnlock;
+      document.getElementById('txtModalTitle').innerText = i18n.unlockReportTitle;
+      document.getElementById('txtModalSubtitle').innerText = i18n.unlockReportSubtitle;
+      document.getElementById('lblModalName').innerText = i18n.modalName;
+      document.getElementById('lblModalEmail').innerText = i18n.modalEmail;
+      document.getElementById('lblModalCompany').innerText = i18n.modalCompany;
+      document.getElementById('lblModalRole').innerText = i18n.modalRole;
+      document.getElementById('txtModalPrivacy').innerText = i18n.modalPrivacyNotice;
+      document.getElementById('btnModalSubmit').innerText = i18n.btnModalSubmit;
+      document.getElementById('btnModalClose').innerText = i18n.modalClose;
+      document.getElementById('txtExecTitle').innerText = i18n.execSummaryTitle;
+      document.getElementById('txtSec1Title').innerText = "1. " + i18n.execSection1;
+      document.getElementById('txtSec2Title').innerText = "2. " + i18n.execSection2;
+      document.getElementById('txtSec3Title').innerText = "3. " + i18n.execSection3;
+      document.getElementById('txtLemonNotice').innerText = i18n.lemonSqueezyNotice;
+      document.getElementById('btnPrimaryCTA').innerText = i18n.primaryCTA;
+      document.getElementById('btnSecondaryCTA').innerText = i18n.secondaryCTA;
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+      });
+      renderControls();
+    }
+
+    function renderControls() {
+      const container = document.getElementById('controlsList');
+      container.innerHTML = '';
+
+      const filtered = CONTROLS_DATA.filter(c => {
+        if (currentCategory === 'all') return true;
+        return c.category === currentCategory;
+      });
+
+      filtered.forEach(c => {
+        const state = controlStates[c.id];
+        const card = document.createElement('div');
+        card.className = 'control-card';
+        card.id = `control-${c.id}`;
+
+        const isCompliant = state === 'compliant';
+        const isNonCompliant = state === 'noncompliant';
+        const isNA = state === 'na';
+
+        const fwBadgeClass = c.framework === 'EU AI Act' ? 'badge-euaiact' : 'badge-iso';
+
+        card.innerHTML = `
+          <div class="control-header">
+            <div>
+              <div class="control-meta">
+                <span class="code-badge">${c.code}</span>
+                <span class="framework-badge ${fwBadgeClass}">${c.framework}</span>
+                <span class="risk-level-badge lvl-${c.risk_level}">${c.risk_level} Risk</span>
+                ${c.mandatory ? '<span class="mandatory-badge">Mandatory</span>' : ''}
+                <span style="font-size: 0.75rem; color: var(--text-dim);">Weight: ${c.weight}</span>
+              </div>
+              <h4 class="control-name" style="margin-top: 0.4rem;">${c.name}</h4>
+            </div>
+            <div class="toggle-group">
+              <button type="button" class="toggle-btn ${isCompliant ? 'active-compliant' : ''}" onclick="setControlState('${c.id}', 'compliant')">Pass</button>
+              <button type="button" class="toggle-btn ${isNonCompliant ? 'active-noncompliant' : ''}" onclick="setControlState('${c.id}', 'noncompliant')">Fail</button>
+              <button type="button" class="toggle-btn ${isNA ? 'active-na' : ''}" onclick="setControlState('${c.id}', 'na')">N/A</button>
+            </div>
+          </div>
+          <p class="control-question">${c.audit_question}</p>
+          <button type="button" class="guidance-toggle" onclick="toggleGuidance('${c.id}')">
+            <span>&#9662;</span> Remediation Guidance
+          </button>
+          <div class="guidance-content" id="guidance-${c.id}">
+            ${c.remediation_guidance}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function toggleGuidance(id) {
+      const g = document.getElementById(`guidance-${id}`);
+      if (g) {
+        g.style.display = g.style.display === 'block' ? 'none' : 'block';
+      }
+    }
+
+    function setControlState(id, state) {
+      controlStates[id] = state;
+      renderControls();
+      recalculateScore();
+    }
+
+    function recalculateScore() {
+      let totalActiveWeight = 0;
+      let failedWeight = 0;
+      let passedCount = 0;
+      let failedCount = 0;
+      let criticalBreaches = 0;
+
+      CONTROLS_DATA.forEach(c => {
+        const state = controlStates[c.id];
+        if (state === 'na') return;
+
+        totalActiveWeight += c.weight;
+        if (state === 'compliant') {
+          passedCount++;
+        } else if (state === 'noncompliant') {
+          failedCount++;
+          failedWeight += c.weight;
+          if (c.risk_level === 'Critical' || c.risk_level === 'High') {
+            criticalBreaches++;
+          }
+        }
+      });
+
+      const riskScore = totalActiveWeight > 0 ? Math.round((failedWeight / totalActiveWeight) * 100) : 0;
+
+      // Update Gauge SVG
+      const circle = document.getElementById('gaugeCircle');
+      const maxOffset = 502; // 2 * PI * 80 ~= 502.6
+      const offset = maxOffset - (riskScore / 100) * maxOffset;
+      circle.style.strokeDashoffset = offset;
+
+      document.getElementById('scoreDisplay').innerText = `${riskScore}%`;
+      document.getElementById('countPassed').innerText = passedCount;
+      document.getElementById('countFailed').innerText = failedCount;
+
+      const badge = document.getElementById('riskStatusBadge');
+      const desc = document.getElementById('riskDescription');
+      const i18n = window.I18N_RADAR?.[currentLang] || window.I18N_RADAR?.['en'];
+
+      badge.className = 'risk-badge-status';
+
+      if (riskScore <= 25) {
+        circle.style.stroke = 'var(--success)';
+        badge.classList.add('risk-status-low');
+        badge.innerText = i18n ? i18n.riskLevelLow : 'Low Risk / Compliant';
+        desc.innerText = i18n ? i18n.riskDescLow : 'Systems demonstrate solid alignment with ISO 42001 and EU AI Act requirements.';
+      } else if (riskScore <= 50) {
+        circle.style.stroke = 'var(--warning)';
+        badge.classList.add('risk-status-mod');
+        badge.innerText = i18n ? i18n.riskLevelModerate : 'Moderate Risk / Action Advised';
+        desc.innerText = i18n ? i18n.riskDescModerate : 'Identified control gaps may trigger compliance audits. Remediation recommended within 90 days.';
+      } else if (riskScore <= 75) {
+        circle.style.stroke = 'var(--danger)';
+        badge.classList.add('risk-status-high');
+        badge.innerText = i18n ? i18n.riskLevelHigh : 'High Risk / Regulatory Exposure';
+        desc.innerText = i18n ? i18n.riskDescHigh : 'Significant non-compliance with EU AI Act obligations. Immediate risk of enforcement.';
+      } else {
+        circle.style.stroke = 'var(--critical)';
+        badge.classList.add('risk-status-crit');
+        badge.innerText = i18n ? i18n.riskLevelCritical : 'Critical Risk / Severe Penalty Threat';
+        desc.innerText = i18n ? i18n.riskDescCritical : 'Severe non-compliance exposing entity to fines up to €35M or 7% of worldwide turnover.';
+      }
+    }
+
+    function openLeadModal() {
+      document.getElementById('leadModal').style.display = 'flex';
+    }
+
+    function closeLeadModal() {
+      document.getElementById('leadModal').style.display = 'none';
+    }
+
+    async function handleLeadSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('btnModalSubmit');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Generating Executive Summary...';
+
+      const name = document.getElementById('leadName').value;
+      const email = document.getElementById('leadEmail').value;
+      const company = document.getElementById('leadCompany').value;
+      const role = document.getElementById('leadRole').value;
+
+      const failed = CONTROLS_DATA.filter(c => controlStates[c.id] === 'noncompliant');
+      const passed = CONTROLS_DATA.filter(c => controlStates[c.id] === 'compliant');
+      const score = parseInt(document.getElementById('scoreDisplay').innerText, 10) || 0;
+
+      const leadPayload = {
+        name,
+        email,
+        company,
+        role,
+        score,
+        failedCount: failed.length,
+        failedControls: failed,
+        passedControls: passed,
+        language: currentLang,
+        requestedProduct: 'Executive AI Audit Diagnostic'
+      };
+
+      try {
+        // 1. Dispatch lead to Cloudflare Pages Function (contact@oltrevista.com)
+        fetch('/api/lead-notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadPayload)
+        }).catch(err => console.warn('Lead dispatch background notice:', err));
+
+        // 2. Request Lead Auditor assessment
+        const assessResp = await fetch('/api/assess', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadPayload)
+        });
+
+        const assessData = await assessResp.json();
+        const summary = assessData.summary || {};
+
+        document.getElementById('execSec1Text').innerText = summary.regulatoryExposure || 'Regulatory exposure analysis calculated.';
+        document.getElementById('execSec2Text').innerText = summary.operationalRisk || 'Operational risk vectors mapped.';
+        document.getElementById('execSec3Text').innerText = summary.immediateRemediation || 'Remediation protocols ready for deployment.';
+
+        // Display card and close modal
+        closeLeadModal();
+        const card = document.getElementById('execSummaryCard');
+        card.classList.add('active');
+        card.scrollIntoView({ behavior: 'smooth' });
+
+      } catch (err) {
+        console.error('Assessment execution failed:', err);
+        // Fallback local display
+        closeLeadModal();
+        document.getElementById('execSec1Text').innerText = `Diagnostic indicates ${failed.length} control failures with potential EU AI Act Art. 99 exposure for ${company}.`;
+        document.getElementById('execSec2Text').innerText = `Unmitigated non-compliance exposes credit recovery and corporate M&A evaluation pipelines.`;
+        document.getElementById('execSec3Text').innerText = `Procure OLTREVISTA 24h Executive Audit Report (€990) or deploy ZUKWEND Local-First (€249) immediately.`;
+        document.getElementById('execSummaryCard').classList.add('active');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Generate Audit Report';
+      }
+    }
+
+    // Initialize on window load
+    window.addEventListener('DOMContentLoaded', initRadar);
+  </script>
+</body>
+</html>

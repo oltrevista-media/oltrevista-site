@@ -30,7 +30,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 
     body {
       background-color: var(--bg);
@@ -189,7 +189,8 @@
 
     /* Hero Section with explicit 100px padding-top */
     .hero {
-      padding: 100px 1.5rem 5rem;
+      padding: 110px 1.5rem 5rem;
+      scroll-margin-top: 110px;
       text-align: center;
       max-width: 1080px;
       margin: 0 auto;
@@ -777,6 +778,23 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
+  
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 2.5rem auto 3.5rem;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -1005,6 +1023,12 @@
       </div>
     </div>
 
+    
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/8br111qJf8E?vq=hd1080&amp;rel=0&amp;modestbranding=1" title="ZUKWEND Sovereign AI Agent Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+
     <!-- Rule Q6 Callout Banner -->
     <div class="feature-callout-banner">
       <div>
@@ -1212,6 +1236,7 @@
           <li><a href="/disclaimer.html">Disclaimer &amp; Terms</a></li>
           <li><a href="/DISCLAIMER_EULA.html">EULA Agreement</a></li>
           <li><a href="/radar_scanner/">Standalone 6-Lang Radar</a></li>
+          <li><a href="https://www.youtube.com/watch?v=8br111qJf8E" target="_blank" rel="noopener">📺 YouTube Demo (1080p HD)</a></li>
           <li><a href="mailto:contact@oltrevista.com">contact@oltrevista.com</a></li>
         </ul>
       </div>

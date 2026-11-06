@@ -753,6 +753,9 @@
       <div style="margin-right: auto; font-size: 0.82rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
         <span>📊</span> Executive Audit Committee Toolkit:
       </div>
+            <button type="button" class="btn-share-action" id="btnRunRadarAudit" onclick="runCurrentRadarAudit()" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border: 1px solid #3b82f6; padding: 0.55rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;">
+        ⚡ Run Sovereign AI Audit
+      </button>
       <button type="button" class="btn-share-action" onclick="printAuditSummary()" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #1e293b; color: #fff; border: 1px solid #334155; padding: 0.55rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;">
         <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
         📄 Print / Save PDF Summary
@@ -806,25 +809,46 @@
           </select>
         </div>
 
-        <div class="field-group">
-          <div class="field-label" style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">
-            <span>Total Overdue Receivables</span>
-            <span id="txtOverdueDisplay" style="color: #60a5fa; font-family: monospace; font-size: 0.95rem;">€1,850,000</span>
+                <div class="field-group">
+          <div class="field-label" style="display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">
+            <label for="inputOverdue">Total Overdue Receivables</label>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <input type="text" id="inputOverdue" class="hybrid-direct-input" value="€1,850,000" oninput="onDirectOverdueInput(this.value)" onchange="onDirectOverdueChange(this.value)" style="background:#0b0f19; color:#60a5fa; border:1px solid #222d45; border-radius:6px; padding:0.25rem 0.5rem; font-family:monospace; font-size:0.92rem; font-weight:700; width:130px; text-align:right;" title="Type amount directly">
+              <span id="txtOverdueDisplay" style="display:none;">€1,850,000</span>
+            </div>
           </div>
           <input type="range" id="sliderOverdue" min="50000" max="20000000" step="50000" value="1850000" oninput="recalculateAudit()" style="width:100%; accent-color:#3b82f6;">
-          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748b;">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748b; margin-bottom:0.4rem;">
             <span>€50k</span><span>€5M</span><span>€20M+</span>
+          </div>
+          <!-- Revenue / Overdue Preset Quick-Select Chips -->
+          <div class="preset-chips-container" style="display:flex; gap:0.35rem; align-items:center; flex-wrap:wrap;">
+            <span style="font-size:0.72rem; color:#64748b; font-weight:600;">Presets:</span>
+            <button type="button" class="preset-chip chip-rev" onclick="applyRevenuePreset(1000000, 'tier1')">€1M</button>
+            <button type="button" class="preset-chip chip-rev" onclick="applyRevenuePreset(5000000, 'tier2')">€5M</button>
+            <button type="button" class="preset-chip chip-rev" onclick="applyRevenuePreset(10000000, 'tier3')">€10M</button>
+            <button type="button" class="preset-chip chip-rev" onclick="applyRevenuePreset(20000000, 'tier4')">€50M+</button>
           </div>
         </div>
 
-        <div class="field-group">
-          <div class="field-label" style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">
-            <span>Average Payment Delay (DSO Days)</span>
-            <span id="txtDsoDisplay" style="color: #60a5fa; font-family: monospace; font-size: 0.95rem;">74 Days</span>
+                <div class="field-group">
+          <div class="field-label" style="display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">
+            <label for="inputDso">Average Payment Delay (DSO Days)</label>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <input type="text" id="inputDso" class="hybrid-direct-input" value="74 Days" oninput="onDirectDsoInput(this.value)" onchange="onDirectDsoChange(this.value)" style="background:#0b0f19; color:#60a5fa; border:1px solid #222d45; border-radius:6px; padding:0.25rem 0.5rem; font-family:monospace; font-size:0.92rem; font-weight:700; width:100px; text-align:right;" title="Type DSO directly">
+              <span id="txtDsoDisplay" style="display:none;">74 Days</span>
+            </div>
           </div>
           <input type="range" id="sliderDso" min="30" max="120" step="1" value="74" oninput="recalculateAudit()" style="width:100%; accent-color:#3b82f6;">
-          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748b;">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748b; margin-bottom:0.4rem;">
             <span>30d (EU Statutory Limit)</span><span>60d</span><span>120d+</span>
+          </div>
+          <!-- DSO Preset Quick-Select Chips -->
+          <div class="preset-chips-container" style="display:flex; gap:0.35rem; align-items:center; flex-wrap:wrap;">
+            <span style="font-size:0.72rem; color:#64748b; font-weight:600;">Presets:</span>
+            <button type="button" class="preset-chip chip-dso" onclick="applyDsoPreset(30)" style="color:#34d399; border-color:rgba(52,211,153,0.3);">30d - EU Limit</button>
+            <button type="button" class="preset-chip chip-dso" onclick="applyDsoPreset(60)" style="color:#fbbf24; border-color:rgba(251,191,36,0.3);">60d - IT Avg</button>
+            <button type="button" class="preset-chip chip-dso" onclick="applyDsoPreset(90)" style="color:#f87171; border-color:rgba(248,113,113,0.3);">90d+ - Critical</button>
           </div>
         </div>
 
@@ -949,6 +973,7 @@
         </div>
 
         <!-- Dynamic Controls Render -->
+                <div id="radarApiError" style="display:none; margin: 1rem 0; padding: 0.75rem 1rem; background: rgba(220, 38, 38, 0.2); border: 1px solid #dc2626; border-radius: 8px; color: #fca5a5; font-size: 0.85rem; font-weight: 600;"></div>
         <div id="controlsList"></div>
 
         <!-- AI Executive Summary Output Card (Appears after submission) -->
@@ -1056,6 +1081,7 @@
 
   <footer>
     <div class="max-w-7xl mx-auto">
+      <p class="footer-brand-link" style="margin-top: 0.75rem; font-size: 0.82rem; color: #94a3b8;">ZUKWEND® is an official vertical AI agent developed by <span translate="no">OLTREVISTA</span>. Visit global product site: <a href="https://zukwend.com" target="_blank" rel="noopener" style="color: #60a5fa; text-decoration: underline;">zukwend.com</a></p>
       <p>&copy; 2026 OLTREVISTA Sovereign AI. ISO/IEC 42001:2023 & Regulation (EU) 2024/1689 Reference Implementation. &bull; <a href="mailto:contact@oltrevista.com" style="color:inherit;text-decoration:underline;">contact@oltrevista.com</a></p>
       <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dim);">
         All transactions processed securely via Lemon Squeezy Merchant of Record. Fully air-gapped local execution on client premises.
@@ -1282,7 +1308,7 @@
       e.preventDefault();
       const submitBtn = document.getElementById('btnModalSubmit');
       submitBtn.disabled = true;
-      submitBtn.innerText = 'Generating Executive Summary...';
+      submitBtn.innerText = 'Connecting to Sovereign Local-First Engine via Cloudflare Worker...';
 
       const name = document.getElementById('leadName').value;
       const email = document.getElementById('leadEmail').value;
@@ -1292,6 +1318,9 @@
       const failed = CONTROLS_DATA.filter(c => controlStates[c.id] === 'noncompliant');
       const passed = CONTROLS_DATA.filter(c => controlStates[c.id] === 'compliant');
       const score = parseInt(document.getElementById('scoreDisplay').innerText, 10) || 0;
+      const sector = document.getElementById('radarSector') ? document.getElementById('radarSector').value : 'mfg';
+      const overdue = document.getElementById('sliderOverdue') ? document.getElementById('sliderOverdue').value : 1850000;
+      const dso = document.getElementById('sliderDso') ? document.getElementById('sliderDso').value : 74;
 
       const leadPayload = {
         name,
@@ -1299,6 +1328,9 @@
         company,
         role,
         score,
+        sector,
+        overdue,
+        dso,
         failedCount: failed.length,
         failedControls: failed,
         passedControls: passed,
@@ -1307,41 +1339,15 @@
       };
 
       try {
-        // 1. Dispatch lead to Cloudflare Pages Function (contact@oltrevista.com)
         fetch('/api/lead-notify', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(leadPayload)
         }).catch(err => console.warn('Lead dispatch background notice:', err));
 
-        // 2. Request Lead Auditor assessment
-        const assessResp = await fetch('/api/assess', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadPayload)
-        });
-
-        const assessData = await assessResp.json();
-        const summary = assessData.summary || {};
-
-        document.getElementById('execSec1Text').innerText = summary.regulatoryExposure || 'Regulatory exposure analysis calculated.';
-        document.getElementById('execSec2Text').innerText = summary.operationalRisk || 'Operational risk vectors mapped.';
-        document.getElementById('execSec3Text').innerText = summary.immediateRemediation || 'Remediation protocols ready for deployment.';
-
-        // Display card and close modal
-        closeLeadModal();
-        const card = document.getElementById('execSummaryCard');
-        card.classList.add('active');
-        card.scrollIntoView({ behavior: 'smooth' });
-
+        await runRadarAssessment(leadPayload);
       } catch (err) {
-        console.error('Assessment execution failed:', err);
-        // Fallback local display
-        closeLeadModal();
-        document.getElementById('execSec1Text').innerText = `Diagnostic indicates ${failed.length} control failures with potential EU AI Act Art. 99 exposure for ${company}.`;
-        document.getElementById('execSec2Text').innerText = `Unmitigated non-compliance exposes credit recovery and corporate M&A evaluation pipelines.`;
-        document.getElementById('execSec3Text').innerText = `Deploy ZUKWEND Local-First AI (€249) immediately for guaranteed compliance and sovereign automation.`;
-        document.getElementById('execSummaryCard').classList.add('active');
+        showRadarErrorState(err.message);
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerText = 'Generate Audit Report';
@@ -1352,6 +1358,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       initRadar();
       if (typeof restoreAuditStateFromHash === 'function') restoreAuditStateFromHash();
+      if (typeof recalculateAudit === 'function') recalculateAudit(true);
     });
   </script>
 

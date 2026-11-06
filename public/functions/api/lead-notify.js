@@ -21,7 +21,7 @@ export async function onRequestPost(context) {
       score = 0,
       failedCount = 0,
       language = 'en',
-      requestedProduct = '24h Executive Audit Report (€990)',
+      requestedProduct = 'Executive AI Audit Diagnostic (€249)',
       notes = ''
     } = payload;
 

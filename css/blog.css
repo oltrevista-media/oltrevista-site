@@ -1,0 +1,25 @@
+/* OLTREVISTA Blog & Header Alignment v3.58 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px !important;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 12, 16, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+main.wrap, main.wrap-narrow {
+  padding-top: 120px !important;
+  scroll-margin-top: 120px !important;
+}
+
+.nav-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}

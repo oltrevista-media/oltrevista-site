@@ -11,6 +11,7 @@
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
   <script src="js/i18n_radar.js"></script>
   <style>
+  .nav-logo { height: 38px; width: auto; object-fit: contain; vertical-align: middle; }
     :root {
       scroll-padding-top: 120px !important;
       scroll-behavior: smooth;
@@ -46,8 +47,8 @@
 
     header {
       border-bottom: 1px solid var(--border);
-      background: rgba(7, 9, 14, 0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(10, 12, 16, 0.95);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -685,15 +686,15 @@
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="brand">
-        <div class="brand-logo">O</div>
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="OLTREVISTA" class="nav-logo" style="height:38px; width:auto; vertical-align:middle;">
         <div>
           <span class="brand-name">OLTREVISTA</span>
           <span class="brand-sub">Sovereign AI Hub</span>
         </div>
       </a>
       <div class="nav-actions">
-        <a href="index.html" class="hub-link" id="navHubLink">&larr; Ecosystem Hub</a>
+        <a href="/" class="hub-link" id="navHubLink">&larr; Ecosystem Hub</a>
         <select class="lang-select" id="langSelector" onchange="changeLanguage(this.value)">
           <option value="en">English (EN)</option>
           <option value="de">Deutsch (DE)</option>
@@ -713,6 +714,86 @@
       </div>
       <h1 class="hero-title" id="txtTitle">EU AI Act & ISO/IEC 42001 Risk & Opportunity Radar</h1>
       <p class="hero-sub" id="txtDesc">Evaluate your AI system across 38 controls derived from ISO/IEC 42001:2023 Annex A and the EU AI Act (Regulation 2024/1689). Instant 0ms deterministic scoring.</p>
+    </div>
+
+    
+    <!-- 5-Parameter Enterprise Risk Audit Dashboard (Mirroring Master Hub) -->
+    <div class="radar-audit-panel" style="max-width: 1200px; margin: 0 auto 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+      <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">5-Parameter Enterprise Risk Audit Engine</div>
+      <div class="radar-input-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+        <div class="field-group">
+          <label class="field-label" for="radarSector" style="display:block; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">Macro-Industrial Sector</label>
+          <select id="radarSector" class="field-select" onchange="recalculateAudit()" style="width:100%; background:#131a2e; color:#e2e8f0; border:1px solid #222d45; padding:0.6rem 0.8rem; border-radius:8px;">
+            <option value="mfg" selected>⚙️ Industrial Manufacturing &amp; Precision Engineering (ATECO 25.62)</option>
+            <option value="pkg">📦 Packaging, Plastics &amp; Rubber Machinery (ATECO 22.22 &amp; 28.96)</option>
+            <option value="con">🏗️ Construction, Infrastructure &amp; Building Materials</option>
+            <option value="ele">🔌 Electronics, Hardware &amp; Industrial Equipment</option>
+            <option value="log">🚚 Logistics, Supply Chain &amp; Wholesale Distribution</option>
+            <option value="srv">💼 Professional Services, Tech &amp; IT Contracting</option>
+            <option value="trd">🌐 Other B2B Industrial / Commercial Trade</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="radarJurisdiction" style="display:block; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">Region / Jurisdiction</label>
+          <select id="radarJurisdiction" class="field-select" onchange="recalculateAudit()" style="width:100%; background:#131a2e; color:#e2e8f0; border:1px solid #222d45; padding:0.6rem 0.8rem; border-radius:8px;">
+            <option value="eu" selected>🇪🇺 European Union (EU AI Act &amp; 2026 Late Pay)</option>
+            <option value="dach">🇩🇪 DACH (Germany, Austria, Switzerland)</option>
+            <option value="uk">🇬🇧 United Kingdom &amp; Commonwealth</option>
+            <option value="us">🇺🇸 United States &amp; North America</option>
+            <option value="latam">🌎 LATAM &amp; Emerging Markets</option>
+            <option value="global">🌐 Global / Cross-Border Trade</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="radarRevenue" style="display:block; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">Annual Revenue Bracket</label>
+          <select id="radarRevenue" class="field-select" onchange="recalculateAudit()" style="width:100%; background:#131a2e; color:#e2e8f0; border:1px solid #222d45; padding:0.6rem 0.8rem; border-radius:8px;">
+            <option value="tier1">&lt; €2M (Small Enterprise / Studio)</option>
+            <option value="tier2" selected>€2M &ndash; €10M (Mid-Market Subcontractor)</option>
+            <option value="tier3">€10M &ndash; €50M (Upper Mid-Market Enterprise)</option>
+            <option value="tier4">&gt; €50M+ (Tier-1 Industrial Corp)</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label" style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">
+            <span>Total Overdue Receivables</span>
+            <span id="txtOverdueDisplay" style="color: #60a5fa; font-family: monospace; font-size: 0.95rem;">€1,850,000</span>
+          </div>
+          <input type="range" id="sliderOverdue" min="50000" max="20000000" step="50000" value="1850000" oninput="recalculateAudit()" style="width:100%; accent-color:#3b82f6;">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748b;">
+            <span>€50k</span><span>€5M</span><span>€20M+</span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label" style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:600; color:#cbd5e1; margin-bottom:0.4rem;">
+            <span>Average Payment Delay (DSO Days)</span>
+            <span id="txtDsoDisplay" style="color: #60a5fa; font-family: monospace; font-size: 0.95rem;">74 Days</span>
+          </div>
+          <input type="range" id="sliderDso" min="30" max="120" step="1" value="74" oninput="recalculateAudit()" style="width:100%; accent-color:#3b82f6;">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748b;">
+            <span>30d (EU Statutory Limit)</span><span>60d</span><span>120d+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Financial Exposure Breakdown -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; padding-top:1rem; border-top:1px solid #1e293b;">
+        <div style="background:#070a12; border:1px solid #1e293b; border-radius:10px; padding:1rem; text-align:center;">
+          <div id="kpiSlaPenalties" style="font-size:1.5rem; font-weight:800; color:#f87171; font-family:monospace;">€24,812</div>
+          <div style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; margin-top:0.3rem;">SLA Penalties Incurred</div>
+        </div>
+        <div style="background:#070a12; border:1px solid #1e293b; border-radius:10px; padding:1rem; text-align:center;">
+          <div id="kpiImmobilizedCapital" style="font-size:1.5rem; font-weight:800; color:#fbbf24; font-family:monospace;">€211,849</div>
+          <div style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; margin-top:0.3rem;">Immobilized Capital Cost</div>
+        </div>
+        <div style="background:#070a12; border:1px solid #1e293b; border-radius:10px; padding:1rem; text-align:center;">
+          <div id="kpiVatDuplication" style="font-size:1.5rem; font-weight:800; color:#60a5fa; font-family:monospace;">34.2%</div>
+          <div style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; margin-top:0.3rem;">VAT Duplication Index</div>
+        </div>
+      </div>
     </div>
 
     <div class="radar-grid">
@@ -791,12 +872,9 @@
               <h4 style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem;">Remediate Non-Compliance Instantly</h4>
               <p style="color: var(--text-muted); font-size: 0.85rem;" id="txtLemonNotice">Instant digital fulfillment via Lemon Squeezy secure checkout. Zero manual IBAN transfers.</p>
             </div>
-            <div class="cta-button-row">
-              <a href="https://oltrevista.lemonsqueezy.com/buy/24h-audit" class="btn-lemon-primary lemonsqueezy-button" id="btnPrimaryCTA">
-                Request 24h Executive Audit Report (€990)
-              </a>
-              <a href="https://zukwend.com/" target="_blank" rel="noopener" class="btn-zukwend-sec" id="btnSecondaryCTA">
-                Resolve Credit Risk with ZUKWEND Local-First (€249)
+            <div class="cta-button-row" style="display:flex; justify-content:center; margin-top:20px;">
+              <a href="https://zukwend.lemonsqueezy.com/checkout/buy/c6c7d5b7-7ee9-4717-a708-c386ad1d2344" class="btn-lemon-primary lemonsqueezy-button" id="btnPrimaryCTA" style="background:#10b981; color:#040f1a; font-weight:700; padding:14px 28px; border-radius:8px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                ⚡ Deploy ZUKWEND Local-First AI (€249 One-Time)
               </a>
             </div>
           </div>
@@ -878,10 +956,17 @@
     }
 
     function changeLanguage(lang) {
-      currentLang = lang;
-      applyI18n();
-      renderControls();
-      recalculateScore();
+      const routes = {
+        'en': '/en/',
+        'de': '/de/',
+        'it': '/it/',
+        'es': '/es/',
+        'fr': '/fr/',
+        'pt': '/pt/'
+      };
+      if (routes[lang]) {
+        window.location.href = routes[lang];
+      }
     }
 
     function applyI18n() {
@@ -1119,7 +1204,7 @@
         closeLeadModal();
         document.getElementById('execSec1Text').innerText = `Diagnostic indicates ${failed.length} control failures with potential EU AI Act Art. 99 exposure for ${company}.`;
         document.getElementById('execSec2Text').innerText = `Unmitigated non-compliance exposes credit recovery and corporate M&A evaluation pipelines.`;
-        document.getElementById('execSec3Text').innerText = `Procure OLTREVISTA 24h Executive Audit Report (€990) or deploy ZUKWEND Local-First (€249) immediately.`;
+        document.getElementById('execSec3Text').innerText = `Deploy ZUKWEND Local-First AI (€249) immediately for guaranteed compliance and sovereign automation.`;
         document.getElementById('execSummaryCard').classList.add('active');
       } finally {
         submitBtn.disabled = false;

@@ -389,8 +389,17 @@ function onYouTubeIframeAPIReady() {
 const CONSUMER_EMAIL_REGEX = /@(gmail\.com|yahoo\.|hotmail\.|outlook\.|icloud\.com|proton\.|protonmail\.|aol\.com|live\.com|yandex\.|mail\.ru|tempmail|mailinator|10minutemail)/i;
 
 function validateCorporateEmail(email) {
-  if (!email || typeof email !== 'string') return false;
-  return !CONSUMER_EMAIL_REGEX.test(email.trim());
+  if (!email || typeof email !== 'string') return { valid: false, reason: "empty" };
+  const trimmed = email.trim();
+  // Tier 1: Syntax check (must have @ and dot in domain)
+  const rfcSyntaxRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!rfcSyntaxRegex.test(trimmed)) return { valid: false, reason: "invalid_syntax" };
+  
+  // Tier 2: Consumer & disposable domain blacklist
+  const consumerDomainRegex = /@(gmail\.com|yahoo\.|hotmail\.|outlook\.|icloud\.com|proton\.|protonmail\.|aol\.com|live\.com|yandex\.|mail\.ru|tempmail|mailinator|10minutemail)/i;
+  if (consumerDomainRegex.test(trimmed)) return { valid: false, reason: "consumer_domain" };
+
+  return { valid: true };
 }
 
 function unlockExecutiveDossierInstant(leadPayload) {
@@ -475,4 +484,6 @@ if (typeof window !== 'undefined') {
   window.runRadarAssessment = runRadarAssessment;
   window.runCurrentRadarAudit = runCurrentRadarAudit;
   window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+  window.validateCorporateEmail = validateCorporateEmail;
+  window.unlockExecutiveDossierInstant = unlockExecutiveDossierInstant;
 }

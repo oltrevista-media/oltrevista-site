@@ -1314,9 +1314,17 @@
       const email = emailInput ? emailInput.value.trim() : '';
       const emailErrorEl = document.getElementById('leadEmailError');
 
-      // SECTION B: CORPORATE EMAIL VALIDATION FILTER (JS REGEX ENFORCEMENT)
-      const consumerRegex = /@(gmail\.com|yahoo\.|hotmail\.|outlook\.|icloud\.com|proton\.|protonmail\.|aol\.com|live\.com|yandex\.|mail\.ru|tempmail|mailinator|10minutemail)/i;
-      if (!email || consumerRegex.test(email)) {
+      // SECTION B: CORPORATE EMAIL VALIDATION FILTER (2-TIER CLIENT-SIDE VALIDATION v3.70)
+      const validation = (typeof validateCorporateEmail === 'function')
+        ? validateCorporateEmail(email)
+        : (function(em) {
+            if (!em) return { valid: false, reason: "empty" };
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return { valid: false, reason: "invalid_syntax" };
+            if (/@(gmail\.com|yahoo\.|hotmail\.|outlook\.|icloud\.com|proton\.|protonmail\.|aol\.com|live\.com|yandex\.|mail\.ru|tempmail|mailinator|10minutemail)/i.test(em)) return { valid: false, reason: "consumer_domain" };
+            return { valid: true };
+          })(email);
+
+      if (!validation.valid) {
         if (emailErrorEl) {
           const i18n = window.I18N_RADAR?.[currentLang] || window.I18N_RADAR?.['en'];
           emailErrorEl.innerText = (i18n && i18n.complianceNoticeCorporateEmail)

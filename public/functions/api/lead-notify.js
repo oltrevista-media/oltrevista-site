@@ -28,7 +28,7 @@ export async function onRequestPost(context) {
       })
     });
     
-    return new Response(JSON.stringify({ result: "success", status: "dispatched_to_google_sheet" }), {
+    return new Response(JSON.stringify({ result: "success", dispatched_to_google_sheet: true }), {
       status: 200,
       headers: corsHeaders
     });

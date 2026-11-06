@@ -820,7 +820,7 @@
       </a>
       <nav class="nav-links">
         <a href="#radar" class="nav-link">KI-Radar</a>
-        <a href="#engine" class="nav-link">ZUKWEND Engine</a>
+        <a href="https://zukwend.com" target="_blank" rel="noopener" class="nav-link">ZUKWEND® Engine</a>
         <a href="#trust" class="nav-link">Trust Center</a>
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="#pricing" class="nav-link">Preise</a>
@@ -856,8 +856,8 @@
         </svg>
         KI-Radar-Audit Starten
       </a>
-      <a href="#engine" class="btn-hero-sec">
-        Video-Demo Ansehen (3 Min)
+      <a href="https://zukwend.com" target="_blank" rel="noopener" class="btn-hero-sec">
+        Explore ZUKWEND Engine — €249 Lifetime
       </a>
     </div>
   </section>
@@ -1199,8 +1199,11 @@
           <label style="display:block; font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:0.4rem; text-transform:uppercase;">Company Name</label>
           <input type="text" id="leadCompany" required placeholder="Precision Machining Holding AG" style="width:100%; background:#060910; border:1px solid var(--border); color:#fff; padding:0.75rem 1rem; border-radius:8px; outline:none;">
         </div>
+        <div id="leadEmailError" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #f87171; padding: 0.65rem 0.85rem; border-radius: 8px; font-size: 0.82rem; margin-bottom: 1rem; line-height: 1.4;">
+          ⚠️ Compliance Notice: ISO 42001 & EU AI Act Dossiers are restricted to registered corporate entities. Please enter a valid business email (e.g., name@company.com).
+        </div>
         <p style="font-size:0.75rem; color:var(--text-dim); margin-bottom:1.5rem;">
-          GDPR Art. 25/44 compliant. Zero data resale. Dossier dispatched to contact@oltrevista.com for 24h executive audit review.
+          GDPR Art. 25/44 compliant. Zero data resale. Executive copy archived in CRM for priority review.
         </p>
         <div style="display:flex; gap:1rem;">
           <button type="submit" id="btnModalSubmit" style="flex:2; background:#2563eb; color:#fff; border:none; padding:0.85rem; border-radius:8px; font-weight:700; cursor:pointer;">
@@ -1346,17 +1349,49 @@
       document.getElementById('leadModal').style.display = 'none';
     }
 
-    async function handleLeadSubmit(e) {
-      e.preventDefault();
-      const btn = document.getElementById('btnModalSubmit');
-      btn.disabled = true;
-      btn.innerText = 'Generating Report...';
+        async function handleLeadSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const emailInput = document.getElementById('leadEmail');
+      const email = emailInput ? emailInput.value.trim() : '';
+      const emailErrorEl = document.getElementById('leadEmailError');
 
-      const name = document.getElementById('leadName').value;
-      const email = document.getElementById('leadEmail').value;
-      const company = document.getElementById('leadCompany').value;
-      const sector = document.getElementById('radarSector').value;
-      const score = document.getElementById('scoreDisplayVal').innerText;
+      // SECTION B: CORPORATE EMAIL VALIDATION FILTER (2-TIER CLIENT-SIDE VALIDATION v3.70)
+      const validation = (typeof validateCorporateEmail === 'function')
+        ? validateCorporateEmail(email)
+        : (function(em) {
+            if (!em) return { valid: false, reason: "empty" };
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return { valid: false, reason: "invalid_syntax" };
+            if (/@(gmail\.com|yahoo\.|hotmail\.|outlook\.|icloud\.com|proton\.|protonmail\.|aol\.com|live\.com|yandex\.|mail\.ru|tempmail|mailinator|10minutemail)/i.test(em)) return { valid: false, reason: "consumer_domain" };
+            return { valid: true };
+          })(email);
+
+      if (!validation.valid) {
+        if (emailErrorEl) {
+          emailErrorEl.innerText = "⚠️ Compliance Notice: ISO 42001 & EU AI Act Dossiers are restricted to registered corporate entities. Please enter a valid business email (e.g., name@company.com).";
+          emailErrorEl.style.display = 'block';
+        } else {
+          alert("⚠️ Compliance Notice: ISO 42001 & EU AI Act Dossiers are restricted to registered corporate entities. Please enter a valid business email (e.g., name@company.com).");
+        }
+        if (emailInput) {
+          emailInput.style.borderColor = '#ef4444';
+          emailInput.focus();
+        }
+        return false;
+      }
+
+      if (emailErrorEl) emailErrorEl.style.display = 'none';
+      if (emailInput) emailInput.style.borderColor = '';
+
+      const btn = document.getElementById('btnModalSubmit');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerText = 'Generating Report...';
+      }
+
+      const name = document.getElementById('leadName') ? document.getElementById('leadName').value : '';
+      const company = document.getElementById('leadCompany') ? document.getElementById('leadCompany').value : '';
+      const sector = document.getElementById('radarSector') ? document.getElementById('radarSector').value : 'mfg';
+      const score = document.getElementById('scoreDisplayVal') ? document.getElementById('scoreDisplayVal').innerText : '0';
 
       const payload = {
         name,
@@ -1369,21 +1404,26 @@
       };
 
       try {
-        await fetch('/api/lead-notify', {
+        fetch('/api/lead-notify', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
-        });
-        alert('Audit Report successfully generated and dispatched to ' + email + ' and contact@oltrevista.com.');
+        }).catch(err => console.warn('Lead dispatch note:', err));
+        
         closeLeadModal();
+        setTimeout(() => {
+          window.print();
+        }, 100);
       } catch (err) {
         console.warn('Lead dispatch note:', err);
-        alert('Audit parameters recorded. Our compliance engineering team will contact you within 24 hours.');
         closeLeadModal();
       } finally {
-        btn.disabled = false;
-        btn.innerText = 'Generate & Dispatch Report';
+        if (btn) {
+          btn.disabled = false;
+          btn.innerText = 'Generate & Dispatch Report';
+        }
       }
+      return false;
     }
 
     window.addEventListener('DOMContentLoaded', recalculateAudit);

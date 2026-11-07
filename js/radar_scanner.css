@@ -1,7 +1,7 @@
 /* ===============================================================================
-   OLTREVISTA / ZUKWEND ECOSYSTEM — SURGICAL FIX PRINT CSS A4 (v3.71)
+   OLTREVISTA / ZUKWEND ECOSYSTEM — SURGICAL FIX PRINT WHITELIST A4 (v3.72)
    File: js/radar_scanner.css
-   Single-Page A4 Executive Audit Dossier Layout
+   Single-Page A4 Executive Audit Dossier Whitelist Layout
    =============================================================================== */
 
 @page {
@@ -46,72 +46,121 @@
 }
 
 /* ===============================================================================
-   @media print ISOLATION — STRICT 1-PAGE A4 EXECUTIVE DOSSIER
+   @media print ISOLATION — STRICT ROOT WHITELIST & HEIGHT BOUNDARY (v3.72)
    =============================================================================== */
 @media print {
-  /* A. BLACKLIST ALL WEB & MARKETING NOISE IN PRINT */
-  header, footer, nav, .hero-section, .hero-banner, .showcase-section, .trust-center,
-  .pricing-section, .video-container, .sub-sites-grid, .cta-buttons-container,
-  .modal-overlay, .btn, button, iframe, .no-print,
-  .lang-select, .nav-actions, .filter-bar, .share-export-bar, .btn-executive-unlock,
-  .radar-audit-panel, .score-panel, #controlsList, .categories-bar, .checkout-banner,
-  .product-proof-card, .stats-row, #atecoBenchmarkBox, .cost-of-inaction-box,
-  .preset-chips-container, .btn-share-action, .btn-lemon-primary, .btn-lock-license,
-  .field-select, input[type=range] {
-    display: none !important;
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
   }
 
-  /* Suppress raw href URL printing next to links */
-  a[href]:after {
-    content: none !important;
-  }
-
-  /* Whitelist: Display ONLY print header, #execSummaryCard / .radar-results-container, and print footer */
-  .radar-results-container, #execSummaryCard, .print-only-header, .print-only-footer {
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  /* Page & Layout Resets for Strict 1-Page A4 vertical fit */
   html, body {
+    height: 100vh !important;
+    max-height: 280mm !important;
+    overflow: hidden !important;
     background: #ffffff !important;
-    color: #0F172A !important;
+    color: #0f172a !important;
     font-size: 10pt !important;
     line-height: 1.35 !important;
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
     width: 100% !important;
-    height: auto !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  main {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding: 0 !important;
+  /* STEP 1: HIDE ALL DIRECT BODY CHILDREN BY DEFAULT */
+  body > * {
+    display: none !important;
+  }
+
+  /* STEP 2: UNHIDE ONLY THE MAIN/RADAR WRAPPER CONTAINING THE DOSSIER */
+  body > main,
+  body > .radar-main-container,
+  body > #radar {
+    display: block !important;
     margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* STEP 3: HIDE ALL NON-DOSSIER ELEMENTS INSIDE RADAR CONTAINER & DOM */
+  .site-header,
+  .site-footer,
+  .radar-inputs-container,
+  .radar-controls,
+  .radar-header-title,
+  .showcase-section,
+  .trust-center,
+  .pricing-section,
+  .hero-section,
+  .hero-banner,
+  .sub-sites-grid,
+  .no-print,
+  button,
+  .btn,
+  iframe,
+  header,
+  footer,
+  nav,
+  .video-container,
+  .cta-buttons-container,
+  .modal-overlay,
+  .lang-select,
+  .nav-actions,
+  .filter-bar,
+  .share-export-bar,
+  .btn-executive-unlock,
+  .radar-audit-panel,
+  .score-panel,
+  #controlsList,
+  #radarApiError,
+  .categories-bar,
+  .checkout-banner,
+  .product-proof-card,
+  .stats-row,
+  #atecoBenchmarkBox,
+  .cost-of-inaction-box,
+  .preset-chips-container,
+  .btn-share-action,
+  .btn-lemon-primary,
+  .btn-lock-license,
+  .field-select,
+  input[type=range] {
+    display: none !important;
+  }
+
+  /* WHITELIST STRICT ISOLATION WITHIN MAIN */
+  main > *:not(.radar-grid),
+  .radar-grid > *:not(.controls-container),
+  .controls-container > *:not(#execSummaryCard) {
+    display: none !important;
   }
 
   .radar-grid,
-  .radar-controls-section {
+  .controls-container {
     display: block !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    border: none !important;
   }
 
+  /* STEP 4: FORCE #execSummaryCard TO FULL A4 PRINT WIDTH & SINGLE PAGE ISOLATION */
   #execSummaryCard,
   .radar-results-container,
   .exec-summary-card {
     display: block !important;
     visibility: visible !important;
-    background: #ffffff !important;
-    border: 1px solid #CBD5E1 !important;
-    border-radius: 6px !important;
-    padding: 10px 14px !important;
-    margin: 0 !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 190mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
     box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
     color: #0F172A !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
@@ -127,9 +176,18 @@
     padding-bottom: 4px !important;
   }
 
-  /* D. PRINT-ONLY HEADER & FOOTER:
-     Header: "OLTREVISTA Sovereign AI Systems | OFFICIAL WORKING CAPITAL & COMPLIANCE DOSSIER" + Timestamp & Ref ID.
-     Footer: "CONFIDENTIAL — FOR BOARD REVIEW ONLY | Powered by ZUKWEND® (www.zukwend.com) | contact@oltrevista.com" */
+  /* SUPPRESS LINK URL EXTENSIONS */
+  a[href]:after {
+    content: none !important;
+  }
+
+  /* PRINT-ONLY HEADER & FOOTER */
+  .print-only-header,
+  .print-only-footer {
+    display: block !important;
+    visibility: visible !important;
+  }
+
   .print-only-header {
     border-bottom: 2px solid #0F172A !important;
     padding-bottom: 6px !important;
@@ -166,7 +224,7 @@
     break-inside: avoid !important;
   }
 
-  /* C. 2x2 KPI GRID FORMATTING IN PRINT */
+  /* 2x2 KPI GRID FORMATTING IN PRINT */
   .kpi-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -228,4 +286,18 @@
     color: #1e293b !important;
     line-height: 1.35 !important;
   }
+}
+
+/* CLASS-BASED PRINT HOOK (JS BACKUP) */
+body.is-printing-dossier > *:not(main):not(#radar) {
+  display: none !important;
+}
+body.is-printing-dossier main > *:not(.radar-grid) {
+  display: none !important;
+}
+body.is-printing-dossier .radar-grid > *:not(.controls-container) {
+  display: none !important;
+}
+body.is-printing-dossier .controls-container > *:not(#execSummaryCard) {
+  display: none !important;
 }

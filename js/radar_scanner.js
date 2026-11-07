@@ -19,7 +19,11 @@ const ATECO_BENCHMARKS = {
 
 // Feature 1: Print & Shareable Hash
 function printAuditSummary() {
+  document.body.classList.add('is-printing-dossier');
   window.print();
+  setTimeout(() => {
+    document.body.classList.remove('is-printing-dossier');
+  }, 500);
 }
 
 function serializeAuditState() {
@@ -477,7 +481,11 @@ function unlockExecutiveDossierInstant(leadPayload) {
 
   // 4. Trigger PDF print/download dialogue (window.print()) within 0.1s
   setTimeout(() => {
+    document.body.classList.add('is-printing-dossier');
     window.print();
+    setTimeout(() => {
+      document.body.classList.remove('is-printing-dossier');
+    }, 500);
   }, 100);
 
   // 5. Update modal copy

@@ -168,6 +168,20 @@ function recalculateAudit(syncInputs = true) {
     document.getElementById('kpiVatDuplication').innerText = duplicationPct.toFixed(1) + '%';
   }
 
+  // Synchronize 2x2 A4 Print Dossier KPI Grid
+  if (document.getElementById('dossierKpiOverdue')) {
+    document.getElementById('dossierKpiOverdue').innerText = '€' + overdue.toLocaleString();
+  }
+  if (document.getElementById('dossierKpiDso')) {
+    document.getElementById('dossierKpiDso').innerText = dso + ' Days (vs 30d EU Limit)';
+  }
+  if (document.getElementById('dossierKpiSla')) {
+    document.getElementById('dossierKpiSla').innerText = '€' + slaPenalties.toLocaleString();
+  }
+  if (document.getElementById('dossierKpiImmobilized')) {
+    document.getElementById('dossierKpiImmobilized').innerText = '€' + immobilizedCapital.toLocaleString();
+  }
+
   // Feature 2: Price Anchoring on Cost of Inaction
   const totalLoss = slaPenalties + immobilizedCapital;
   const roiMultiple = Math.max(1, Math.round(totalLoss / 249));
@@ -443,6 +457,22 @@ function unlockExecutiveDossierInstant(leadPayload) {
   }
   if (sec3 && (!sec3.innerText || sec3.innerText.includes('Prioritizing'))) {
     sec3.innerText = `Immediate sovereign air-gapped remediation recommended: deploy local-first execution to isolate data and eliminate recurring SaaS governance exposure.`;
+  }
+
+    // Synchronize 2x2 A4 Print Dossier KPI Grid upon unlock
+  if (document.getElementById('dossierKpiOverdue')) {
+    const overdueVal = leadPayload.overdue || (document.getElementById('sliderOverdue') ? document.getElementById('sliderOverdue').value : 1850000);
+    document.getElementById('dossierKpiOverdue').innerText = '€' + Number(overdueVal).toLocaleString();
+  }
+  if (document.getElementById('dossierKpiDso')) {
+    const dsoVal = leadPayload.dso || (document.getElementById('sliderDso') ? document.getElementById('sliderDso').value + ' Days' : '74 Days');
+    document.getElementById('dossierKpiDso').innerText = dsoVal + ' (vs 30d EU Limit)';
+  }
+  if (document.getElementById('dossierKpiSla')) {
+    document.getElementById('dossierKpiSla').innerText = leadPayload.slaPenalties || (document.getElementById('kpiSlaPenalties') ? document.getElementById('kpiSlaPenalties').innerText : '€24,812');
+  }
+  if (document.getElementById('dossierKpiImmobilized')) {
+    document.getElementById('dossierKpiImmobilized').innerText = document.getElementById('kpiImmobilizedCapital') ? document.getElementById('kpiImmobilizedCapital').innerText : '€211,849';
   }
 
   // 4. Trigger PDF print/download dialogue (window.print()) within 0.1s

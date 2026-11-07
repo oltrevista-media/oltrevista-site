@@ -1,4 +1,6 @@
 /* OLTREVISTA Global Layout & Scroll Anchoring v3.66 */
+@import url('/js/radar_scanner.css');
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 140px !important;
@@ -76,4 +78,29 @@ header {
   background: #1e293b;
   color: #fff;
   border-color: #3b82f6;
+}
+
+/* ===============================================================================
+   @media print ISOLATION — SINGLE-PAGE A4 EXECUTIVE DOSSIER (v3.71)
+   =============================================================================== */
+@media print {
+  header, footer, nav, .hero-section, .hero-banner, .showcase-section, .trust-center,
+  .pricing-section, .video-container, .sub-sites-grid, .cta-buttons-container,
+  .modal-overlay, .btn, button, iframe, .no-print,
+  .lang-select, .nav-actions, .filter-bar, .share-export-bar, .btn-executive-unlock,
+  .radar-audit-panel, .score-panel, #controlsList, .categories-bar, .checkout-banner,
+  .product-proof-card, .stats-row, #atecoBenchmarkBox, .cost-of-inaction-box,
+  .preset-chips-container, .btn-share-action, .btn-lemon-primary, .btn-lock-license,
+  .field-select, input[type=range] {
+    display: none !important;
+  }
+
+  a[href]:after {
+    content: none !important;
+  }
+
+  .radar-results-container, #execSummaryCard, .print-only-header, .print-only-footer {
+    display: block !important;
+    visibility: visible !important;
+  }
 }

@@ -1,0 +1,231 @@
+/* ===============================================================================
+   OLTREVISTA / ZUKWEND ECOSYSTEM — SURGICAL FIX PRINT CSS A4 (v3.71)
+   File: js/radar_scanner.css
+   Single-Page A4 Executive Audit Dossier Layout
+   =============================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 8mm 10mm 8mm 10mm;
+}
+
+/* Default screen visibility for print-only elements */
+.print-only-header,
+.print-only-footer {
+  display: none;
+}
+
+/* Base styles for KPI Grid on screen */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 1.25rem 0;
+}
+
+.kpi-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.kpi-card-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #60a5fa;
+  font-family: monospace;
+}
+
+.kpi-card-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+/* ===============================================================================
+   @media print ISOLATION — STRICT 1-PAGE A4 EXECUTIVE DOSSIER
+   =============================================================================== */
+@media print {
+  /* A. BLACKLIST ALL WEB & MARKETING NOISE IN PRINT */
+  header, footer, nav, .hero-section, .hero-banner, .showcase-section, .trust-center,
+  .pricing-section, .video-container, .sub-sites-grid, .cta-buttons-container,
+  .modal-overlay, .btn, button, iframe, .no-print,
+  .lang-select, .nav-actions, .filter-bar, .share-export-bar, .btn-executive-unlock,
+  .radar-audit-panel, .score-panel, #controlsList, .categories-bar, .checkout-banner,
+  .product-proof-card, .stats-row, #atecoBenchmarkBox, .cost-of-inaction-box,
+  .preset-chips-container, .btn-share-action, .btn-lemon-primary, .btn-lock-license,
+  .field-select, input[type=range] {
+    display: none !important;
+  }
+
+  /* Suppress raw href URL printing next to links */
+  a[href]:after {
+    content: none !important;
+  }
+
+  /* Whitelist: Display ONLY print header, #execSummaryCard / .radar-results-container, and print footer */
+  .radar-results-container, #execSummaryCard, .print-only-header, .print-only-footer {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Page & Layout Resets for Strict 1-Page A4 vertical fit */
+  html, body {
+    background: #ffffff !important;
+    color: #0F172A !important;
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .radar-grid,
+  .radar-controls-section {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #execSummaryCard,
+  .radar-results-container,
+  .exec-summary-card {
+    display: block !important;
+    visibility: visible !important;
+    background: #ffffff !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    color: #0F172A !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  #execSummaryCard h3,
+  .exec-summary-card h3 {
+    color: #0F172A !important;
+    font-size: 13pt !important;
+    font-weight: 800 !important;
+    margin-bottom: 6px !important;
+    border-bottom: 2px solid #0284c7 !important;
+    padding-bottom: 4px !important;
+  }
+
+  /* D. PRINT-ONLY HEADER & FOOTER:
+     Header: "OLTREVISTA Sovereign AI Systems | OFFICIAL WORKING CAPITAL & COMPLIANCE DOSSIER" + Timestamp & Ref ID.
+     Footer: "CONFIDENTIAL — FOR BOARD REVIEW ONLY | Powered by ZUKWEND® (www.zukwend.com) | contact@oltrevista.com" */
+  .print-only-header {
+    border-bottom: 2px solid #0F172A !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 10px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-only-header-title {
+    font-size: 12pt !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-only-header-meta {
+    font-size: 8pt !important;
+    color: #475569 !important;
+    margin-top: 3px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .print-only-footer {
+    border-top: 1px solid #CBD5E1 !important;
+    padding-top: 6px !important;
+    margin-top: 10px !important;
+    font-size: 7.5pt !important;
+    color: #64748b !important;
+    text-align: center !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* C. 2x2 KPI GRID FORMATTING IN PRINT */
+  .kpi-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin: 8px 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .kpi-card {
+    background: #F8FAFC !important;
+    border: 1px solid #CBD5E1 !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-sizing: border-box !important;
+  }
+
+  .kpi-card-value {
+    font-size: 16pt !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.15 !important;
+  }
+
+  .kpi-card-label {
+    font-size: 7.5pt !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    margin-top: 2px !important;
+  }
+
+  /* Executive Bullets Formatting */
+  .exec-bullet {
+    background: #F8FAFC !important;
+    border-left: 3px solid #0284c7 !important;
+    padding: 6px 10px !important;
+    border-radius: 0 6px 6px 0 !important;
+    margin-bottom: 6px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .exec-bullet-title {
+    font-weight: 700 !important;
+    font-size: 9pt !important;
+    color: #0369a1 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .exec-bullet-text {
+    font-size: 8pt !important;
+    color: #1e293b !important;
+    line-height: 1.35 !important;
+  }
+}

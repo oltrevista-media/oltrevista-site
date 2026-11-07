@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
   <script src="/js/i18n_radar.js"></script>
+  <link rel="stylesheet" href="/js/radar_scanner.css">
+  <link rel="stylesheet" href="/css/radar_scanner.css">
   <style>
   .nav-logo { height: 38px; width: auto; object-fit: contain; vertical-align: middle; }
     :root {
@@ -681,32 +683,177 @@
       margin-top: auto;
     }
   
-    /* Print Layout for Internal Executive Committee Review (CEO, IT, Legal) — v3.63 */
+    /* Print Layout for Single-Page A4 Executive Dossier — v3.71 */
     @media print {
-      header, footer, .lang-select, .nav-actions, .filter-bar, .modal-overlay, .share-export-bar, .btn-executive-unlock, button, .video-container, .btn-lock-license {
-        display: none !important;
-      }
-      body, main {
-        background: #fff !important;
-        color: #000 !important;
-        padding-top: 0 !important;
-      }
-      .radar-audit-panel, .cost-of-inaction-box, #atecoBenchmarkBox, .control-card, .score-panel, .product-proof-card {
-        background: #fff !important;
-        color: #000 !important;
-        border: 1px solid #ccc !important;
-        box-shadow: none !important;
-        page-break-inside: avoid;
-        margin-bottom: 1.5rem !important;
-      }
+      header, footer, nav, .hero-section, .hero-banner, .showcase-section, .trust-center,
+      .pricing-section, .video-container, .sub-sites-grid, .cta-buttons-container,
+      .modal-overlay, .btn, button, iframe, .no-print,
+      .lang-select, .nav-actions, .filter-bar, .share-export-bar, .btn-executive-unlock,
+      .radar-audit-panel, .score-panel, #controlsList, .categories-bar, .checkout-banner,
+      .product-proof-card, .stats-row, #atecoBenchmarkBox, .cost-of-inaction-box,
+      .preset-chips-container, .btn-share-action, .btn-lemon-primary, .btn-lock-license,
       .field-select, input[type=range] {
         display: none !important;
       }
-      .breakdown-num, .gauge-pct {
-        color: #000 !important;
+
+      a[href]:after {
+        content: none !important;
       }
-      .breakdown-lbl, .gauge-lbl {
-        color: #333 !important;
+
+      .radar-results-container, #execSummaryCard, .print-only-header, .print-only-footer {
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      html, body {
+        background: #ffffff !important;
+        color: #0F172A !important;
+        font-size: 10pt !important;
+        line-height: 1.35 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      main {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .radar-grid,
+      .radar-controls-section {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      #execSummaryCard,
+      .radar-results-container,
+      .exec-summary-card {
+        display: block !important;
+        visibility: visible !important;
+        background: #ffffff !important;
+        border: 1px solid #CBD5E1 !important;
+        border-radius: 6px !important;
+        padding: 10px 14px !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        color: #0F172A !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      #execSummaryCard h3,
+      .exec-summary-card h3 {
+        color: #0F172A !important;
+        font-size: 13pt !important;
+        font-weight: 800 !important;
+        margin-bottom: 6px !important;
+        border-bottom: 2px solid #0284c7 !important;
+        padding-bottom: 4px !important;
+      }
+
+      .print-only-header {
+        border-bottom: 2px solid #0F172A !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 10px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      .print-only-header-title {
+        font-size: 12pt !important;
+        font-weight: 800 !important;
+        color: #0F172A !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.02em !important;
+        line-height: 1.2 !important;
+      }
+
+      .print-only-header-meta {
+        font-size: 8pt !important;
+        color: #475569 !important;
+        margin-top: 3px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+      }
+
+      .print-only-footer {
+        border-top: 1px solid #CBD5E1 !important;
+        padding-top: 6px !important;
+        margin-top: 10px !important;
+        font-size: 7.5pt !important;
+        color: #64748b !important;
+        text-align: center !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      .kpi-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        margin: 8px 0 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      .kpi-card {
+        background: #F8FAFC !important;
+        border: 1px solid #CBD5E1 !important;
+        padding: 8px 12px !important;
+        border-radius: 6px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+      }
+
+      .kpi-card-value {
+        font-size: 16pt !important;
+        font-weight: 700 !important;
+        color: #0F172A !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        line-height: 1.15 !important;
+      }
+
+      .kpi-card-label {
+        font-size: 7.5pt !important;
+        font-weight: 600 !important;
+        color: #475569 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+        margin-top: 2px !important;
+      }
+
+      .exec-bullet {
+        background: #F8FAFC !important;
+        border-left: 3px solid #0284c7 !important;
+        padding: 6px 10px !important;
+        border-radius: 0 6px 6px 0 !important;
+        margin-bottom: 6px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      .exec-bullet-title {
+        font-weight: 700 !important;
+        font-size: 9pt !important;
+        color: #0369a1 !important;
+        margin-bottom: 2px !important;
+      }
+
+      .exec-bullet-text {
+        font-size: 8pt !important;
+        color: #1e293b !important;
+        line-height: 1.35 !important;
       }
     }
 
@@ -977,8 +1124,37 @@
         <div id="controlsList"></div>
 
         <!-- AI Executive Summary Output Card (Appears after submission) -->
-        <div id="execSummaryCard" class="exec-summary-card">
+        <div id="execSummaryCard" class="exec-summary-card radar-results-container">
+          <!-- Print-Only Header -->
+          <div class="print-only-header">
+            <div class="print-only-header-title">OLTREVISTA Sovereign AI Systems | OFFICIAL WORKING CAPITAL &amp; COMPLIANCE DOSSIER</div>
+            <div class="print-only-header-meta">
+              <span>Ref ID: AUDIT-2026-NATIVE</span>
+              <span id="printTimestamp">Generated: 2026-11-07 | ISO 42001:2023 &amp; Regulation (EU) 2024/1689</span>
+            </div>
+          </div>
+
           <h3 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 1.25rem;" id="txtExecTitle">Lead Auditor Executive Summary</h3>
+          
+          <!-- 2x2 KPI Grid for A4 Executive Dossier -->
+          <div class="kpi-grid" id="auditKpiGrid">
+            <div class="kpi-card">
+              <div class="kpi-card-value" id="dossierKpiOverdue">€1,850,000</div>
+              <div class="kpi-card-label">Total Overdue Receivables</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-card-value" id="dossierKpiDso">74 Days (vs 30d EU Limit)</div>
+              <div class="kpi-card-label">Average Payment Delay (DSO Days vs 30d EU Limit)</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-card-value" id="dossierKpiSla">€24,812</div>
+              <div class="kpi-card-label">SLA Penalties Incurred (€)</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-card-value" id="dossierKpiImmobilized">€211,849</div>
+              <div class="kpi-card-label">Immobilized Capital Cost (€)</div>
+            </div>
+          </div>
           
           <div class="exec-bullet">
             <div class="exec-bullet-title" id="txtSec1Title">1. Regulatory Exposure</div>
@@ -993,6 +1169,13 @@
             <div class="exec-bullet-text" id="execSec3Text">Prioritizing gap closure procedures...</div>
           </div>
 
+          <!-- Physical Backup Print Button (.no-print) -->
+          <div style="margin: 1.25rem 0 0.5rem 0; text-align: right;" class="no-print">
+            <button type="button" class="btn no-print" onclick="window.print()" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #1e293b; color: #60a5fa; border: 1px solid #2563eb; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: all 0.2s;">
+              🖨️ Stampa / Salva Dossier PDF (A4)
+            </button>
+          </div>
+
           <div class="checkout-banner">
             <div>
               <h4 style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem;">Remediate Non-Compliance Instantly</h4>
@@ -1003,6 +1186,11 @@
                 ⚡ Deploy ZUKWEND Local-First AI (€249 One-Time)
               </a>
             </div>
+          </div>
+
+          <!-- Print-Only Footer -->
+          <div class="print-only-footer">
+            CONFIDENTIAL — FOR BOARD REVIEW ONLY | Powered by ZUKWEND® (www.zukwend.com) | contact@oltrevista.com
           </div>
         </div>
       </section>

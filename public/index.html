@@ -819,7 +819,7 @@
         </div>
       </a>
       <nav class="nav-links">
-        <a href="#radar" class="nav-link">Radar</a>
+        <a href="/radar_scanner/" class="nav-link">Radar</a>
         <a href="https://zukwend.com" target="_blank" rel="noopener" class="nav-link">ZUKWEND® Engine</a>
         <a href="#trust" class="nav-link">Trust Center</a>
         <a href="/blog/" class="nav-link">Blog</a>
@@ -850,7 +850,7 @@
       Stop paying recurring SaaS fees for credit management. Deploy Local-First AI Agents with zero cloud data lock-in and 100% Tax ID consolidation.
     </p>
     <div class="hero-cta-row">
-      <a href="#radar" class="btn-hero-primary">
+      <a href="/radar_scanner/" class="btn-hero-primary">
         <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
@@ -998,12 +998,12 @@
           </div>
         </div>
 
-        <button type="button" class="btn-generate-report" onclick="openLeadModal()">
+        <a href="/radar_scanner/" class="btn-generate-report" style="text-decoration:none;">
           <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
           Generate Sovereign AI Audit Report (PDF)
-        </button>
+        </a>
       </div>
     </div>
   </section>
@@ -1412,9 +1412,7 @@
         }).catch(err => console.warn('Lead dispatch note:', err));
         
         closeLeadModal();
-        setTimeout(() => {
-          window.print();
-        }, 100);
+        window.location.href = '/radar_scanner/';
       } catch (err) {
         console.warn('Lead dispatch note:', err);
         closeLeadModal();
